@@ -1,0 +1,81 @@
+@use '../../../styles/partials/' as p;
+
+.meetingMetrics {
+    display: none;
+
+    @include p.breakpoint(tablet) {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-xxs;
+
+        &__header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            border-bottom: 1px solid p.$border-dark-grey;
+            width: 100%;
+
+            &-cell {
+                font-weight: 700;
+                background-color: p.$background-grey;
+                padding-block: p.$size-xs;
+            }
+        }
+
+        &__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            border-bottom: 1px solid p.$border-dark-grey;
+            padding-block: p.$size-xs;
+            width: 100%;
+            align-items: center;
+        }
+
+        &__cell {
+            font-size: p.px-to-rem(18);
+        }
+
+        &__location-container {
+            display: flex;
+            flex-direction: column;
+    
+            button {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &--mobile {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-l;
+
+        @include p.breakpoint(tablet) {
+            display: none;
+        }
+
+        .meetingMetrics__row {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-xs;
+            border-bottom: 1px solid p.$border-global-grey;
+            padding-bottom: p.$size-s;
+        }
+    }
+
+    &__metric {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__header-cell {
+        font-weight: p.$font-bold;
+    }
+
+
+}
+
+.disabled {
+    color: p.$secondaryColor--fontGrey;
+    font-size: p.$font-xs;
+}

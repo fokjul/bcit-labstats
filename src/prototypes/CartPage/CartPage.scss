@@ -1,0 +1,11 @@
+@use '../../styles/partials/' as p;
+
+.cartPage {
+
+    &__contentArea {
+        @extend .body-copy;
+    }
+
+}
+
+

@@ -1,0 +1,186 @@
+@use '../../../../styles/partials/' as p;
+
+.crn-section {
+    display: flex;
+    flex-direction: column;
+    gap: p.$size-m;
+    width: 100%;
+    padding: p.$size-s;
+    background-color: p.$primaryColor--white;
+    margin-inline: auto;
+
+    @include p.breakpoint(tablet) {
+        gap: p.$size-l;
+    }
+
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: p.$size-s;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: p.$size-xs;
+
+            @include p.breakpoint(tablet) { 
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    &__crn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: p.px-to-rem(2);
+    }
+
+    &__crn {
+        display: flex;
+        align-items: center;
+        gap: p.$size-xs;
+        
+
+        &-header {
+            font-size: p.$font-m;
+
+            @include p.breakpoint(tablet) {
+                font-size: p.$font-l;
+            }
+        }
+    }
+
+    &__caption {
+        font-size: p.px-to-rem(14);
+        display: flex;
+        gap: p.px-to-rem(2);
+
+        &-value {
+            font-weight: bold;
+        }
+    }
+
+    &__cost {
+        display: flex;
+        gap: p.$size-xs;
+        align-items: center;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: p.px-to-rem(2);
+        }
+    }
+
+    &__schedule {
+        display: grid;
+        grid-template-columns: 1fr;
+
+
+        @include p.breakpoint(tablet) {
+            grid-template-columns: 1fr auto;
+            row-gap: p.$size-xs;
+        }
+    }
+
+    &__status {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__status--available {
+        display: flex;
+        flex-direction: column;
+        row-gap: p.$size-xs;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+.offering-details {
+    display: flex;
+    flex-direction: column;
+    gap: p.$size-m;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-s;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__hide-btn-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__item {
+
+        &-heading {
+            color: p.$secondaryColor--fontGrey;
+        }
+        
+        &-copy {
+            @extend .body-copy;
+        }
+    }
+
+    &__info {
+        padding-top: p.$size-m;
+        border-top: 1px solid p.$border-global-grey
+    }
+
+    &__subscribe {
+        display: flex;
+        flex-wrap: wrap;
+        color: p.$secondaryColor--fontLightGrey;
+        @extend .body-copy;
+        column-gap: p.$size-xxs;
+        align-items: center;
+        
+        span > p {
+            display: inline-block
+        }
+    }
+
+    &__available {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+    }
+}
+
+.hidden {
+    display: none;
+}

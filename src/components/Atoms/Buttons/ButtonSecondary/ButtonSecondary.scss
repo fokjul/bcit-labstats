@@ -1,0 +1,21 @@
+@use '../../../../styles/partials/' as p;
+
+.btn-secondary {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid p.$primaryColor--blue;
+    background-color: p.$primaryColor--white;
+    align-items: center;
+    padding-inline: p.$size-s;
+    padding-block: p.$size-s;
+    gap: p.$size-xs;
+    cursor: pointer;
+    width: 100%;
+    height: p.px-to-rem(64);
+
+    &__text {
+        text-transform: uppercase;
+        color: p.$primaryColor--blue;
+        font-weight: 600;
+    }
+}

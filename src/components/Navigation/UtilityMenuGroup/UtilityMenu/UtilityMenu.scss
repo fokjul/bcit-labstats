@@ -1,0 +1,22 @@
+@use '../../../../styles/partials/' as p;
+
+.navbar-util {
+    display: none;
+    
+    @include p.breakpoint(tablet) {
+        display: block;
+        background-color: p.$primaryColor--darkBlue;
+    
+    &__container {
+        @include p.container-layout;
+        justify-content: flex-end;
+        border-bottom: none;
+    }
+
+    &__menu {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+    }
+    }
+}

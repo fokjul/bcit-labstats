@@ -1,0 +1,19 @@
+@use '../../../styles/partials/' as p;
+
+.noticePanel {
+    display: flex;
+    flex-direction: column;
+    padding: p.$size-m;
+    width: 100%;
+    @extend .body-copy;
+
+    &__heading {
+        font-weight: 600;
+        line-height: p.$lineH-m;
+    }
+}
+
+.info {
+    background-color: p.$background-blue-light;
+    border-left: 8px solid p.$border-blue;
+}

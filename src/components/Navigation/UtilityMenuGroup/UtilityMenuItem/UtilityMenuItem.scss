@@ -1,0 +1,11 @@
+@use '../../../../styles/partials/' as p;
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    @include p.utilNavItem;
+    color: p.$primaryColor--white;
+    height: p.px-to-rem(40);
+    padding-inline: p.$size-xs;
+    
+}

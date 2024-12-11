@@ -1,0 +1,14 @@
+@use '../../../../styles/partials/' as p;
+
+.offerings {
+    &__title {
+        padding-block: p.$size-m;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: p.$size-s;
+        background-color: p.$border-global-grey;
+        gap: p.$size-l;
+    }
+}

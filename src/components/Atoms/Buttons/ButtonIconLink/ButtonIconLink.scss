@@ -1,0 +1,23 @@
+@use '../../../../styles/partials/' as p;
+
+.btn-iconLink {
+    display: flex;
+    align-items: center;
+    background-color: p.$background-grey;
+    border-radius: p.$size-xxs;
+    padding-inline: p.$size-xxs;
+    height: p.$size-m;
+    cursor: pointer;
+
+    &__img {
+        width: p.$size-s;
+        height: p.$size-s;
+    }
+
+    &__text {
+        display: block;
+        @extend .labels-buttons;
+        font-weight: 400;
+        color: p.$primaryColor--blue;
+    }
+}

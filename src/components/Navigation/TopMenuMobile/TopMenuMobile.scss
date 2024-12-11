@@ -1,0 +1,19 @@
+@use '../../../styles/partials/' as p;
+
+.mobileMenu {
+    @include p.breakpoint(tablet) {
+        //display: none;
+    }
+
+    &__button {
+        height: 100%;
+        width: p.px-to-rem(59);
+        border: 1px solid p.$border-dark-grey;
+        background: none;
+
+        &-icon {
+            width: p.$size-m;
+            height: p.$size-m;
+        }
+    } 
+}

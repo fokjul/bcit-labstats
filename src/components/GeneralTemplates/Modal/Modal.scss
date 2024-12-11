@@ -1,0 +1,41 @@
+@use '../../../styles/partials/' as p;
+
+.modal {
+    
+    &__bg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+        width: p.px-to-rem(600);
+        padding: p.$size-m;
+        border: p.$size-m solid p.$border-global-grey;
+        background: p.$primaryColor--white;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+        width: 100%;
+    }
+
+    &__btn {
+        max-width: p.px-to-rem(290);
+    }
+}

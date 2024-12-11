@@ -1,0 +1,116 @@
+@use '../../../styles/partials/' as p;
+
+.footer {
+    &__container {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-inline: p.$size-s;
+        padding-top: p.px-to-rem(65);
+        padding-bottom: p.px-to-rem(50);
+
+        @include p.breakpoint(tablet) {
+            @include p.container-layout;
+            flex-direction: row;
+            align-items: flex-start;
+            padding-block: 0;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid p.$border-global-grey;
+        padding-block: p.$size-m;
+        gap: p.$size-m;
+
+        @include p.breakpoint(tablet) {
+            border-right: 1px solid p.$border-global-grey;
+            padding-right: p.$size-l;
+            width: 25%;
+            border-top: none;
+            padding-block: p.$size-xl;
+        }
+
+        &-link {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: p.$size-m;
+        }
+
+        &-phones {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: p.$size-xxs;
+        }
+
+        &-header {
+            font: p.px-to-rem(16);
+            text-transform: uppercase;
+            font-weight: 700;
+
+            &::before {
+                content: ('—— ')
+            }
+        }
+
+        &-address {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-img {
+            display: flex;
+            gap: p.$size-s;
+
+            img {
+                width: p.px-to-rem(26);
+                height: p.px-to-rem(22);
+            }
+        }
+    }
+
+    &__link-container {
+        display: none;
+
+        @include p.breakpoint(tablet) {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-xxs;
+            border-right: 1px solid p.$border-global-grey;
+            padding-inline: p.$size-l;
+            padding-block: p.$size-xl;
+            justify-content: flex-start;
+            width: 25%;
+        }
+    }
+
+    &__info-container {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+        border-top: 1px solid p.$border-global-grey;
+        padding-block: p.$size-m;
+
+        @include p.breakpoint(tablet) {
+            padding-inline: p.$size-l;
+            padding-block: p.$size-xl;
+            border-top: none;
+        }
+
+        &-campuses {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-xxs;
+        }
+
+        &-links {
+            display: flex;
+            gap: p.$size-s;
+        }
+    }
+
+
+    
+}

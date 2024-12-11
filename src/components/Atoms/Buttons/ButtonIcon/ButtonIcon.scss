@@ -1,0 +1,13 @@
+@use '../../../../styles/partials/' as p;
+
+.btn-icon {
+    display: flex;
+    justify-content: center;
+    width: p.$size-2xl;
+    height: p.$size-2xl;
+    cursor: pointer;
+
+    &__img {
+        width: p.px-to-rem(18);
+    }
+}

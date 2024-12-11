@@ -1,0 +1,54 @@
+@use '../../../styles/partials/' as p;
+
+.breadcrumbBar {
+    &__container {
+        @include p.container-layout;
+        padding-inline: p.$size-s;
+
+        @include p.breakpoint(tablet) {
+            padding-inline: p.$size-m;
+        }
+    }
+}
+
+.breadcrumbs {
+    display: none;
+    list-style: none;
+    padding-left: 0;
+    margin-block: 0;
+    padding-block: p.$size-xs;
+
+    &-item {
+        text-transform: uppercase;
+        @extend .labels-buttons;
+        font-weight: 400;
+        padding-block: p.px-to-rem(2);
+
+        &:not(:last-child)::after {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            content: '\f0da';
+            margin-inline: 8px;
+        }
+    }
+
+    @include p.breakpoint(tablet) {
+        display: flex;
+    }
+
+    &--mobile {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+        margin-block: 0;
+        padding-block: p.$size-xs;
+
+        @include p.breakpoint(tablet) {
+            display: none;
+        }
+    }
+}
+
+.cartLabel {
+    width: fit-content;
+}

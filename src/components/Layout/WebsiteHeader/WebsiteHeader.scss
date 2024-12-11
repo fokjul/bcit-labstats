@@ -1,0 +1,30 @@
+@use '../../../styles/partials/' as p;
+
+.navMenuBar {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        height: p.px-to-rem(64);
+        padding-left: p.$size-s;
+        border-bottom: 1px solid p.$border-global-grey;
+
+        @include p.breakpoint(tablet) {
+            @include p.container-layout;
+            height: p.px-to-rem(120);
+        }
+    }
+
+    &__menu-container {
+        display: flex;
+        flex-direction: row-reverse;
+
+        @include p.breakpoint(tablet) {
+            width: 100%;
+            flex-direction: row;
+        }
+        
+    }
+    
+    
+}
+

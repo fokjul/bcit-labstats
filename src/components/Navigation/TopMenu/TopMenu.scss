@@ -1,0 +1,46 @@
+@use '../../../styles/partials/' as p;
+
+.navMenu {
+    display: none;
+    list-style-type: none;
+    width: 100%;
+    padding-left: 0;
+
+    @include p.breakpoint(tablet) {
+        display: flex;
+        font-size: p.$font-xxs;
+    } 
+
+    &__item {
+
+        &-text {
+            color: p.$primaryColor--darkBlue;
+            padding: p.$size-xs;
+            @extend .menu-item;
+        }
+    }
+}
+
+.navMenu--mobile {
+    &__button {
+        height: 100%;
+        width: p.px-to-rem(59);
+        border: none;
+        background: none;
+
+        &-icon {
+            width: p.$size-m;
+            height: p.$size-m;
+        }
+
+        span::after {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            content: '\f0c9';
+        }
+    } 
+
+    @include p.breakpoint(tablet) {
+        display: none;
+    }
+}

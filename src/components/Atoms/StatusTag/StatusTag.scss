@@ -1,0 +1,76 @@
+@use '../../../styles/partials/' as p;
+
+.statusTag {
+    display: flex;
+    flex-shrink: 0;
+    border-radius: p.$size-xxs;
+    //padding: p.$size-xxs;
+    //padding-left: p.$size-s;
+    height: fit-content;
+    width: fit-content;
+
+    img {
+        width: p.px-to-rem(22);
+    }
+
+    &--available {
+       //background-color: rgba(0, 159, 61, 0.1);
+        display: inline-block;
+        vertical-align: bottom;
+        
+        div {
+            display: flex;
+            align-items: center;
+            gap: p.$size-xxs;
+        }
+    }
+
+    &--full {
+        //background-color: rgba(204, 0, 0, 0.1);
+        display: inline-block;
+        vertical-align: bottom;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: p.$size-xxs;
+        }
+    }
+
+    &--inProgress {
+        //background-color: rgba(255, 166, 10, 0.1);
+        display: inline-block;
+        vertical-align: bottom;
+        div {
+            display: flex;
+            align-items: center;
+            gap: p.$size-xxs;
+        }
+    }
+
+    &-text {
+        //text-transform: uppercase;
+        //@extend .labels-buttons;
+        @extend .body-copy;
+        text-transform: capitalize;
+
+        
+        p {
+            text-align: center;
+            line-height: p.px-to-rem(18);
+        }
+
+        &--available {
+            color: p.$success-color
+        }
+
+        &--full {
+            color: p.$error-color
+        }
+
+        &--inProgress {
+            color: p.$warning-color
+        }
+    }
+}
+
