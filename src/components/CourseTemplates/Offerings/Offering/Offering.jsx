@@ -14,9 +14,13 @@ import ButtonLink from '../../../Atoms/Buttons/ButtonLink/ButtonLink';
 //assets
 import link from '../../../../assets/icons/link.svg';
 
-const Offering = ({offeringDetails, isViewDetailsClicked, setIsViewDetailsClicked, cartCounter, setCartCounter, setCoursesAddedToCart, coursesAddedToCart}) => {
+const Offering = ({offeringDetails, cartCounter, setCartCounter, setCoursesAddedToCart, coursesAddedToCart}) => {
 
-const navigate = useNavigate();
+const [isViewDetailsClicked, setIsViewDetailsClicked] = useState({
+  id: '',
+  isClicked: false
+})
+
 
 const [isAddedToCart, setIsAddedToCart] = useState({
   status: false,
@@ -24,7 +28,7 @@ const [isAddedToCart, setIsAddedToCart] = useState({
 })
 
 const handleAddToCard = (offeringDetails) => {
-  setIsAddedToCart((prev) => ({
+  setIsAddedToCart(() => ({
     status: true,
     offerings: offeringDetails
   }))
@@ -32,7 +36,8 @@ const handleAddToCard = (offeringDetails) => {
   setCoursesAddedToCart((prev) => [...prev, offeringDetails])
 }
 
-
+//Passes # of courses added to the cart to the CartPage
+const navigate = useNavigate();
 
 const handleViewCart = () => {
   //To pass data about selected offering to the Cart page

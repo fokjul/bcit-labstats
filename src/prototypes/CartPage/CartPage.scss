@@ -4,8 +4,43 @@
 
     &__contentArea {
         @extend .body-copy;
+
+        display: flex;
+    flex-direction: column-reverse;
+    padding-block: p.px-to-rem(38);
+    
+    @include p.breakpoint(tablet) {
+        width: 100%;
+        align-items: flex-start;
+        padding-top: 0;
+        padding-inline: p.$size-xl;
+        border-bottom: 1px solid p.$border-global-grey;
+    }
+
+    @include p.breakpoint(desktop) {
+        @include p.container-layout;
+        align-items: flex-start;
+        flex-direction: row;
+        
+    }
+
+    
+    &__main {
+        padding-bottom: p.px-to-rem(38);
+        border-bottom: 1px solid p.$border-global-grey;
+        padding-inline: p.$size-s;
+        width: 100%;
+
+        @include p.breakpoint(tablet) {
+            padding-block: p.$size-3xl;
+            padding-inline: 0;
+            border-bottom: none;
+        }
+
+        @include p.breakpoint(desktop) {
+            padding-left: p.$size-xl;
+        }
+    }
     }
 
 }
-
-

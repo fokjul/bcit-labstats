@@ -14,7 +14,7 @@ import Modal from "../../components/GeneralTemplates/Modal/Modal";
 
 const CartPage = () => {
 
-//Passes courses added to cart to the Cart page
+//Receives # of courses added to cart from the CoursePage
 const location = useLocation()
 const coursesAddedToCart = location.state
 
