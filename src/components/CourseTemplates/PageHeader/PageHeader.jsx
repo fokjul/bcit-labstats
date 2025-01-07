@@ -1,6 +1,7 @@
 import './PageHeader.scss';
-import ButtonSecondary from '../../Atoms/Buttons/ButtonSecondary/ButtonSecondary'
-import { email, print } from '../../../assets/icons';
+
+import { email, print, arrowForwardBlue } from '../../../assets/icons';
+import ButtonIconLarge  from '../../Atoms/Buttons/ButtonIconLarge/ButtonIconLarge';
 
 const PageHeader = ({crn, title, scope, subject}) => {
   return (
@@ -21,10 +22,20 @@ const PageHeader = ({crn, title, scope, subject}) => {
         
             <div className='pageHeader__container-btn'>
                 <div className='pageHeader__btn'>
-                    <ButtonSecondary btnLabel='subscribe'/>
+                    <ButtonIconLarge  
+                        label='subscribe'
+                        handleBtnClick=''
+                        icon={arrowForwardBlue}
+                        type='secondary'
+                    />
                 </div>
                 <div className='pageHeader__btn'>
-                    <ButtonSecondary btnLabel='contact us'/>
+                    <ButtonIconLarge 
+                        label='contact us'
+                        handleBtnClick=''
+                        icon={arrowForwardBlue}
+                        type='secondary'
+                    />
                 </div>  
             </div> 
         </div>

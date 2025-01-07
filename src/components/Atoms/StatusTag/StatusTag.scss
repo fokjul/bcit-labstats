@@ -14,7 +14,6 @@
     }
 
     &--available {
-       //background-color: rgba(0, 159, 61, 0.1);
         display: inline-block;
         vertical-align: bottom;
         
@@ -26,7 +25,6 @@
     }
 
     &--full {
-        //background-color: rgba(204, 0, 0, 0.1);
         display: inline-block;
         vertical-align: bottom;
 
@@ -38,7 +36,6 @@
     }
 
     &--inProgress {
-        //background-color: rgba(255, 166, 10, 0.1);
         display: inline-block;
         vertical-align: bottom;
         div {
@@ -49,8 +46,6 @@
     }
 
     &-text {
-        //text-transform: uppercase;
-        //@extend .labels-buttons;
         @extend .body-copy;
         text-transform: capitalize;
 

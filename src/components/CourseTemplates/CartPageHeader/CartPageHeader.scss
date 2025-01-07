@@ -1,12 +1,12 @@
 @use '../../../styles/partials/' as p;
 
-.pageHeader {
+.cartPageHeader {
     &__container {
         display: flex;
         flex-direction: column;
         gap: p.$size-l;
         padding-inline: p.$size-s;
-        border-bottom: 1px solid p.$border-global-grey;
+        border-bottom: 1px solid p.$primaryColor--darkBlue;
         padding-top: p.px-to-rem(65);
         padding-bottom: p.px-to-rem(50);
 
@@ -15,6 +15,7 @@
             flex-direction: row;
             padding-top: p.px-to-rem(105);
             padding-bottom: p.px-to-rem(75);
+            border-bottom: 1px solid p.$primaryColor--darkBlue;
         }
 
         &-btn {

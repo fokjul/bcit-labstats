@@ -5,11 +5,12 @@
     border: none;
     background-color: p.$primaryColor--blue;
     align-items: center;
-    padding-inline: p.$size-s;
-    padding-block: p.$size-s;
+    padding: p.$size-s + p.$size-xxs;
     gap: p.$size-xs;
     cursor: pointer;
     justify-content: space-between;
+
+    @extend .labels-buttons;
 
     &__text {
         text-transform: uppercase;

@@ -1,5 +1,5 @@
 import './Modal.scss';
-import ButtonPrimary from '../../Atoms/Buttons/ButtonPrimary/ButtonPrimary';
+import ButtonPrimary from '../../Atoms/Buttons/ButtonIconLarge/ButtonIconLarge';
 import { ButtonIcon } from '../../Atoms/Buttons/ButtonIcon/ButtonIcon';
 
 import { xmark } from '../../../assets/icons';

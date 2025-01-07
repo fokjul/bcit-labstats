@@ -1,13 +1,12 @@
-import React from 'react';
-import './MeetingMatrixTable.scss';
-import TextLink from '../../Navigation/TextLink/TextLink';
+import './OfferingMeetingTimes.scss';
+import TextLink from '../../../Navigation/TextLink/TextLink';
 
 
 
-const MeetingMatrixTable = ({ meetingMetrics }) => {
+const OfferingMeetingTimes = ({ meetingMetrics }) => {
 
   return (
-    <>
+    <div className='meetingMetrics__schedule'>
       <div className='meetingMetrics'>
       <div className='meetingMetrics__header'>
         <div className='meetingMetrics__header-cell'>Dates</div>
@@ -54,9 +53,9 @@ const MeetingMatrixTable = ({ meetingMetrics }) => {
         
       ))}
       </div>
-    </>
+    </div>
    
   );
 }
 
-export default MeetingMatrixTable
+export default OfferingMeetingTimes

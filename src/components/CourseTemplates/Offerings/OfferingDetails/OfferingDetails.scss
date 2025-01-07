@@ -1,0 +1,65 @@
+@use '../../../../styles/partials/' as p;
+
+.offering-details {
+    display: flex;
+    flex-direction: column;
+    gap: p.$size-m;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-s;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__item {
+
+        &-heading {
+            color: p.$secondaryColor--fontGrey;
+        }
+        
+        &-copy {
+            @extend .body-copy;
+        }
+    }
+
+    &__info {
+        padding-top: p.$size-m;
+        border-top: 1px solid p.$border-global-grey
+    }
+
+    &__subscribe {
+        display: flex;
+        flex-wrap: wrap;
+        color: p.$secondaryColor--fontLightGrey;
+        @extend .body-copy;
+        column-gap: p.$size-xxs;
+        align-items: center;
+        
+        span > p {
+            display: inline-block
+        }
+    }
+
+    &__available {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+    }
+}
+
+.hidden {
+    display: none;
+}

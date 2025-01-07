@@ -1,0 +1,12 @@
+@use '../../../../styles/partials/' as p;
+
+.offeringFooter {
+    display: flex;
+    flex-direction: column;
+    gap: p.$size-m;
+    
+    &__hide-btn-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

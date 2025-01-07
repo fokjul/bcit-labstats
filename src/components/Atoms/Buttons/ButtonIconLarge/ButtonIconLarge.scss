@@ -1,0 +1,53 @@
+@use '../../../../styles/partials/' as p;
+
+.buttonIcon {
+    display: flex;
+    border: none;
+    align-items: center;
+    padding: p.$size-s + p.$size-xxs;
+    gap: p.$size-xs;
+    cursor: pointer;
+    justify-content: space-between;
+    min-width: p.px-to-rem(200);
+
+    @extend .labels-buttons;
+
+    &--secondary {
+        background-color: p.$primaryColor--white;
+        border: 1px solid p.$primaryColor--blue;
+        color: p.$primaryColor--blue;
+        text-transform: uppercase;
+        &::after {
+            font-family: 'Font Awesome 5 Free'; 
+            font-weight: 600;
+            content: '\f054'
+        }
+    }
+
+    &--primary {
+        background-color: p.$primaryColor--blue;
+        color: p.$primaryColor--white;
+        text-transform: uppercase;
+        font-weight: p.$font-demi;
+
+        &::after {
+            font-family: 'Font Awesome 5 Free'; 
+            font-weight: 600;
+            content: '\f054';
+            font-size: p.$size-s;
+        }
+    }
+
+    &--tetriary {
+        background-color: p.$border-dark-grey;
+        color: p.$secondaryColor--fontGrey;
+        text-transform: uppercase;
+
+        &::after {
+            font-family: 'Font Awesome 5 Free'; 
+            font-weight: 600;
+            content: '\f00d';
+            font-size: p.$size-s;
+        }
+    }
+}

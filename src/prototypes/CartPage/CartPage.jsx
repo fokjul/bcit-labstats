@@ -8,25 +8,52 @@ import Notice from "../../components/Panels/Notice/Notice";
 import CartPageHeader from "../../components/CourseTemplates/CartPageHeader/CartPageHeader";
 import SideBar from "../../components/CourseTemplates/SideBar/SideBar";
 import PageLayout from "../../components/Layout/PageLayout/PageLayout";
-import ButtonPrimary from "../../components/Atoms/Buttons/ButtonPrimary/ButtonPrimary";
+import ButtonIconLarge  from "../../components/Atoms/Buttons/ButtonIconLarge/ButtonIconLarge";
 import Modal from "../../components/GeneralTemplates/Modal/Modal";
+import OfferingFooterCardPage from "../../components/CourseTemplates/Offerings/OfferingFooterCardPage/OfferingFooterCardPage";
+import OfferingHeader from "../../components/CourseTemplates/Offerings/OfferingHeader/OfferingHeader";
+import OfferingMeetingTimes from "../../components/CourseTemplates/Offerings/OfferingMeetingTimes/OfferingMeetingTimes";
+import OfferingDetails from "../../components/CourseTemplates/Offerings/OfferingDetails/OfferingDetails";
+import CartPageSubTotal from "../../components/CourseTemplates/CartPageSubTotal/CartPageSubTotal";
+
+//Assets
+import { arrowForward } from '../../assets/icons';
+
+
 
 
 const CartPage = () => {
+  
+  //Receives # of courses added to cart from the CoursePage
+  const location = useLocation()
+  const {offeringsInCart, courseDetails} = location.state;
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [subtotal, setSubtotal] = useState(null)
+  
+  console.log(courseDetails.overview.prereq[0])
 
-//Receives # of courses added to cart from the CoursePage
-const location = useLocation()
-const coursesAddedToCart = location.state
+  const openModal = () => {
+    setIsModalOpen(true)
+  }
 
-const [isModalOpen, setIsModalOpen] = useState(false)
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
+  
+  //Calculates course total when page loads
+  useEffect(() => {
+    const calculateCourseSubtotal = () => {
+      let courseSubtotal = 0;
+      offeringsInCart.forEach((course, index) => {
+      if (!course.domestic_fee) console.log('domestic fee is not available');
+        else {courseSubtotal += course.domestic_fee};
+      });
 
-const openModal = () => {
-  setIsModalOpen(true)
-}
-
-const closeModal = () => {
-  setIsModalOpen(false)
-}
+      
+      setSubtotal(Math.round((courseSubtotal + Number.EPSILON) * 100) / 100) //Rounds the number to 2 decimal 
+    }
+    calculateCourseSubtotal()
+  }, [offeringsInCart]) //calculate if offeringsInCart changes
 
   // Toggle overflow on body when modal is open/closed
   useEffect(() => {
@@ -47,27 +74,80 @@ return (
     {isModalOpen && <Modal closeModal={closeModal}/>}
     <PageLayout>
     <div className={`cartPage ${isModalOpen && 'overflowHidden'}`}>
-    <Breadcrumbs />
-    <CartPageHeader
-      title="Cart"
-    />
+    <div className="bg-darkBlue">
+      <Breadcrumbs />
+    </div>
+    <div className="bg-darkBlue">
+      <CartPageHeader
+        title="Cart"
+      />
+    </div>
+    
     <div className="cartPage__contentArea">
       <SideBar />
-      <div className="contentArea__main">
+      <div className="cartPage__contentArea-main">
         <Notice
           heading="International Fees"
           descr="International fees are typically 3.12 times the domestic tuition. Exact cost will be calculated upon completion of registration."
           type="info"
         />
-        <h2>
-          {`You have ${coursesAddedToCart.length} ${coursesAddedToCart.length > 1 ? "courses" : "course"} in your cart`}
+        <h2 className="heading2">
+          {`You have ${offeringsInCart.length} ${offeringsInCart.length > 1 ? "courses" : "course"} in your cart`}
         </h2>
         <p>You will be registered in the following course offering(s) immediately upon log-in to the BCIT Student Information System. Prior to registration, please ensure that you have read the notes on each course for which you are registering.
         </p>
-        <ButtonPrimary 
-          label="Continue to Registration"
-          handleBtnClick={openModal}
-        />  
+        <div className="cartPage__offerings">
+          <CartPageSubTotal 
+            offeringsInCart={offeringsInCart}
+            subtotal={subtotal}
+          />
+          <div className="cartPage__offerings-list">
+            {offeringsInCart.map((offering, index) => {
+              return (
+                <div className="cartPage__offerings__container">
+                  <div className='cartPage__offerings__header'>
+                    <h2>{`${courseDetails.crn} - ${courseDetails.title}`}</h2>
+                    <div>
+                      <h4 className="descr__title">Prerequisite(s)</h4>
+                      <ul>
+                        {courseDetails.overview.prereq.map((prereq, index) => {
+                          return <li>{prereq}</li>
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className='cartPage__offerings-details' key={index}>
+                    <OfferingHeader 
+                      offeringDetails={offering}
+                    />
+                    <OfferingMeetingTimes 
+                      meetingMetrics={offering.meeting_metrics}
+                    />
+                    <OfferingDetails 
+                        offeringDetails={offering} 
+                      />
+                    <OfferingFooterCardPage /> 
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          <CartPageSubTotal 
+            offeringsInCart={offeringsInCart}
+            subtotal={subtotal}
+          />
+          <div className='cartPage__offerings__btn-container'>
+            <ButtonIconLarge  
+              label="Continue to Registration"
+              handleBtnClick={openModal}
+              icon={arrowForward}
+              type='primary'
+            /> 
+          </div>
+         
+        </div>
+
+ 
       </div>
       
     </div>

@@ -1,6 +1,7 @@
 @use '../../../styles/partials/' as p;
 
 .breadcrumbBar {
+
     &__container {
         @include p.container-layout;
         padding-inline: p.$size-s;

@@ -1,0 +1,74 @@
+@use '../../../../styles/partials/' as p;
+
+.offering__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: p.$size-s;
+
+    @include p.breakpoint(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: p.$size-xs;
+
+        @include p.breakpoint(tablet) { 
+            justify-content: flex-start;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: p.px-to-rem(2);
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        gap: p.$size-xs;
+    
+        &-container {
+            font-size: p.$font-m;
+    
+            @include p.breakpoint(tablet) {
+                font-size: p.$font-l;
+            }
+        }
+    }
+
+    &__crn {
+        display: flex;
+        align-items: center;
+        gap: p.$size-xs
+    }
+
+    &__caption {
+        font-size: p.px-to-rem(16);
+        display: flex;
+        gap: p.px-to-rem(2);
+    
+        &-value {
+            font-weight: bold;
+        }
+    }
+    
+    &__cost {
+        display: flex;
+        gap: p.$size-xs;
+        align-items: center;
+    
+        @include p.breakpoint(tablet) {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: p.px-to-rem(2);
+        }
+    }
+}
+

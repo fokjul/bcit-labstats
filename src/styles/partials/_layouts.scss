@@ -19,6 +19,6 @@ $size-xxs: f.px-to-rem(4);
     padding-inline: $size-xl;
     margin: auto;
     max-width: f.px-to-rem(1400);
-    border-inline: 1px solid c.$border-global-grey;
-    border-bottom: 1px solid c.$border-global-grey;
+    border-inline: 1px solid c.$border-grey;
+    border-bottom: 1px solid c.$border-grey;
 }

@@ -1,4 +1,4 @@
-@use '../../../styles/partials/' as p;
+@use '../../../../styles/partials/' as p;
 
 .meetingMetrics {
     display: none;
@@ -71,11 +71,20 @@
     &__header-cell {
         font-weight: p.$font-bold;
     }
-
-
 }
 
 .disabled {
     color: p.$secondaryColor--fontGrey;
     font-size: p.$font-xs;
+}
+
+.meetingMetrics__schedule {
+    display: grid;
+    grid-template-columns: 1fr;
+
+
+    @include p.breakpoint(tablet) {
+        grid-template-columns: 1fr auto;
+        row-gap: p.$size-xs;
+    }
 }

@@ -1,46 +1,107 @@
 @use '../../styles/partials/' as p;
 
 .cartPage {
-
     &__contentArea {
         @extend .body-copy;
 
         display: flex;
-    flex-direction: column-reverse;
-    padding-block: p.px-to-rem(38);
+        flex-direction: column-reverse;
+        padding-block: p.px-to-rem(38);
     
-    @include p.breakpoint(tablet) {
-        width: 100%;
-        align-items: flex-start;
-        padding-top: 0;
-        padding-inline: p.$size-xl;
-        border-bottom: 1px solid p.$border-global-grey;
-    }
-
-    @include p.breakpoint(desktop) {
-        @include p.container-layout;
-        align-items: flex-start;
-        flex-direction: row;
-        
-    }
-
-    
-    &__main {
-        padding-bottom: p.px-to-rem(38);
-        border-bottom: 1px solid p.$border-global-grey;
-        padding-inline: p.$size-s;
-        width: 100%;
-
         @include p.breakpoint(tablet) {
-            padding-block: p.$size-3xl;
-            padding-inline: 0;
-            border-bottom: none;
+            width: 100%;
+            align-items: flex-start;
+            padding-top: 0;
+            padding-inline: p.$size-xl;
+            border-bottom: 1px solid p.$border-global-grey;
         }
 
         @include p.breakpoint(desktop) {
-            padding-left: p.$size-xl;
+            @include p.container-layout;
+            align-items: flex-start;
+            flex-direction: row;
+        }
+
+        &-main {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-m;
+            padding-bottom: p.px-to-rem(38);
+            border-bottom: 1px solid p.$border-global-grey;
+            padding-inline: p.$size-s;
+            width: 100%;
+
+            @include p.breakpoint(tablet) {
+                padding-block: p.$size-3xl;
+                padding-inline: 0;
+                border-bottom: none;
+            }
+
+            @include p.breakpoint(desktop) {
+                padding-left: p.$size-xl;
+            }
         }
     }
-    }
 
+    &__offerings {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+
+        &-subtotal {
+            display: flex;
+            justify-content: space-between;
+    
+            &-amount {
+                display: flex; 
+                gap: p.$size-xxs;
+            }
+        }
+
+        &-list {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+        padding-block: p.$size-s;
+        }
+
+        &__container {
+            background-color: p.$border-global-grey;
+            padding: p.$size-s;
+        }
+
+        &__header {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-s;
+        }
+
+        &-details {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-m;
+            width: 100%;
+            padding: p.$size-s;
+            background-color: p.$primaryColor--white;
+            margin-inline: auto;
+    
+            @include p.breakpoint(tablet) {
+                gap: p.$size-l;
+            }
+    
+            &__header {
+                background-color: p.$border-global-grey;
+            }
+        }
+
+        &__btn-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.bg-darkBlue {
+    background-color: p.$primaryColor--darkBlue;
+    color: p.$primaryColor--white;
 }
