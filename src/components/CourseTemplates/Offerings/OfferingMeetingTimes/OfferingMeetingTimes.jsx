@@ -29,7 +29,7 @@ const OfferingMeetingTimes = ({ meetingMetrics }) => {
       </div>
       <div className='meetingMetrics--mobile'>
       {meetingMetrics?.map((metricItem, index) => (
-        <div className='meetingMetrics__row' key={index}>
+        <div className='meetingMetrics__row' key={index+1}>
             <div className='meetingMetrics__metric'>
               <div className='meetingMetrics__header-cell'>Dates</div>
               <div key={index} className='`meetingMetrics__cell'>{metricItem.dates}</div>

@@ -12,7 +12,7 @@ import ButtonLink from '../../../Atoms/Buttons/ButtonLink/ButtonLink';
 //components
 import ButtonIconLarge from '../../../Atoms/Buttons/ButtonIconLarge/ButtonIconLarge';
 
-const OfferingFooterCoursePage = ({offeringDetails, cartCounter, setCartCounter, setOfferingsInCart, offeringsInCart, courseDetails, isViewDetailsClicked, setIsViewDetailsClicked}) => {
+const OfferingFooterCoursePage = ({offeringDetails, cartCounter, setCartCounter, setOfferingsAddedToCart, offeringsAddedToCart, courseDetails, isViewDetailsClicked, setIsViewDetailsClicked}) => {
   
   const [isAddedToCart, setIsAddedToCart] = useState({
     status: false,
@@ -25,7 +25,7 @@ const OfferingFooterCoursePage = ({offeringDetails, cartCounter, setCartCounter,
       offerings: offeringDetails
     }))
     setCartCounter(prevCounter =>  prevCounter + 1)
-    setOfferingsInCart((prev) => [...prev, offeringDetails])
+    setOfferingsAddedToCart((prev) => [...prev, offeringDetails])
   }
   
   //Passes # of courses added to the cart to the CartPage
@@ -35,7 +35,7 @@ const OfferingFooterCoursePage = ({offeringDetails, cartCounter, setCartCounter,
     //To pass selected offerings to the Cart page
     navigate('/prototypes/cart', {
       state: {
-        offeringsInCart: offeringsInCart,
+        offeringsAddedToCart: offeringsAddedToCart,
         courseDetails: courseDetails, 
       }
     })

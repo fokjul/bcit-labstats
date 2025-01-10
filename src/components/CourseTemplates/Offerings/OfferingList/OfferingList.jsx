@@ -20,7 +20,7 @@ const OfferingList = ({courseDetails}) => {
   const [cartCounter, setCartCounter] = useState(0)
 
   // Array of courses added to the cart
-  const [offeringsInCart, setOfferingsInCart] = useState([])
+  const [offeringsAddedToCart, setOfferingsAddedToCart] = useState([])
 
   useEffect(() => {
     if (termArray.length > 0 && !tabClicked.id) {
@@ -58,8 +58,8 @@ const OfferingList = ({courseDetails}) => {
               setIsViewDetailsClicked={setIsViewDetailsClicked}
               cartCounter = {cartCounter}
               setCartCounter = {setCartCounter}
-              setOfferingsInCart={setOfferingsInCart}
-              offeringsInCart={offeringsInCart}
+              setOfferingsAddedToCart={setOfferingsAddedToCart}
+              offeringsAddedToCart={offeringsAddedToCart}
               courseDetails={courseDetails}
             />
           })}

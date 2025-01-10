@@ -10,8 +10,7 @@ import OfferingFooterCoursePage from '../OfferingFooterCoursePage/OfferingFooter
 import OfferingFooterCardPage from '../OfferingFooterCardPage/OfferingFooterCardPage';
 
 
-const Offering = ({offeringDetails, cartCounter, setCartCounter, setOfferingsInCart, offeringsInCart, courseDetails}) => {
-  console.log(offeringDetails)
+const Offering = ({offeringDetails, cartCounter, setCartCounter, setOfferingsAddedToCart, offeringsAddedToCart, courseDetails}) => {
 
   const [isViewDetailsClicked, setIsViewDetailsClicked] = useState({
     id: '',
@@ -40,8 +39,8 @@ const Offering = ({offeringDetails, cartCounter, setCartCounter, setOfferingsInC
         offeringDetails={offeringDetails} 
         cartCounter={cartCounter}
         setCartCounter={setCartCounter}
-        setOfferingsInCart={setOfferingsInCart}
-        offeringsInCart={offeringsInCart}
+        setOfferingsAddedToCart={setOfferingsAddedToCart}
+        offeringsAddedToCart={offeringsAddedToCart}
         courseDetails={courseDetails}
         isViewDetailsClicked={isViewDetailsClicked}
         setIsViewDetailsClicked={setIsViewDetailsClicked}
