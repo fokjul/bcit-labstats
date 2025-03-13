@@ -1,4 +1,4 @@
-import './PageHeader.scss';
+import './CoursePageHeader.scss';
 
 import { email, print, arrowForwardBlue } from '../../../assets/icons';
 import ButtonIconLarge  from '../../Atoms/Buttons/ButtonIconLarge/ButtonIconLarge';

@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 import OfferingList from "../../components/CourseTemplates/Offerings/OfferingList/OfferingList";
 import Breadcrumbs from "../../components/CourseTemplates/Breadcrumbs/Breadcrumbs";
 import Notice from "../../components/Panels/Notice/Notice";
-import PageHeader from "../../components/CourseTemplates/PageHeader/PageHeader";
-import SideBar from "../../components/CourseTemplates/SideBar/SideBar";
+import PageHeader from "../../components/CourseTemplates/CoursePageHeader/CoursePageHeader";
+import SideBar from "../../components/CourseTemplates/SideBar/CourseSidebar";
 import Accordion from "../../components/CourseTemplates/AccordionPanel/Accordion/Accordion";
 import PageLayout from "../../components/Layout/PageLayout/PageLayout";
 
