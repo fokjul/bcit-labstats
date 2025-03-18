@@ -18,6 +18,7 @@ import linkedin from "./linkedin.svg";
 import facebook from "./facebook.svg";
 import clock from "./clock.svg";
 import xmark from "./xmark.svg";
+import plus from "./plus.svg";
 
 export {
   calendar,
@@ -40,4 +41,5 @@ export {
   facebook,
   clock,
   xmark,
+  plus,
 };

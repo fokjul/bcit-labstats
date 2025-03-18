@@ -5,7 +5,7 @@ import CoursePage from "../prototypes/coursePage/CoursePage";
 import CartPage from "../prototypes/CartPage/CartPage";
 import NotFound from "../utilPages/NotFound";
 import Prototypes from "../utilPages/Prototypes";
-import DonationPage from "../prototypes/DonationPage/DonationPage";
+import DonationPage from "../prototypes/Donation/DonationPage/DonationPage";
 
 const AppRoutes = () => {
   return (

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Breadcrumbs from "../../components/CourseTemplates/Breadcrumbs/Breadcrumbs";
 import Notice from "../../components/Panels/Notice/Notice";
 import CartPageHeader from "../../components/CourseTemplates/CartPageHeader/CartPageHeader";
-import SideBar from "../../components/CourseTemplates/SideBar/SideBar";
+import SidebarLayout from '../../components/Navigation/Sidebar/SidebarLayout/SidebarLayout';
 import PageLayout from "../../components/Layout/PageLayout/PageLayout";
 import ButtonIconLarge  from "../../components/Atoms/Buttons/ButtonIconLarge/ButtonIconLarge";
 import Modal from "../../components/GeneralTemplates/Modal/Modal";
@@ -92,7 +92,7 @@ return (
     </div>
     
     <div className="cartPage__contentArea">
-      <SideBar />
+      <SidebarLayout />
       <div className="cartPage__contentArea-main">
         <Notice
           heading="International Fees"
