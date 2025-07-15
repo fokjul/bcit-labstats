@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './AccordionRow.scss';
 import { arrowDownBlue} from '../../../../assets/icons';
 import { useState } from 'react';
@@ -6,6 +6,10 @@ import AccordionRowContent from '../AccourdionRowContent/AccordionRowContent';
 
 const AccordionRow = ({title, courseDetails}) => {
     const [isRowClicked, setIsRowClicked] = useState(false)
+
+    useEffect (() => {
+        title === "Course Overview" && setIsRowClicked(true) 
+    }, [])
 
     const handleRowClick = () => {
         setIsRowClicked(prev => !prev)

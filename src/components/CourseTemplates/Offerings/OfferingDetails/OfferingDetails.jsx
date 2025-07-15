@@ -1,6 +1,8 @@
+
 import './OfferingDetails.scss';
 
 const OfferingDetails = ({offeringDetails}) => {
+
   return (
     <div className='offering-details'>
         <div className='offering-details__container'>

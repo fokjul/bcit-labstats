@@ -9,4 +9,4 @@ const Notice = ({heading, descr, type}) => {
   )
 }
 
-export default Notice
+export default Notice;

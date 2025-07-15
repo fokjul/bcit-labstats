@@ -5,11 +5,10 @@ import { useState, useEffect } from "react";
 //Components
 import OfferingList from "../../components/CourseTemplates/Offerings/OfferingList/OfferingList";
 import Breadcrumbs from "../../components/CourseTemplates/Breadcrumbs/Breadcrumbs";
-import Notice from "../../components/Panels/Notice/Notice";
 import PageHeader from "../../components/CourseTemplates/CoursePageHeader/CoursePageHeader";
-import SideBar from "../../components/CourseTemplates/SideBar/CourseSidebar";
 import Accordion from "../../components/CourseTemplates/AccordionPanel/Accordion/Accordion";
 import PageLayout from "../../components/Layout/PageLayout/PageLayout";
+import SidebarNotices from "../../components/Navigation/Sidebar/SidebarNotices/SidebarNotices";
 
 
 const CoursePage = () => {
@@ -45,13 +44,8 @@ const CoursePage = () => {
         subject={courseDetails.subject}
       />
       <div className="contentArea">
-        <SideBar />
+        <SidebarNotices />
         <div className="contentArea__main">
-          <Notice
-            heading="International Fees"
-            descr="International fees are typically 3.12 times the domestic tuition. Exact cost will be calculated upon completion of registration."
-            type="info"
-          />
           <Accordion courseDetails={courseDetails} />
           <OfferingList courseDetails={courseDetails} />
         </div>

@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+/* Primary Colors */
+/* Secondary Colors */
+/* Utility Colors */
+/* Font Family */
+/* Font weight */
+/* Font Size */
+/* Line Height  */
+h1, h2, h3, h4, h5 {
+  font-family: "DM Sans", "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 3.375rem;
+  line-height: 3.375rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.body-copy {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.menu-item {
+  font-size: 0.875rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.labels-buttons, .sidemenu__header a {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+
+.heading2 {
+  font-size: 2.625rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+.heading5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+html {
+  width: 100vw;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 60, 113);
+  font-family: "Nunito Sans", "Arial", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+/* Margines & Paddings */
+.sidemenu {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+.sidemenu ul {
+  list-style: none;
+}
+.sidemenu button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+.sidemenu__header {
+  border: 1px solid rgb(242, 242, 242);
+  padding-inline: 2rem;
+  padding-block: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 80rem) {
+  .sidemenu__header {
+    border-block: 1px solid rgb(242, 242, 242);
+    border-inline: 0;
+  }
+}
+.sidemenu__header-btn {
+  display: block;
+  width: 1rem;
+}
+@media (min-width: 80rem) {
+  .sidemenu__header-btn {
+    display: none;
+  }
+}
+.sidemenu__header a {
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  color: rgb(90, 90, 90);
+  font-weight: 500;
+  color: rgb(0, 60, 113);
+  font-weight: 700;
+  width: 100%;
+}
+.sidemenu__list {
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  border-inline: 1px solid rgb(242, 242, 242);
+  border-bottom: 1px solid rgb(242, 242, 242);
+  display: none;
+}
+@media (min-width: 80rem) {
+  .sidemenu__list {
+    border-inline: 0;
+    display: block;
+  }
+}
+.sidemenu__list-row {
+  padding-block: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.sidemenu__list-row-link {
+  color: rgb(0, 60, 113);
+}
+.sidemenu__list--display {
+  display: block;
+}

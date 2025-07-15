@@ -23,7 +23,7 @@ const PageHeader = ({crn, title, scope, subject}) => {
             <div className='pageHeader__container-btn'>
                 <div className='pageHeader__btn'>
                     <ButtonIconLarge  
-                        label='subscribe'
+                        label='notify me'
                         handleBtnClick=''
                         icon={arrowForwardBlue}
                         type='secondary'

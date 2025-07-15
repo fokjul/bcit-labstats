@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+/* Primary Colors */
+/* Secondary Colors */
+/* Utility Colors */
+/* Font Family */
+/* Font weight */
+/* Font Size */
+/* Line Height  */
+h1, h2, h3, h4, h5 {
+  font-family: "DM Sans", "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 3.375rem;
+  line-height: 3.375rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.body-copy {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.menu-item {
+  font-size: 0.875rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.labels-buttons {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+
+.heading2 {
+  font-size: 2.625rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+.heading5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+html {
+  width: 100vw;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 60, 113);
+  font-family: "Nunito Sans", "Arial", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+/* Margines & Paddings */
+.meetingMetrics {
+  display: none;
+}
+@media (min-width: 59.9375rem) {
+  .meetingMetrics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .meetingMetrics__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    width: 100%;
+  }
+  .meetingMetrics__header-cell {
+    font-weight: 700;
+    background-color: rgb(249, 249, 249);
+    padding-block: 0.5rem;
+  }
+  .meetingMetrics__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    padding-block: 0.5rem;
+    width: 100%;
+    align-items: center;
+  }
+  .meetingMetrics__cell {
+    font-size: 1.125rem;
+  }
+  .meetingMetrics__location-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .meetingMetrics__location-container button {
+    padding-left: 0;
+  }
+}
+.meetingMetrics--mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 59.9375rem) {
+  .meetingMetrics--mobile {
+    display: none;
+  }
+}
+.meetingMetrics--mobile .meetingMetrics__row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgb(242, 242, 242);
+  padding-bottom: 1rem;
+}
+.meetingMetrics__metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.meetingMetrics__header-cell {
+  font-weight: 700;
+}
+
+.disabled {
+  color: rgb(90, 90, 90);
+  font-size: 0.875rem;
+}
+
+.meetingMetrics__schedule {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 59.9375rem) {
+  .meetingMetrics__schedule {
+    grid-template-columns: 1fr auto;
+    row-gap: 0.5rem;
+  }
+}

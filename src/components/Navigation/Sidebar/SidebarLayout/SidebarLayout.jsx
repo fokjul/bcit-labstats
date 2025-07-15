@@ -5,7 +5,7 @@ import './SidebarLayout.scss';
 const SidebarLayout = () => {
     return (
         <div className='sidebarLayout'>
-              <SidebarMenu />
+              {/* <SidebarMenu /> */}
               <SidebarNotices />
 
         </div>

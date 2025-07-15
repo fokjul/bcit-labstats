@@ -3,7 +3,8 @@
 .offering-details {
     display: flex;
     flex-direction: column;
-    gap: p.$size-m;
+    gap: p.$size-s;
+    width: 100%;
 
     &__container {
         display: flex;
@@ -29,16 +30,23 @@
 
     &__info {
         padding-top: p.$size-m;
-        border-top: 1px solid p.$border-global-grey
+        border-bottom: 1px solid p.$border-global-grey
     }
 
     &__subscribe {
+        //width: 100%;
         display: flex;
-        flex-wrap: wrap;
+        //flex-direction: column;
+        gap: p.$size-xs;
         color: p.$secondaryColor--fontLightGrey;
         @extend .body-copy;
-        column-gap: p.$size-xxs;
+        //column-gap: p.$size-xxs;
+
+        @include p.breakpoint(tablet) {
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: center;
+        }
         
         span > p {
             display: inline-block

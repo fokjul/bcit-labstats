@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+/* Primary Colors */
+/* Secondary Colors */
+/* Utility Colors */
+/* Font Family */
+/* Font weight */
+/* Font Size */
+/* Line Height  */
+h1, h2, h3, h4, h5 {
+  font-family: "DM Sans", "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 3.375rem;
+  line-height: 3.375rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.body-copy {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.menu-item {
+  font-size: 0.875rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.labels-buttons, .buttonIcon {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+
+.heading2 {
+  font-size: 2.625rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+.heading5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+html {
+  width: 100vw;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 60, 113);
+  font-family: "Nunito Sans", "Arial", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+/* Margines & Paddings */
+.buttonIcon {
+  display: flex;
+  border: none;
+  align-items: center;
+  padding: 1.25rem;
+  gap: 0.5rem;
+  cursor: pointer;
+  justify-content: space-between;
+  min-width: 12.5rem;
+  width: 100%;
+}
+.buttonIcon--secondary {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(41, 108, 246);
+  color: rgb(41, 108, 246);
+  text-transform: uppercase;
+}
+.buttonIcon--secondary::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: "\f054";
+}
+@media (min-width: 59.9375rem) {
+  .buttonIcon--secondary {
+    width: fit-content;
+  }
+}
+.buttonIcon--primary {
+  background-color: rgb(41, 108, 246);
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.buttonIcon--primary::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: "\f054";
+  font-size: 1rem;
+}
+@media (min-width: 59.9375rem) {
+  .buttonIcon--primary {
+    width: fit-content;
+  }
+}
+.buttonIcon--tetriary {
+  background-color: rgb(220, 220, 220);
+  color: rgb(90, 90, 90);
+  text-transform: uppercase;
+  width: fit-content;
+}
+.buttonIcon--tetriary::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: "\f00d";
+  font-size: 1rem;
+}
+.buttonIcon--disabled {
+  background-color: rgb(255, 255, 255);
+  color: rgb(118, 118, 118);
+  border: 1px solid rgb(118, 118, 118);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.buttonIcon--disabled::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: "\f054";
+  font-size: 1rem;
+}
+@media (min-width: 59.9375rem) {
+  .buttonIcon--disabled {
+    width: fit-content;
+  }
+}

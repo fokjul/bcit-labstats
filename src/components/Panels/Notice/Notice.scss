@@ -6,10 +6,11 @@
     padding: p.$size-m;
     width: 100%;
     @extend .body-copy;
+    font-size: 1rem;
 
     &__heading {
         font-weight: 600;
-        line-height: p.$lineH-m;
+        line-height: p.$lineH-s;
     }
 }
 

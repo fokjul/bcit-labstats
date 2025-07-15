@@ -1,23 +1,42 @@
 import './OfferingFooterCoursePage.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 //Components
 import TextLink from '../../../Navigation/TextLink/TextLink';
-import ButtonPrimary from '../../../Atoms/Buttons/ButtonIconLarge/ButtonIconLarge';
 import ButtonCounter from '../../../Atoms/Buttons/ButtonCounter/ButtonCounter';
 import StatusTag from '../../../Atoms/StatusTag/StatusTag';
 import ButtonLink from '../../../Atoms/Buttons/ButtonLink/ButtonLink';
-
-//components
 import ButtonIconLarge from '../../../Atoms/Buttons/ButtonIconLarge/ButtonIconLarge';
+import ConfirmationCheckbox from '../../ConfirmationCheckbox/ConfirmationCheckbox';
 
 const OfferingFooterCoursePage = ({offeringDetails, cartCounter, setCartCounter, setOfferingsAddedToCart, offeringsAddedToCart, courseDetails, isViewDetailsClicked, setIsViewDetailsClicked}) => {
+
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState({
+    departmentalApproval: false,
+    confirmImportantInfo: false
+  })
+
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false)
   
   const [isAddedToCart, setIsAddedToCart] = useState({
     status: false,
     offerings: {}
   })
+
+  const handleCheckboxCheck = (e) => {
+  const {name, checked} = e.target;
+  setIsCheckboxChecked(prev => ({...prev, [name]: checked}))
+  handleButtonEnable();
+  }
+
+  useEffect(() => {
+    if(Object.values(isCheckboxChecked).includes(false)) {
+      setIsButtonDisabled(true)
+    } else {
+      setIsButtonDisabled (false)
+    }
+  }, [isCheckboxChecked])
   
   const handleAddToCard = () => {
     setIsAddedToCart(() => ({
@@ -26,6 +45,10 @@ const OfferingFooterCoursePage = ({offeringDetails, cartCounter, setCartCounter,
     }))
     setCartCounter(prevCounter =>  prevCounter + 1)
     setOfferingsAddedToCart((prev) => [...prev, offeringDetails])
+  }
+
+  const handleNotifyMe = () => {
+    console.log("Notify Me")
   }
   
   //Passes # of courses added to the cart to the CartPage
@@ -55,31 +78,48 @@ const OfferingFooterCoursePage = ({offeringDetails, cartCounter, setCartCounter,
         {
           isViewDetailsClicked.isClicked && isViewDetailsClicked.id === offeringDetails.crn 
           ? (offeringDetails.status.value === 'available' 
-              ? <div className='offering-details__available'>
+              ? <div className='offering-details'>
+                  <ConfirmationCheckbox 
+                      isCheckboxChecked={isCheckboxChecked}handleCheckboxCheck={handleCheckboxCheck}
+                      />
+                  <div className='offering-details__available'>
+                    <div className='offering-details__subscribe'>
+                      <StatusTag status={offeringDetails.status}/> 
+                      <p>
+                      {`This course is ${offeringDetails.status.name.toLowerCase()}`}
+                      </p>
+                    </div>
+
+                    { isAddedToCart.status 
+                      ? <ButtonCounter 
+                            label="view cart"
+                            counter={cartCounter}
+                            handleBtnClick={handleViewCart}
+                        />
+                      : <ButtonIconLarge 
+                          label="add to cart"
+                          isButtonDisabled={isButtonDisabled}
+                          handleBtnClick={() => handleAddToCard(offeringDetails)}
+                          type= {isButtonDisabled ? "disabled" : "primary"}
+                        />
+
+                    }
+                    
+                  </div>
+              </div> 
+              : <div className='offering-details__available'>
                   <div className='offering-details__subscribe'>
                     <StatusTag status={offeringDetails.status}/> 
-                    {'This course is available'}
+                    <p>
+                      {`This course is ${offeringDetails.status.name.toLowerCase()}.`}
+                    </p>
                   </div>
-
-                  { isAddedToCart.status 
-                    ? <ButtonCounter 
-                          label="view cart"
-                          counter={cartCounter}
-                          handleBtnClick={handleViewCart}
-                      />
-                    : <ButtonIconLarge 
-                        label="add to cart"
-                        handleBtnClick={() => handleAddToCard(offeringDetails)}
-                        type="primary"
-                      />
-
-                  }
-                  
-                </div> 
-              : <div className='offering-details__subscribe'>
-                  <div>
-                    <StatusTag status={offeringDetails.status}/> {`This course is ${offeringDetails.status.name.toLowerCase()}. Please check this page for other currently available offerings, `} <TextLink text='subscribe' /> {` to receive email updates or `}  <TextLink text='contact us' /> {`with your comments or questions.`}
-                  </div>
+                  <ButtonIconLarge 
+                    label="notify me"
+                    isButtonDisabled={false}
+                    handleBtnClick={handleNotifyMe}
+                    type= "secondary"
+                  />
                 </div>)
           : <ButtonLink 
             label="View details"
@@ -88,15 +128,22 @@ const OfferingFooterCoursePage = ({offeringDetails, cartCounter, setCartCounter,
         }
       </div>
         {isViewDetailsClicked.isClicked && isViewDetailsClicked.id === offeringDetails.crn && (
-          <div className='offeringFooter__hide-btn-container'>
-          <ButtonLink 
-            label="Hide details"
-            handleClick={handleHideDetailsClick}
-          />
-        </div>
-        )
-      }
-    </div>
+          <div className='offeringFooter__container'>
+            <div className='offeringFooter__contact'>
+              <span className='offeringFooter__contact-description'>If you have any questions about this course section, please <TextLink text='contact us' /> </span>
+              
+            </div>
+            <div className='offeringFooter__hide-btn-container'>
+              <ButtonLink 
+                label="Hide details"
+                handleClick={handleHideDetailsClick}
+              />
+            </div>
+          </div>
+            
+          )
+        }
+      </div>
   )
 }
 

@@ -1,0 +1,16 @@
+@use '../../../styles/partials/' as p;
+
+.confirmationSection {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-s;
+        padding-block: p.$size-m;
+
+        &__description {
+            @extend .body-copy;
+        }
+
+        &__checkbox {
+            @extend .body-copy;
+        }
+}

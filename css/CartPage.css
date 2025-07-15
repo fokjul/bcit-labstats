@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+/* Primary Colors */
+/* Secondary Colors */
+/* Utility Colors */
+/* Font Family */
+/* Font weight */
+/* Font Size */
+/* Line Height  */
+h1, h2, h3, h4, h5 {
+  font-family: "DM Sans", "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 3.375rem;
+  line-height: 3.375rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.body-copy, .cartPage__contentArea {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.menu-item {
+  font-size: 0.875rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.labels-buttons {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+
+.heading2 {
+  font-size: 2.625rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+.heading5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+html {
+  width: 100vw;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 60, 113);
+  font-family: "Nunito Sans", "Arial", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+/* Margines & Paddings */
+.cartPage__contentArea {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-block: 2.375rem;
+}
+@media (min-width: 59.9375rem) {
+  .cartPage__contentArea {
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 0;
+    padding-inline: 2.5rem;
+    border-bottom: 1px solid rgb(242, 242, 242);
+  }
+}
+@media (min-width: 80rem) {
+  .cartPage__contentArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2.5rem;
+    margin: auto;
+    max-width: 87.5rem;
+    border-inline: 1px solid rgb(233, 233, 233);
+    border-bottom: 1px solid rgb(233, 233, 233);
+    align-items: flex-start;
+    flex-direction: row;
+  }
+}
+.cartPage__contentArea-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2.375rem;
+  border-bottom: 1px solid rgb(242, 242, 242);
+  padding-inline: 1rem;
+  width: 100%;
+}
+@media (min-width: 59.9375rem) {
+  .cartPage__contentArea-main {
+    padding-block: 4rem;
+    padding-inline: 0;
+    border-bottom: none;
+  }
+}
+@media (min-width: 80rem) {
+  .cartPage__contentArea-main {
+    padding-left: 2.5rem;
+  }
+}
+.cartPage__offerings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cartPage__offerings-subtotal {
+  display: flex;
+  justify-content: space-between;
+}
+.cartPage__offerings-subtotal-amount {
+  display: flex;
+  gap: 0.25rem;
+}
+.cartPage__offerings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+.cartPage__offerings__container {
+  background-color: rgb(242, 242, 242);
+  padding: 1rem;
+}
+.cartPage__offerings__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+.cartPage__offerings-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  margin-inline: auto;
+}
+@media (min-width: 59.9375rem) {
+  .cartPage__offerings-details {
+    gap: 2rem;
+  }
+}
+.cartPage__offerings-details__header {
+  background-color: rgb(242, 242, 242);
+}
+.cartPage__offerings__btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.bg-darkBlue {
+  background-color: rgb(0, 60, 113);
+  color: rgb(255, 255, 255);
+}

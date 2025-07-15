@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import Breadcrumbs from "../../components/CourseTemplates/Breadcrumbs/Breadcrumbs";
 import Notice from "../../components/Panels/Notice/Notice";
 import CartPageHeader from "../../components/CourseTemplates/CartPageHeader/CartPageHeader";
-import SidebarLayout from '../../components/Navigation/Sidebar/SidebarLayout/SidebarLayout';
 import PageLayout from "../../components/Layout/PageLayout/PageLayout";
 import ButtonIconLarge  from "../../components/Atoms/Buttons/ButtonIconLarge/ButtonIconLarge";
 import Modal from "../../components/GeneralTemplates/Modal/Modal";
@@ -15,6 +14,7 @@ import OfferingHeader from "../../components/CourseTemplates/Offerings/OfferingH
 import OfferingMeetingTimes from "../../components/CourseTemplates/Offerings/OfferingMeetingTimes/OfferingMeetingTimes";
 import OfferingDetails from "../../components/CourseTemplates/Offerings/OfferingDetails/OfferingDetails";
 import CartPageSubTotal from "../../components/CourseTemplates/CartPageSubTotal/CartPageSubTotal";
+import SidebarNotices from "../../components/Navigation/Sidebar/SidebarNotices/SidebarNotices";
 
 //Assets
 import { arrowForward } from '../../assets/icons';
@@ -72,11 +72,6 @@ const CartPage = () => {
     setCrnInCart(updatedCart)
   }
 
-  const handleCheckboxCheck = (event) => {
-    setIsCheckboxChecked(prev => [...prev, event.target.checked])
-    console.log(isCheckboxChecked)
-  }
-
 return (
   <>
     {isModalOpen && <Modal closeModal={closeModal}/>}
@@ -92,7 +87,7 @@ return (
     </div>
     
     <div className="cartPage__contentArea">
-      <SidebarLayout />
+      <SidebarNotices />
       <div className="cartPage__contentArea-main">
         <Notice
           heading="International Fees"
@@ -117,14 +112,14 @@ return (
                     <div className="cartPage__offerings__container" key={index}>
                       <div className='cartPage__offerings__header'>
                         <h2>{`${courseDetails.crn} - ${courseDetails.title}`}</h2>
-                        <div>
+                        {/* <div>
                           <h4 className="descr__title">Prerequisite(s)</h4>
                           <ul>
                             {courseDetails.overview.prereq.map((prereq, index) => {
                               return <li key={index}>{prereq}</li>
                             })}
                           </ul>
-                        </div>
+                        </div> */}
                       </div>
                       <div className='cartPage__offerings-details'>
                         <OfferingHeader 
@@ -133,14 +128,12 @@ return (
                         <OfferingMeetingTimes 
                           meetingMetrics={offering.meeting_metrics}
                         />
-                        <OfferingDetails 
+                        {/* <OfferingDetails 
                             offeringDetails={offering} 
-                          />
+                          /> */}
                         <OfferingFooterCardPage 
                           handleBtnClick={handleDeleteBtnClick}
                           courseDetailsCrn={offering.crn}
-                          isCheckboxChecked={isCheckboxChecked}
-                          handleCheckboxCheck={handleCheckboxCheck}
                         /> 
                       </div>
                     </div>

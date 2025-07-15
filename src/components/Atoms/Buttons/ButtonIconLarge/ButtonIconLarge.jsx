@@ -1,10 +1,14 @@
 import './ButtonIconLarge.scss';
 
 
-const ButtonIconLarge  = ({handleBtnClick, label, type, param}) => {
+const ButtonIconLarge  = ({handleBtnClick, label, type, param, isButtonDisabled}) => {
   return (
-    <button className={`buttonIcon buttonIcon--${type}`} onClick={() => handleBtnClick(param)}>
-      <span>{label}</span>
+    <button 
+      className = {`buttonIcon buttonIcon--${type}`} 
+      disabled = {isButtonDisabled}
+      onClick = {() => handleBtnClick()}
+    >
+        <span>{label}</span>
     </button>
   )
 }

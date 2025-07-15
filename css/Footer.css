@@ -1,0 +1,212 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+/* Primary Colors */
+/* Secondary Colors */
+/* Utility Colors */
+/* Font Family */
+/* Font weight */
+/* Font Size */
+/* Line Height  */
+h1, h2, h3, h4, h5 {
+  font-family: "DM Sans", "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 3.375rem;
+  line-height: 3.375rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.body-copy {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.menu-item {
+  font-size: 0.875rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.labels-buttons {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+
+.heading2 {
+  font-size: 2.625rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+.heading5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+html {
+  width: 100vw;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 60, 113);
+  font-family: "Nunito Sans", "Arial", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+/* Margines & Paddings */
+.footer__container {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-inline: 1rem;
+  padding-top: 4.0625rem;
+  padding-bottom: 3.125rem;
+}
+@media (min-width: 59.9375rem) {
+  .footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2.5rem;
+    margin: auto;
+    max-width: 87.5rem;
+    border-inline: 1px solid rgb(233, 233, 233);
+    border-bottom: 1px solid rgb(233, 233, 233);
+    flex-direction: row;
+    align-items: flex-start;
+    padding-block: 0;
+  }
+}
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgb(242, 242, 242);
+  padding-block: 1.5rem;
+  gap: 1.5rem;
+}
+@media (min-width: 59.9375rem) {
+  .footer__contact {
+    border-right: 1px solid rgb(242, 242, 242);
+    padding-right: 2rem;
+    width: 25%;
+    border-top: none;
+    padding-block: 2.5rem;
+  }
+}
+.footer__contact-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1.5rem;
+}
+.footer__contact-phones {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0.25rem;
+}
+.footer__contact-header {
+  font: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.footer__contact-header::before {
+  content: "—— ";
+}
+.footer__contact-address {
+  display: flex;
+  flex-direction: column;
+}
+.footer__contact-img {
+  display: flex;
+  gap: 1rem;
+}
+.footer__contact-img img {
+  width: 1.625rem;
+  height: 1.375rem;
+}
+.footer__link-container {
+  display: none;
+}
+@media (min-width: 59.9375rem) {
+  .footer__link-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-right: 1px solid rgb(242, 242, 242);
+    padding-inline: 2rem;
+    padding-block: 2.5rem;
+    justify-content: flex-start;
+    width: 25%;
+  }
+}
+.footer__info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-top: 1px solid rgb(242, 242, 242);
+  padding-block: 1.5rem;
+}
+@media (min-width: 59.9375rem) {
+  .footer__info-container {
+    padding-inline: 2rem;
+    padding-block: 2.5rem;
+    border-top: none;
+  }
+}
+.footer__info-container-campuses {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.footer__info-container-links {
+  display: flex;
+  gap: 1rem;
+}

@@ -22,10 +22,8 @@
         @include p.container-layout;
         align-items: flex-start;
         flex-direction: row;
-        padding-inline: 0;
-        
+        padding-inline: p.$size-xl;
     }
-
     
     &__main {
         padding-bottom: p.px-to-rem(38);
@@ -34,7 +32,8 @@
         width: 100%;
 
         @include p.breakpoint(tablet) {
-            padding-block: p.$size-3xl;
+            padding-top: p.$size-xl;
+            padding-bottom: p.$size-3xl;
             padding-inline: 0;
             border-bottom: none;
         }

@@ -25,7 +25,7 @@
         &-main {
             display: flex;
             flex-direction: column;
-            gap: p.$size-m;
+            gap: p.$size-l;
             padding-bottom: p.px-to-rem(38);
             border-bottom: 1px solid p.$border-global-grey;
             padding-inline: p.$size-s;
@@ -46,7 +46,7 @@
     &__offerings {
         display: flex;
         flex-direction: column;
-        gap: p.$size-m;
+        gap: p.$size-s;
 
         &-subtotal {
             display: flex;
@@ -62,7 +62,7 @@
         display: flex;
         flex-direction: column;
         gap: p.$size-m;
-        padding-block: p.$size-s;
+        padding-bottom: p.$size-s;
         }
 
         &__container {
@@ -74,6 +74,7 @@
             display: flex;
             flex-direction: column;
             gap: p.$size-s;
+            padding-bottom: p.$size-s;
         }
 
         &-details {
@@ -97,6 +98,7 @@
         &__btn-container {
             display: flex;
             justify-content: flex-end;
+            margin-top: p.$size-s;
         }
     }
 }

@@ -5,13 +5,6 @@
     flex-direction: column;
     gap: p.$size-m;
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        gap: p.$size-s;
-        border-bottom: 1px solid p.$border-dark-grey;
-        padding-block: p.$size-m;
-    }
 
     &__btn-container {
         display: flex;

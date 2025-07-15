@@ -9,12 +9,16 @@
     gap: p.$size-xs;
     cursor: pointer;
     justify-content: space-between;
-
+    width: 100%;
     @extend .labels-buttons;
+
+    @include p.breakpoint(tablet) {
+        width: fit-content;
+    }
 
     &__text {
         text-transform: uppercase;
-        color: p.$primaryColor--white
+        color: p.$primaryColor--white;
     }
 
     &__container {

@@ -6,8 +6,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: fixed;
-
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100vw;
         height: 100vh;
         background: rgba(0, 0, 0, 0.7);
@@ -37,5 +38,13 @@
 
     &__btn {
         max-width: p.px-to-rem(290);
+    }
+
+    &__block {
+        display: block;
+    }
+
+    &__hidden {
+        display: none;
     }
 }

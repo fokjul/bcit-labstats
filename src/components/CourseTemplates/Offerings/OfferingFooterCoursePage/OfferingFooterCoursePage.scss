@@ -3,7 +3,26 @@
 .offeringFooter {
     display: flex;
     flex-direction: column;
-    gap: p.$size-m;
+    gap: p.$size-xl;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+    }
+
+    &__contact {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        @extend .body-copy;
+        color: p.$secondaryColor--fontLightGrey;
+        align-self: center;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: row;
+        }
+    }
     
     &__hide-btn-container {
         display: flex;

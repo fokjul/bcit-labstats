@@ -34,5 +34,36 @@
             display: flex;
             flex-direction: column;
         }
+
+        &--prereq {
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: p.$size-s;
+            }
+            
+
+            &-approval {
+
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: p.$size-xs;
+            }
+
+            span {
+                display: flex;
+                flex-direction: column;
+            }
+            
+        }
+        }
+
+        
+
+
     }
+
+    
 }
