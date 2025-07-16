@@ -1,0 +1,11 @@
+@use '../../../../styles/partials/' as p;
+
+.submitFormButton {
+    background-color: p.$primaryColor--darkBlue;  
+    border: none;
+    border-radius: p.$size-xxs;
+    @include p.label;
+    color: p.$primaryColor--white;
+    padding: p.$size-s;
+    cursor: pointer;
+}

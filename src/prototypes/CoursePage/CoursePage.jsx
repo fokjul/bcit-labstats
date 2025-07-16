@@ -9,6 +9,8 @@ import PageHeader from "../../components/CourseTemplates/CoursePageHeader/Course
 import Accordion from "../../components/CourseTemplates/AccordionPanel/Accordion/Accordion";
 import PageLayout from "../../components/Layout/PageLayout/PageLayout";
 import SidebarNotices from "../../components/Navigation/Sidebar/SidebarNotices/SidebarNotices";
+import TextLinkSmall from "../../components/Navigation/TextLinkSmall/TextLinkSmall";
+import { Link } from 'react-router-dom';
 
 
 const CoursePage = () => {
@@ -29,7 +31,7 @@ const CoursePage = () => {
   useEffect(() => {
     getCourseDetails();
   }, []);
-
+ 
   return (
     <PageLayout>
       <div className="app">
@@ -48,6 +50,12 @@ const CoursePage = () => {
         <div className="contentArea__main">
           <Accordion courseDetails={courseDetails} />
           <OfferingList courseDetails={courseDetails} />
+          <div className="contentArea__cancelNotice">
+            Programs and courses are subject to change without notice. For more information visit
+            <TextLinkSmall 
+              text='BCIT Course Cancellation' 
+              source='https://www.bcit.ca/flexible-learning/part-time-courses-programs/part-time-course-requirements-registration/course-cancellations-transfers-withdrawals/#cancelled-courses'/> 
+          </div>
         </div>
       </div>
     </div>

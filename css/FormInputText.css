@@ -41,7 +41,7 @@ h5 {
   font-weight: 500;
 }
 
-.body-copy {
+.body-copy, .formField__label {
   font-size: 1.125rem;
   line-height: 2rem;
   font-weight: 400;
@@ -101,40 +101,24 @@ a, a:visited, a:active {
 }
 
 /* Margines & Paddings */
-.modal__bg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-}
-.modal__container {
+.formField__container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  width: fit-content;
-  padding: 1.5rem;
-  border: 1.5rem solid rgb(242, 242, 242);
-  background: rgb(255, 255, 255);
 }
-.modal__title {
-  display: flex;
-  justify-content: space-between;
-  gap: 2.5rem;
+.formField__label {
+  color: rgb(0, 60, 113);
+  font-weight: 700;
 }
-.modal__content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
+.formField__label--required::after {
+  content: " *";
+  color: rgb(210, 45, 45);
 }
-.modal__btn {
-  max-width: 18.125rem;
+.formField__input {
+  border: 1px solid rgb(186, 186, 186);
+  height: 2.8125rem;
+  border-radius: 0.25rem;
+  padding-inline: 1rem;
 }
-.modal__block {
-  display: block;
+.formField__input:focus {
+  outline: 2px solid rgb(186, 186, 186);
 }

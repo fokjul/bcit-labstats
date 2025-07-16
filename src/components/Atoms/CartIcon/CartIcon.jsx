@@ -1,4 +1,3 @@
-import React from 'react';
 import './CartIcon.scss';
 
 const CartIcon = () => {

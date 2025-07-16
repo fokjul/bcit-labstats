@@ -1,1 +1,18 @@
 @use '../../../styles/partials/' as p;
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    gap: p.$size-m;
+
+    &__description {
+        @extend .body-copy;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+    }
+
+}

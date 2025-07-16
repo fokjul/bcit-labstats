@@ -1,6 +1,6 @@
 @use '../../../styles/partials/' as p;
 
-.text-link {
+.text-linkSmall {
     border: none;
     background: none;
     padding-inline: 0;
@@ -11,8 +11,8 @@
 
     &-copy {
         color: p.$primaryColor--blue;
-        font-family: p.$fontBody;
-        @extend .body-copy;
+        font-size: p.$font-xs;
         border-bottom: 2px solid p.$secondaryColor--yellow;
+        padding-left: p.$size-xxs;
     }
 }

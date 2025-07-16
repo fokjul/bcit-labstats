@@ -42,5 +42,13 @@
             padding-left: p.$size-xl;
         }
     }
+
+    &__cancelNotice {
+        text-align: center;
+        font-size: p.$font-xs;
+        font-weight: p.$font-bold;
+        color: p.$secondaryColor--fontGrey;
+        margin-top: p.$size-xl;
+    }
 }
 

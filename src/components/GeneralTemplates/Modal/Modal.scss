@@ -6,7 +6,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
@@ -18,7 +18,7 @@
         display: flex;
         flex-direction: column;
         gap: p.$size-m;
-        width: p.px-to-rem(600);
+        width: fit-content;
         padding: p.$size-m;
         border: p.$size-m solid p.$border-global-grey;
         background: p.$primaryColor--white;
@@ -27,6 +27,7 @@
     &__title {
         display: flex;
         justify-content: space-between;
+        gap: p.$size-xl
     }
 
     &__content {
@@ -44,7 +45,4 @@
         display: block;
     }
 
-    &__hidden {
-        display: none;
-    }
 }

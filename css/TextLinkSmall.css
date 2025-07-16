@@ -101,40 +101,16 @@ a, a:visited, a:active {
 }
 
 /* Margines & Paddings */
-.modal__bg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-}
-.modal__container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.text-linkSmall {
+  border: none;
+  background: none;
+  padding-inline: 0;
+  cursor: pointer;
   width: fit-content;
-  padding: 1.5rem;
-  border: 1.5rem solid rgb(242, 242, 242);
-  background: rgb(255, 255, 255);
 }
-.modal__title {
-  display: flex;
-  justify-content: space-between;
-  gap: 2.5rem;
-}
-.modal__content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-}
-.modal__btn {
-  max-width: 18.125rem;
-}
-.modal__block {
-  display: block;
+.text-linkSmall-copy {
+  color: rgb(41, 108, 246);
+  font-size: 0.875rem;
+  border-bottom: 2px solid rgb(255, 244, 0);
+  padding-left: 0.25rem;
 }

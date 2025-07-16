@@ -41,7 +41,7 @@ h5 {
   font-weight: 500;
 }
 
-.body-copy {
+.body-copy, .form__container__description {
   font-size: 1.125rem;
   line-height: 2rem;
   font-weight: 400;
@@ -101,3 +101,13 @@ a, a:visited, a:active {
 }
 
 /* Margines & Paddings */
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.form__container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

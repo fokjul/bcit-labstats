@@ -1,0 +1,30 @@
+@use '../../../styles/partials/' as p;
+
+.formField {
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        @extend .body-copy;
+        color: p.$primaryColor--darkBlue;
+        font-weight: p.$font-bold;
+
+        &--required::after {
+            content: ' *';
+            color: p.$error-color;
+        }
+    }
+
+    &__input {
+        border: 1px solid p.$border-darkGrey; 
+        height: p.px-to-rem(45);
+        border-radius: p.$size-xxs;
+        padding-inline: p.$size-s;
+
+        &:focus {
+            outline: 2px solid p.$border-darkGrey; 
+        }
+    }
+}

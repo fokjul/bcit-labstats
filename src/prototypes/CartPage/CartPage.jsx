@@ -31,7 +31,7 @@ const CartPage = () => {
   const [isCheckboxChecked, setIsCheckboxChecked] = useState([false])
  
   const openModal = () => {
-    setIsModalOpen(true)
+    console.log('Continue to Registration TBD')
   }
 
   const closeModal = () => {

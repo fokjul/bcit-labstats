@@ -45,7 +45,7 @@ const OfferingMeetingTimes = ({ meetingMetrics }) => {
             <div className='meetingMetrics__metric'>
               <div className='meetingMetrics__header-cell'>Locations</div>
               <div className='meetingMetrics__location-container' key={index}>
-              <TextLink text={metricItem.locations}/>
+              
               {metricItem.room ? metricItem.room : ''}
             </div>
             </div>
