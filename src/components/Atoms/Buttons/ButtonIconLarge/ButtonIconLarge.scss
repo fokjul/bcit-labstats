@@ -25,7 +25,8 @@
         }
 
                 @include p.breakpoint(tablet) {
-            width: fit-content;
+            //width: fit-content;
+            width: 100%;
         }
     }
 

@@ -26,5 +26,10 @@
         &:focus {
             outline: 2px solid p.$border-darkGrey; 
         }
+
+        &::placeholder {
+            font-family: p.$fontBody;
+            font-size: p.$font-xxs;
+        }
     }
 }

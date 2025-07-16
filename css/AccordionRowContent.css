@@ -136,12 +136,14 @@ a, a:visited, a:active {
   flex-direction: column;
   gap: 1rem;
 }
-.descr__container--prereq-approval div {
+.descr__container--prereq-approval-wrapper {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.descr__container--prereq-approval span {
+
+.approval-copy {
   display: flex;
-  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
 }

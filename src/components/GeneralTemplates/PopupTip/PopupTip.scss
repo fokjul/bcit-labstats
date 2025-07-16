@@ -1,0 +1,36 @@
+@use '../../../styles/partials/' as p;
+
+.popupTip {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-xxs;
+        width: fit-content;
+        max-width: p.px-to-rem(500);
+        padding: p.$size-s;
+        border: p.$size-xs solid p.$border-global-grey;
+        background: p.$primaryColor--white;
+        position: absolute;
+        z-index: 10;
+        bottom: 80%;
+        right: 0;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.09);
+
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: p.$size-xl
+    }
+
+    &__title {
+        font-weight: p.$font-bold;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+        width: 100%;
+    }
+}

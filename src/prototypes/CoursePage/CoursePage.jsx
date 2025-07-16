@@ -53,7 +53,7 @@ const CoursePage = () => {
           <div className="contentArea__cancelNotice">
             Programs and courses are subject to change without notice. For more information visit
             <TextLinkSmall 
-              text='BCIT Course Cancellation' 
+              text='BCIT Course Cancellations' 
               source='https://www.bcit.ca/flexible-learning/part-time-courses-programs/part-time-course-requirements-registration/course-cancellations-transfers-withdrawals/#cancelled-courses'/> 
           </div>
         </div>

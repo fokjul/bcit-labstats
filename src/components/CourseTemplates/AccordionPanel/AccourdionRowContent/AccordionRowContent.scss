@@ -46,24 +46,20 @@
 
             &-approval {
 
-            div {
-                display: flex;
-                flex-direction: column;
-                gap: p.$size-xs;
-            }
-
-            span {
-                display: flex;
-                flex-direction: column;
-            }
-            
+                &-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: p.$size-xs;    
+                }
+            }   
         }
         }
+    }
 
-        
-
-
+    .approval-copy {
+        display: flex;
+        gap: p.$size-xs;
+        position: relative;
     }
 
     
-}

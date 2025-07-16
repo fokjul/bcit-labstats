@@ -19,6 +19,7 @@ import facebook from "./facebook.svg";
 import clock from "./clock.svg";
 import xmark from "./xmark.svg";
 import plus from "./plus.svg";
+import question from "./question.svg";
 
 export {
   calendar,
@@ -42,4 +43,5 @@ export {
   clock,
   xmark,
   plus,
+  question
 };

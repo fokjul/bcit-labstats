@@ -4,10 +4,6 @@
     display: flex;
     flex-direction: column;
     gap: p.$size-m;
-
-    &__description {
-        @extend .body-copy;
-    }
     
     form {
         display: flex;
@@ -15,4 +11,8 @@
         gap: p.$size-m;
     }
 
+}
+
+.form__description {
+    @extend .body-copy;
 }

@@ -9,6 +9,7 @@
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 20;
         width: 100vw;
         height: 100vh;
         background: rgba(0, 0, 0, 0.7);
@@ -19,6 +20,7 @@
         flex-direction: column;
         gap: p.$size-m;
         width: fit-content;
+        max-width: p.px-to-rem(900);
         padding: p.$size-m;
         border: p.$size-m solid p.$border-global-grey;
         background: p.$primaryColor--white;
@@ -39,10 +41,6 @@
 
     &__btn {
         max-width: p.px-to-rem(290);
-    }
-
-    &__block {
-        display: block;
     }
 
 }

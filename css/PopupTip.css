@@ -101,39 +101,33 @@ a, a:visited, a:active {
 }
 
 /* Margines & Paddings */
-.modal__bg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-}
-.modal__container {
+.popupTip {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.25rem;
   width: fit-content;
-  max-width: 56.25rem;
-  padding: 1.5rem;
-  border: 1.5rem solid rgb(242, 242, 242);
+  max-width: 31.25rem;
+  padding: 1rem;
+  border: 0.5rem solid rgb(242, 242, 242);
   background: rgb(255, 255, 255);
+  position: absolute;
+  z-index: 10;
+  bottom: 80%;
+  right: 0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.09);
 }
-.modal__title {
+.popupTip__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 2.5rem;
 }
-.modal__content {
+.popupTip__title {
+  font-weight: 700;
+}
+.popupTip__content {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-}
-.modal__btn {
-  max-width: 18.125rem;
 }

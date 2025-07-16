@@ -5,14 +5,23 @@ import ButtonIconLarge from '../../../Atoms/Buttons/ButtonIconLarge/ButtonIconLa
 import Modal from '../../../GeneralTemplates/Modal/Modal.jsx';
 import SubmitApprovalForm from '../../../../prototypes/Forms/SubmitApprovalForm/SubmitApprovalForm.jsx';
 import { useState } from 'react';
+import PopupTip from '../../../GeneralTemplates/PopupTip/PopupTip.jsx';
+import PopupTipContent from '../../../../prototypes/Content /PopupTipContent/PopupTipContent.jsx';
+import { ButtonIcon } from '../../../Atoms/Buttons/ButtonIcon/ButtonIcon.jsx';
+import { question } from '../../../../assets/icons/index.js';
 
 const AccordionRowContent = ({title, courseDetails}) => {
     const courseInfo = courseDetails.overview;
 
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isPopupTipOpen, setIsPopupTipOpen] = useState(false)
 
     const handleRequestApproval = () => {
         setIsModalOpen(true)
+    }
+
+    const handleOpenPopupTip = () => {
+        setIsPopupTipOpen(prev => !prev)
     }
 
     const handleSubmitApprovalRequest = () => {
@@ -27,7 +36,7 @@ const AccordionRowContent = ({title, courseDetails}) => {
         handleBtnClick={handleSubmitApprovalRequest}
         isModalOpen = {isModalOpen}
         setIsModalOpen = {setIsModalOpen}>
-        {<SubmitApprovalForm />}
+        <SubmitApprovalForm />
     </Modal>
      <div>
         {courseInfo && title === "Course Overview" 
@@ -42,10 +51,25 @@ const AccordionRowContent = ({title, courseDetails}) => {
                                 }) 
                             }
                             <li className='descr__container--prereq-approval'>
-                                <div>
-                                    <span >
-                                    Departmental approval required to register after completing prerequisites above. <TextLink text='Why approval is needed?'/>
-                                    </span>
+                                <div className='descr__container--prereq-approval-wrapper'>
+                                    <div className='approval-copy'>
+                                        <p>Departmental approval required to register after completing prerequisites above.</p>
+                                        <ButtonIcon 
+                                            icon={question}
+                                            handleBtnClick={handleOpenPopupTip}
+                                                                />
+                                        {isPopupTipOpen && (
+                                            <PopupTip
+                                                title='Why approval is needed?'
+                                                isPopupTipOpen={isPopupTipOpen}
+                                                setIsPopupTipOpen={setIsPopupTipOpen}
+                                                >
+                                                    <PopupTipContent />
+                                            </PopupTip>
+                                        )}
+                                        
+                                    </div>
+                                    
                                     <ButtonIconLarge 
                                         label="request approval"
                                         isButtonDisabled={false}
