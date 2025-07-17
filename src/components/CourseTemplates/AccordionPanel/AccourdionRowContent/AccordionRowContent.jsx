@@ -94,8 +94,8 @@ const AccordionRowContent = ({title, courseDetails}) => {
                     <small>See individual course offerings below for actual costs.</small>
                 </div>
                 <Notice
-                    heading="International Fees"
-                    descr="International fees are typically 3.12 times the domestic tuition. Exact cost will be calculated upon completion of registration."
+                    //heading="International Fees"
+                    descr="International fees are typically 3.25 times the domestic tuition. Exact cost will be calculated upon completion of registration."
                     type="info"
                 />
             </div> 

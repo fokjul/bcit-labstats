@@ -89,11 +89,6 @@ return (
     <div className="cartPage__contentArea">
       <SidebarNotices />
       <div className="cartPage__contentArea-main">
-        <Notice
-          heading="International Fees"
-          descr="International fees are typically 3.12 times the domestic tuition. Exact cost will be calculated upon completion of registration."
-          type="info"
-        />
         {crnInCart.length !== 0 
         ? <>
             <h2 className="heading2">
@@ -101,6 +96,10 @@ return (
             </h2>
             <p>You will be registered in the following course offering(s) immediately upon log-in to the BCIT Student Information System. Prior to registration, please ensure that you have read the notes on each course for which you are registering.
             </p>
+            <Notice
+              descr="International fees are typically 3.25 times the domestic tuition. Exact cost will be calculated upon completion of registration."
+              type="info"
+            />
             <div className="cartPage__offerings">
               <CartPageSubTotal 
                 offeringsInCart={crnInCart}

@@ -63,9 +63,9 @@
     }
 
     &--disabled {
-        background-color: p.$primaryColor--white;
-        color: p.$secondaryColor--fontLightGrey;
-        border: 1px solid p.$secondaryColor--fontLightGrey;
+        background-color: #A9C4FB;
+        color: p.$primaryColor--white;
+        border: none;
         text-transform: uppercase;
         font-weight: p.$font-demi;
 

@@ -1,6 +1,6 @@
 import './Notice.scss'
 
-const Notice = ({heading, descr, type}) => {
+const Notice = ({heading = '', descr, type}) => {
   return (
     <div className ={`noticePanel ${type}`}>
         <span className='noticePanel__heading'>{heading}</span>
