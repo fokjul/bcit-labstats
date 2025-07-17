@@ -125,7 +125,7 @@ a, a:visited, a:active {
 }
 @media (min-width: 59.9375rem) {
   .buttonIcon--secondary {
-    width: 100%;
+    width: fit-content;
   }
 }
 .buttonIcon--primary {
