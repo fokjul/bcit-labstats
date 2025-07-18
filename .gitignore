@@ -7,18 +7,55 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependency directories
+node_modules/
+/node_modules
+jspm_packages/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Production build artifacts
+# For Create React App
+/build
+# For Vite
+/dist
+# For Next.js (if you were using it)
+.next/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# npm package-lock.json and yarn.lock are generally committed,
+# but if you prefer to ignore them (less common now)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Local .DS_Store files (macOS)
 .DS_Store
+
+# IDE and Editor files
+.vscode/           # VS Code settings (optional: can be committed if shared settings)
+!.vscode/extensions.json # Keep extensions.json to recommend extensions
+.idea/             # JetBrains IDEs (WebStorm, IntelliJ)
+*.iml              # JetBrains project files
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.sw?              # Swap files for vim
+
+# Other common ignored files
+npm-debug.log
+yarn-error.log
+.cache
+.eslintcache
+.prettierrc.local
+coverage/          # Test coverage reports
+
+# You might add other specific files or folders if your project has them
+# For example, if you have a separate backend folder:
+# /backend/node_modules/
+# /backend/dist/
