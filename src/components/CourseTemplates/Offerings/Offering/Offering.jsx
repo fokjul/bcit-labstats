@@ -10,7 +10,7 @@ import OfferingFooterCoursePage from '../OfferingFooterCoursePage/OfferingFooter
 import OfferingFooterCardPage from '../OfferingFooterCardPage/OfferingFooterCardPage';
 
 
-const Offering = ({offeringDetails, cartCounter, setCartCounter, setOfferingsAddedToCart, offeringsAddedToCart, courseDetails}) => {
+const Offering = ({offeringDetails, cartCounter, setCartCounter, setOfferingsAddedToCart, offeringsAddedToCart, courseDetails, isPopupTipOpen, setIsPopupTipOpen}) => {
 
   const [isViewDetailsClicked, setIsViewDetailsClicked] = useState({
     id: '',
@@ -44,6 +44,8 @@ const Offering = ({offeringDetails, cartCounter, setCartCounter, setOfferingsAdd
         courseDetails={courseDetails}
         isViewDetailsClicked={isViewDetailsClicked}
         setIsViewDetailsClicked={setIsViewDetailsClicked}
+        isPopupTipOpen = {isPopupTipOpen}
+        setIsPopupTipOpen = {setIsPopupTipOpen}
       />  }
          
     </div>

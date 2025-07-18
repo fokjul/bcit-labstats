@@ -179,6 +179,9 @@ a, a:visited, a:active {
   gap: 1rem;
   padding-bottom: 1rem;
 }
+.cartPage__offerings__header__link {
+  color: rgb(41, 108, 246);
+}
 .cartPage__offerings-details {
   display: flex;
   flex-direction: column;

@@ -1,9 +1,11 @@
 import './OfferingMeetingTimes.scss';
 import TextLink from '../../../Navigation/TextLink/TextLink';
-
+import { useLocation } from 'react-router-dom';
 
 
 const OfferingMeetingTimes = ({ meetingMetrics }) => {
+
+  const location = useLocation();
 
   return (
     <div className='meetingMetrics__schedule'>
@@ -20,7 +22,9 @@ const OfferingMeetingTimes = ({ meetingMetrics }) => {
             <div key={index} className={`meetingMetrics__cell ${metricItem.days === 'N/A' ? 'disabled' : ''}`}>{metricItem.days}</div>
             <div key={index} className={`meetingMetrics__cell ${metricItem.times === 'N/A' ? 'disabled' : ''}`}>{metricItem.times}</div>
             <div className='meetingMetrics__location-container'>
-              <TextLink text={metricItem.locations}/>
+              {location.pathname === "/prototypes/cart" 
+              ? <p>{metricItem.locations}</p>
+              : <TextLink text={metricItem.locations}/>}
               {metricItem.room ? metricItem.room : ''}
             </div>
         </div>

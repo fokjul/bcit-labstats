@@ -4,7 +4,7 @@ import { arrowDownBlue} from '../../../../assets/icons';
 import { useState } from 'react';
 import AccordionRowContent from '../AccourdionRowContent/AccordionRowContent';
 
-const AccordionRow = ({title, courseDetails}) => {
+const AccordionRow = ({title, courseDetails, isPopupTipOpen, setIsPopupTipOpen}) => {
     const [isRowClicked, setIsRowClicked] = useState(false)
 
     useEffect (() => {
@@ -29,6 +29,8 @@ const AccordionRow = ({title, courseDetails}) => {
             <AccordionRowContent 
                 title={title}
                 courseDetails={courseDetails}
+                isPopupTipOpen = {isPopupTipOpen}
+                setIsPopupTipOpen = {setIsPopupTipOpen}
 
             />
         </div>

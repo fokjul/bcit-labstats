@@ -1,12 +1,14 @@
 import './OfferingHeader.scss';
-
 import ButtonIconLink from '../../../Atoms/Buttons/ButtonIconLink/ButtonIconLink';
 import StatusTag from '../../../Atoms/StatusTag/StatusTag';
+import { useLocation } from "react-router-dom";
 
 //assets
 import link from '../../../../assets/icons/link.svg';
 
 const OfferingHeader = ({offeringDetails}) => {
+  const location = useLocation()
+
   return (
     <div className='offering__header'>
           <div className='offering__header-container'>
@@ -19,11 +21,12 @@ const OfferingHeader = ({offeringDetails}) => {
                 <span className='offering__header__caption-label'>CRN</span>
                 <span className='offering__header__caption-value'>{offeringDetails.crn}</span>
               </div>
-              <ButtonIconLink 
+              { location.pathname !== "/prototypes/cart" && <ButtonIconLink 
                 label="copy link"
                 handleClick={()=> (console.log('btn clicked'))}
                 icon={link}
-              />
+              />}
+              
             </div>
             </div>
             <div className='offering__header__status-tag'>

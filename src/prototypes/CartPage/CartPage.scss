@@ -75,6 +75,10 @@
             flex-direction: column;
             gap: p.$size-s;
             padding-bottom: p.$size-s;
+
+            &__link {
+                color: p.$primaryColor--blue;
+            }
         }
 
         &-details {

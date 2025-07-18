@@ -1,6 +1,7 @@
 import "./CartPage.scss";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 //Components
 import Breadcrumbs from "../../components/CourseTemplates/Breadcrumbs/Breadcrumbs";
@@ -97,9 +98,10 @@ return (
             <p>You will be registered in the following course offering(s) immediately upon log-in to the BCIT Student Information System. Prior to registration, please ensure that you have read the notes on each course for which you are registering.
             </p>
             <Notice
-              descr="International fees are typically 3.25 times the domestic tuition. Exact cost will be calculated upon completion of registration."
-              type="info"
-            />
+                    heading="International Fees"
+                    descr="are typically 3.25 times the domestic tuition. Exact cost will be calculated upon completion of registration."
+                    type="info"
+                />
             <div className="cartPage__offerings">
               <CartPageSubTotal 
                 offeringsInCart={crnInCart}
@@ -110,7 +112,9 @@ return (
                   return (
                     <div className="cartPage__offerings__container" key={index}>
                       <div className='cartPage__offerings__header'>
-                        <h2>{`${courseDetails.crn} - ${courseDetails.title}`}</h2>
+                        <Link to="/prototypes/course" className="cartPage__offerings__header__link">
+                          <h2>{`${courseDetails.crn} - ${courseDetails.title}`}</h2>
+                        </Link>
                         {/* <div>
                           <h4 className="descr__title">Prerequisite(s)</h4>
                           <ul>
@@ -122,14 +126,11 @@ return (
                       </div>
                       <div className='cartPage__offerings-details'>
                         <OfferingHeader 
-                          offeringDetails={offering}
+                          offeringDetails={ offering }
                         />
                         <OfferingMeetingTimes 
                           meetingMetrics={offering.meeting_metrics}
                         />
-                        {/* <OfferingDetails 
-                            offeringDetails={offering} 
-                          /> */}
                         <OfferingFooterCardPage 
                           handleBtnClick={handleDeleteBtnClick}
                           courseDetailsCrn={offering.crn}

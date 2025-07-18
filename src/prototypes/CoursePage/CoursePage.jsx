@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 
 const CoursePage = () => {
   const [courseDetails, setCourseDetails] = useState({});
+  const [isPopupTipOpen, setIsPopupTipOpen] = useState(false)
 
   const getCourseDetails = async () => {
     try {
@@ -48,8 +49,17 @@ const CoursePage = () => {
       <div className="contentArea">
         <SidebarNotices />
         <div className="contentArea__main">
-          <Accordion courseDetails={courseDetails} />
-          <OfferingList courseDetails={courseDetails} />
+          <Accordion 
+            courseDetails={courseDetails} 
+            isPopupTipOpen = {isPopupTipOpen}
+            setIsPopupTipOpen = {setIsPopupTipOpen}
+          />
+          <OfferingList 
+            courseDetails={courseDetails} 
+            isPopupTipOpen = {isPopupTipOpen}
+            setIsPopupTipOpen = {setIsPopupTipOpen}
+          />
+          
           <div className="contentArea__cancelNotice">
             Programs and courses are subject to change without notice. For more information visit
             <TextLinkSmall 

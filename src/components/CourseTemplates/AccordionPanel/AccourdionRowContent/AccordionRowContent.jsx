@@ -10,11 +10,10 @@ import PopupTipContent from '../../../../prototypes/Content /PopupTipContent/Pop
 import { ButtonIcon } from '../../../Atoms/Buttons/ButtonIcon/ButtonIcon.jsx';
 import { question } from '../../../../assets/icons/index.js';
 
-const AccordionRowContent = ({title, courseDetails}) => {
+const AccordionRowContent = ({title, courseDetails, isPopupTipOpen, setIsPopupTipOpen}) => {
     const courseInfo = courseDetails.overview;
 
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [isPopupTipOpen, setIsPopupTipOpen] = useState(false)
 
     const handleRequestApproval = () => {
         setIsModalOpen(true)
@@ -64,7 +63,9 @@ const AccordionRowContent = ({title, courseDetails}) => {
                                                 isPopupTipOpen={isPopupTipOpen}
                                                 setIsPopupTipOpen={setIsPopupTipOpen}
                                                 >
-                                                    <PopupTipContent />
+                                                    <PopupTipContent 
+                                                        content = 'Departmental approval is required to confirm you’ve completed all prerequisites. If you haven’t received approval yet, please submit a request below — you won’t be able to register without it.'
+                                                    />
                                             </PopupTip>
                                         )}
                                         
@@ -94,8 +95,8 @@ const AccordionRowContent = ({title, courseDetails}) => {
                     <small>See individual course offerings below for actual costs.</small>
                 </div>
                 <Notice
-                    //heading="International Fees"
-                    descr="International fees are typically 3.25 times the domestic tuition. Exact cost will be calculated upon completion of registration."
+                    heading="International Fees"
+                    descr="are typically 3.25 times the domestic tuition. Exact cost will be calculated upon completion of registration."
                     type="info"
                 />
             </div> 
