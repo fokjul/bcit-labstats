@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Home from "../utilPages/Home";
-import CoursePage from "../prototypes/coursePage/CoursePage";
+import CoursePage from "../prototypes/CoursePage/CoursePage";
 import CartPage from "../prototypes/CartPage/CartPage";
 import NotFound from "../utilPages/NotFound";
 import Prototypes from "../utilPages/Prototypes";
