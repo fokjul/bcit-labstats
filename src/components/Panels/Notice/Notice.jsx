@@ -3,8 +3,7 @@ import './Notice.scss'
 const Notice = ({heading = '', descr, type}) => {
   return (
     <div className ={`noticePanel ${type}`}>
-        <p className='noticePanel__heading'>{heading}</p>
-        <p className='noticePanel__descr'>{descr}</p>
+        <span className='noticePanel__descr'><strong>{heading}</strong>{descr}</span>
     </div>
   )
 }

@@ -95,7 +95,7 @@ const AccordionRowContent = ({title, courseDetails, isPopupTipOpen, setIsPopupTi
                     <small>See individual course offerings below for actual costs.</small>
                 </div>
                 <Notice
-                    heading="International Fees"
+                    heading="International Fees "
                     descr="are typically 3.25 times the domestic tuition. Exact cost will be calculated upon completion of registration."
                     type="info"
                 />

@@ -2,7 +2,7 @@
 
 .noticePanel {
     display: flex;
-    text-align: center;
+    text-align: start;
     padding: p.$size-m;
     width: 100%;
     @extend .body-copy;
