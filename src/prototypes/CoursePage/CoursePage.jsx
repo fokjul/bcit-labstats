@@ -10,7 +10,6 @@ import Accordion from "../../components/CourseTemplates/AccordionPanel/Accordion
 import PageLayout from "../../components/Layout/PageLayout/PageLayout";
 import SidebarNotices from "../../components/Navigation/Sidebar/SidebarNotices/SidebarNotices";
 import TextLinkSmall from "../../components/Navigation/TextLinkSmall/TextLinkSmall";
-import { Link } from 'react-router-dom';
 
 
 const CoursePage = () => {
