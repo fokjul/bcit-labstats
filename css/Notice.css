@@ -103,7 +103,7 @@ a, a:visited, a:active {
 /* Margines & Paddings */
 .noticePanel {
   display: flex;
-  text-align: center;
+  text-align: start;
   padding: 1.5rem;
   width: 100%;
   font-size: 1rem;
