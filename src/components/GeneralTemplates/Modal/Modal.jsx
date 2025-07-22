@@ -2,13 +2,20 @@ import './Modal.scss';
 import { ButtonIcon } from '../../Atoms/Buttons/ButtonIcon/ButtonIcon';
 
 import { xmark } from '../../../assets/icons';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import FormButton from '../../Atoms/Buttons/FormButtonPrimary/FormButton';
 
 const Modal = ({title, children, btnLabel, handleBtnClick, setIsModalOpen, isModalOpen}) => {
 
- const handleCloseModal = () => {
+const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+
+const handleCloseModal = () => {
     setIsModalOpen(false)
+    setIsFormSubmitted(false)
+ }
+
+const handleFormSubmission = () => {
+    setIsFormSubmitted(true)
  }
 
  useEffect(() => {
@@ -36,16 +43,32 @@ const Modal = ({title, children, btnLabel, handleBtnClick, setIsModalOpen, isMod
                     </div>
                     
                 </div>
-                <div className='modal__content'>
-                    {children}
-                </div>
-                
-                <div className='modal__btn'>
+                {isFormSubmitted 
+                    ? <>
+                        <div>hi</div>
+                        <FormButton 
+                        value = 'close'
+                        type = 'button'
+                        handleBtnClick={handleFormSubmission}
+                        isButtonDisabled = {false}
+                    /> 
+                        </>
+                    : <>
+                        <div className='modal__content'>
+                            {children}
+                        </div>
+                        <div className='modal__btn'>
                     <FormButton 
-                        handleBtnClick={handleBtnClick}
+                        value = 'submit'
+                        type = 'submit'
+                        handleBtnClick={handleFormSubmission}
                         isButtonDisabled = {false}
                     />
                 </div>
+                    </>}
+                
+                
+                
             </div>
         
 
