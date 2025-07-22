@@ -4,8 +4,9 @@ import { ButtonIcon } from '../../Atoms/Buttons/ButtonIcon/ButtonIcon';
 import { xmark } from '../../../assets/icons';
 import { useEffect, useState } from 'react';
 import FormButton from '../../Atoms/Buttons/FormButtonPrimary/FormButton';
+import Notice from '../../Panels/Notice/Notice';
 
-const Modal = ({title, children, btnLabel, handleBtnClick, setIsModalOpen, isModalOpen}) => {
+const Modal = ({title, children, setIsModalOpen, isModalOpen}) => {
 
 const [isFormSubmitted, setIsFormSubmitted] = useState(false)
 
@@ -16,7 +17,7 @@ const handleCloseModal = () => {
 
 const handleFormSubmission = () => {
     setIsFormSubmitted(true)
- }
+}
 
  useEffect(() => {
   
@@ -45,13 +46,19 @@ const handleFormSubmission = () => {
                 </div>
                 {isFormSubmitted 
                     ? <>
-                        <div>hi</div>
-                        <FormButton 
-                        value = 'close'
-                        type = 'button'
-                        handleBtnClick={handleFormSubmission}
-                        isButtonDisabled = {false}
-                    /> 
+                        <Notice 
+                            type='confirmation'
+                            descr='Thank you for submitting your request. We will be in touch with you within 2 business days.'
+                        />
+                        <div className='modal__btn'>
+                            <FormButton 
+                                value = 'close'
+                                type = 'button'
+                                handleBtnClick={handleCloseModal}
+                                isButtonDisabled = {false}
+                            /> 
+                        </div>
+                        
                         </>
                     : <>
                         <div className='modal__content'>

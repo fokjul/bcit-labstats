@@ -117,3 +117,8 @@ a, a:visited, a:active {
   background-color: rgb(226, 239, 246);
   border-left: 8px solid rgb(139, 171, 193);
 }
+
+.confirmation {
+  background-color: #F8FFEC;
+  border-left: 4px solid rgb(0, 159, 61);
+}

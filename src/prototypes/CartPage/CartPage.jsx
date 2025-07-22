@@ -115,14 +115,6 @@ return (
                         <Link to="/prototypes/course" className="cartPage__offerings__header__link">
                           <h2>{`${courseDetails.crn} - ${courseDetails.title}`}</h2>
                         </Link>
-                        {/* <div>
-                          <h4 className="descr__title">Prerequisite(s)</h4>
-                          <ul>
-                            {courseDetails.overview.prereq.map((prereq, index) => {
-                              return <li key={index}>{prereq}</li>
-                            })}
-                          </ul>
-                        </div> */}
                       </div>
                       <div className='cartPage__offerings-details'>
                         <OfferingHeader 
