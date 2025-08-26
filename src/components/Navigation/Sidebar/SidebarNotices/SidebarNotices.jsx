@@ -7,7 +7,7 @@ const SidebarNotices = () => {
         <h4>Notices</h4>
         <div>
             <h5>Registration news</h5>
-            <span>Registration is now open for the Winter 2025 term.</span>
+            <span>Registration is now open for the Fall 2025 term.</span>
         </div>
         <div>
             <h5>Additional Information</h5>
@@ -19,9 +19,6 @@ const SidebarNotices = () => {
             </ul>
         </div>
         </div>
-        {/* <div className='sidebarNotices-textblock'>
-            <h4>Recently visited courses</h4>
-        </div> */}
     </div>
   )
 }
