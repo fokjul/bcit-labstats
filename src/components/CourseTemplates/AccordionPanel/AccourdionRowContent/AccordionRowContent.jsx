@@ -52,7 +52,7 @@ const AccordionRowContent = ({title, courseDetails, isPopupTipOpen, setIsPopupTi
                             <li className='descr__container--prereq-approval'>
                                 <div className='descr__container--prereq-approval-wrapper'>
                                     <div className='approval-copy'>
-                                        <p>Departmental approval required to register after completing prerequisites above.</p>
+                                        <p>Departmental approval is required to register after completing the prerequisite.</p>
                                         <ButtonIcon 
                                             icon={question}
                                             handleBtnClick={handleOpenPopupTip}
