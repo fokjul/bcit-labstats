@@ -1,7 +1,8 @@
 import "./CartPage.scss";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 //Components
 import Breadcrumbs from "../../components/CourseTemplates/Breadcrumbs/Breadcrumbs";
@@ -13,7 +14,6 @@ import Modal from "../../components/GeneralTemplates/Modal/Modal";
 import OfferingFooterCardPage from "../../components/CourseTemplates/Offerings/OfferingFooterCardPage/OfferingFooterCardPage";
 import OfferingHeader from "../../components/CourseTemplates/Offerings/OfferingHeader/OfferingHeader";
 import OfferingMeetingTimes from "../../components/CourseTemplates/Offerings/OfferingMeetingTimes/OfferingMeetingTimes";
-import OfferingDetails from "../../components/CourseTemplates/Offerings/OfferingDetails/OfferingDetails";
 import CartPageSubTotal from "../../components/CourseTemplates/CartPageSubTotal/CartPageSubTotal";
 import SidebarNotices from "../../components/Navigation/Sidebar/SidebarNotices/SidebarNotices";
 
@@ -30,6 +30,7 @@ const CartPage = () => {
   const [subtotal, setSubtotal] = useState(null)
   const [crnInCart, setCrnInCart ] = useState(offeringsAddedToCart)
   const [isCheckboxChecked, setIsCheckboxChecked] = useState([false])
+  const navigate = useNavigate()
  
   const openModal = () => {
     console.log('Continue to Registration TBD')
@@ -98,7 +99,7 @@ return (
             <p>You will be registered in the following course offering(s) immediately upon log-in to the BCIT Student Information System. Prior to registration, please ensure that you have read the notes on each course for which you are registering.
             </p>
             <Notice
-                    heading="International Fees "
+                    heading="International fees "
                     descr="are typically 3.25 times the domestic tuition. Exact cost will be calculated upon completion of registration."
                     type="info"
                 />
@@ -112,8 +113,9 @@ return (
                   return (
                     <div className="cartPage__offerings__container" key={index}>
                       <div className='cartPage__offerings__header'>
-                        <Link to="/prototypes/course" className="cartPage__offerings__header__link">
-                          <h2>{`${courseDetails.crn} - ${courseDetails.title}`}</h2>
+                        <h2>{`${courseDetails.crn} - ${courseDetails.title}`}</h2>
+                        <Link to=".." relative="path" className="text-link" onClick={() => {e.preventDefault(); navigate(-1);}}>
+                          <span className="text-link-copy">Back to Course Details</span>
                         </Link>
                       </div>
                       <div className='cartPage__offerings-details'>

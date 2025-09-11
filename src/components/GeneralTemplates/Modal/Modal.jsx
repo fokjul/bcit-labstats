@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import FormButton from '../../Atoms/Buttons/FormButtonPrimary/FormButton';
 import Notice from '../../Panels/Notice/Notice';
 
-const Modal = ({title, children, setIsModalOpen, isModalOpen}) => {
+const Modal = ({title, children, setIsModalOpen, isModalOpen, btnLabel = 'submit'}) => {
 
 const [isFormSubmitted, setIsFormSubmitted] = useState(false)
 
@@ -66,7 +66,7 @@ const handleFormSubmission = () => {
                         </div>
                         <div className='modal__btn'>
                     <FormButton 
-                        value = 'submit'
+                        value = {btnLabel}
                         type = 'submit'
                         handleBtnClick={handleFormSubmission}
                         isButtonDisabled = {false}

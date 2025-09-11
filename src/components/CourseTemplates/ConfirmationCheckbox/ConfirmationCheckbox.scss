@@ -12,5 +12,12 @@
 
         &__checkbox {
             @extend .body-copy;
+            position: relative;
+            
+            &.approval-copy .popupTip {
+                bottom: 100%;
+                right: 0;
+                margin-bottom: p.$size-xs;
+            }
         }
 }

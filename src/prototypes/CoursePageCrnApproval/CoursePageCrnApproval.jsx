@@ -1,7 +1,6 @@
-import "./CoursePage.scss";
+import "./CoursePageCrnApproval.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 //Components
 import OfferingList from "../../components/CourseTemplates/Offerings/OfferingList/OfferingList";
@@ -13,12 +12,9 @@ import SidebarNotices from "../../components/Navigation/Sidebar/SidebarNotices/S
 import TextLinkSmall from "../../components/Navigation/TextLinkSmall/TextLinkSmall";
 
 
-const CoursePage = () => {
+const CoursePageCrnApproval = () => {
   const [courseDetails, setCourseDetails] = useState({});
   const [isPopupTipOpen, setIsPopupTipOpen] = useState(false)
-  const location = useLocation()
-
-  console.log(location.pathname)
 
   const getCourseDetails = async () => {
     try {
@@ -56,13 +52,13 @@ const CoursePage = () => {
             courseDetails={courseDetails} 
             isPopupTipOpen = {isPopupTipOpen}
             setIsPopupTipOpen = {setIsPopupTipOpen}
-            departmentalApproval={true}
+            departmentalApproval={false}
           />
           <OfferingList 
             courseDetails={courseDetails} 
             isPopupTipOpen = {isPopupTipOpen}
             setIsPopupTipOpen = {setIsPopupTipOpen}
-            departmentalApproval={false}
+            departmentalApproval={true}
           />
           
           <div className="contentArea__cancelNotice">
@@ -78,4 +74,4 @@ const CoursePage = () => {
   );
 };
 
-export default CoursePage;
+export default CoursePageCrnApproval;

@@ -10,7 +10,7 @@ import PopupTipContent from '../../../../prototypes/Content /PopupTipContent/Pop
 import { ButtonIcon } from '../../../Atoms/Buttons/ButtonIcon/ButtonIcon.jsx';
 import { question } from '../../../../assets/icons/index.js';
 
-const AccordionRowContent = ({title, courseDetails, isPopupTipOpen, setIsPopupTipOpen}) => {
+const AccordionRowContent = ({title, courseDetails, isPopupTipOpen, setIsPopupTipOpen, departmentalApproval}) => {
     const courseInfo = courseDetails.overview;
 
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -49,38 +49,39 @@ const AccordionRowContent = ({title, courseDetails, isPopupTipOpen, setIsPopupTi
                                 return <li key={index}>{item}</li>
                                 }) 
                             }
-                            <li className='descr__container--prereq-approval'>
-                                <div className='descr__container--prereq-approval-wrapper'>
-                                    <div className='approval-copy'>
-                                        <p>Departmental approval is required to register after completing the prerequisite.</p>
-                                        <ButtonIcon 
-                                            icon={question}
-                                            handleBtnClick={handleOpenPopupTip}
-                                                                />
-                                        {isPopupTipOpen && (
-                                            <PopupTip
-                                                title='Why approval is needed?'
-                                                isPopupTipOpen={isPopupTipOpen}
-                                                setIsPopupTipOpen={setIsPopupTipOpen}
-                                                >
-                                                    <PopupTipContent 
-                                                        content = 'Departmental approval is required to confirm you’ve completed all prerequisites. If you haven’t received approval yet, please submit a request below — you won’t be able to register without it.'
-                                                    />
-                                            </PopupTip>
-                                        )}
+                            {departmentalApproval && (
+                                <li className='descr__container--prereq-approval'>
+                                    <div className='descr__container--prereq-approval-wrapper'>
+                                        <div className='approval-copy'>
+                                            <p>Departmental approval is required to register after completing the prerequisite.</p>
+                                            <ButtonIcon 
+                                                icon={question}
+                                                handleBtnClick={handleOpenPopupTip}
+                                                                    />
+                                            {isPopupTipOpen && (
+                                                <PopupTip
+                                                    title='Why approval is needed?'
+                                                    isPopupTipOpen={isPopupTipOpen}
+                                                    setIsPopupTipOpen={setIsPopupTipOpen}
+                                                    >
+                                                        <PopupTipContent 
+                                                            content = 'Departmental approval is required to confirm you’ve completed all prerequisites. If you haven’t received approval yet, please submit a request below — you won’t be able to register without it.'
+                                                        />
+                                                </PopupTip>
+                                            )}
+                                            
+                                        </div>
                                         
+                                        <ButtonIconLarge 
+                                            label="request approval"
+                                            isButtonDisabled={false}
+                                            handleBtnClick={handleRequestApproval}
+                                            type= "primary"
+                                        />
                                     </div>
                                     
-                                    <ButtonIconLarge 
-                                        label="request approval"
-                                        isButtonDisabled={false}
-                                        handleBtnClick={handleRequestApproval}
-                                        type= "primary"
-                                    />
-                                </div>
-                                
-
-                            </li>
+                                </li>
+                            )}
                         </ul>
                     </div>
                     <div className='descr__container--credits'>

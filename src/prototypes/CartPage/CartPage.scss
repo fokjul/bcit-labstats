@@ -73,8 +73,16 @@
         &__header {
             display: flex;
             flex-direction: column;
-            gap: p.$size-s;
+            align-items: flex-start;
+            gap: p.$size-xs;
             padding-bottom: p.$size-s;
+
+            @include p.breakpoint(desktop) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: p.$size-s;
+            }
 
             &__link {
                 color: p.$primaryColor--blue;
