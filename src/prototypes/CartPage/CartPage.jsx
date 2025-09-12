@@ -114,9 +114,10 @@ return (
                     <div className="cartPage__offerings__container" key={index}>
                       <div className='cartPage__offerings__header'>
                         <h2>{`${courseDetails.crn} - ${courseDetails.title}`}</h2>
-                        <Link to=".." relative="path" className="text-link" onClick={() => {e.preventDefault(); navigate(-1);}}>
-                          <span className="text-link-copy">Back to Course Details</span>
-                        </Link>
+                        <TextLink 
+                          text="Back to Previous Page"
+                          handleClick={() => navigate(-1)}
+                        />
                       </div>
                       <div className='cartPage__offerings-details'>
                         <OfferingHeader 

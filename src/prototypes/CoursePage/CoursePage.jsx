@@ -18,8 +18,6 @@ const CoursePage = () => {
   const [isPopupTipOpen, setIsPopupTipOpen] = useState(false)
   const location = useLocation()
 
-  console.log(location.pathname)
-
   const getCourseDetails = async () => {
     try {
       const response = await axios.get("https://bcit-flcc-ph2-server.vercel.app/courses");
