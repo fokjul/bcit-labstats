@@ -10,10 +10,8 @@ import PopupTipContent from '../../../../prototypes/Content /PopupTipContent/Pop
 import { ButtonIcon } from '../../../Atoms/Buttons/ButtonIcon/ButtonIcon.jsx';
 import { question } from '../../../../assets/icons/index.js';
 
-const AccordionRowContent = ({title, courseDetails, isPopupTipOpen, setIsPopupTipOpen, departmentalApproval}) => {
+const AccordionRowContent = ({title, courseDetails, isPopupTipOpen, setIsPopupTipOpen, departmentalApproval, isModalOpen, setIsModalOpen}) => {
     const courseInfo = courseDetails.overview;
-
-    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const handleRequestApproval = () => {
         setIsModalOpen(true)

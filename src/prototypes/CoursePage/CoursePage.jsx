@@ -16,7 +16,7 @@ import TextLinkSmall from "../../components/Navigation/TextLinkSmall/TextLinkSma
 const CoursePage = () => {
   const [courseDetails, setCourseDetails] = useState({});
   const [isPopupTipOpen, setIsPopupTipOpen] = useState(false)
-  const location = useLocation()
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const getCourseDetails = async () => {
     try {
@@ -55,12 +55,16 @@ const CoursePage = () => {
             isPopupTipOpen = {isPopupTipOpen}
             setIsPopupTipOpen = {setIsPopupTipOpen}
             departmentalApproval={true}
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
           />
           <OfferingList 
             courseDetails={courseDetails} 
             isPopupTipOpen = {isPopupTipOpen}
             setIsPopupTipOpen = {setIsPopupTipOpen}
             departmentalApproval={false}
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
           />
           
           <div className="contentArea__cancelNotice">

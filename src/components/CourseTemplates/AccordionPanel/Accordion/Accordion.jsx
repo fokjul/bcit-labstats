@@ -1,7 +1,7 @@
 import './Accordion.scss';
 import AccordionRow from '../AccordionRow/AccordionRow';
 
-const Accordion = ({courseDetails='', isPopupTipOpen, setIsPopupTipOpen, departmentalApproval}) => {
+const Accordion = ({courseDetails='', isPopupTipOpen, setIsPopupTipOpen, departmentalApproval, isModalOpen, setIsModalOpen}) => {
   return (
     <div className='accordion'>
       <AccordionRow 
@@ -10,6 +10,8 @@ const Accordion = ({courseDetails='', isPopupTipOpen, setIsPopupTipOpen, departm
         isPopupTipOpen = {isPopupTipOpen}
         setIsPopupTipOpen = {setIsPopupTipOpen}
         departmentalApproval={departmentalApproval}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
       />
       <AccordionRow 
         title='Learning Outcomes'

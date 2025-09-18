@@ -6,7 +6,7 @@ import PopupTip from '../../GeneralTemplates/PopupTip/PopupTip';
 import PopupTipContent from '../../../prototypes/Content /PopupTipContent/PopupTipContent';
 import TextLink from '../../Navigation/TextLink/TextLink';
 
-const ConfirmationCheckbox = ({isCheckboxChecked, handleCheckboxCheck}) => {
+const ConfirmationCheckbox = ({isCheckboxChecked, handleCheckboxCheck, setIsModalOpen}) => {
   const [isConfirmationPopupOpen, setIsConfirmationPopupOpen] = useState(false);
   return (
     <div>
