@@ -1,16 +1,26 @@
 import FormInputText from '../../../components/Atoms/FormInputText/FormInputText'
 import './SubmitApprovalForm.scss'
 
-const SubmitApprovalForm = ({ courseName }) => {
+const SubmitApprovalForm = ({ courseDetails }) => {
+
   return (
     <div className='form__container'>
       <p className='form__description'>
-          After completing the prerequisites, you&apos;ll need departmental approval in order to register for {courseName}. Please submit your request below — we&apos;ll review your student record and follow up by email.</p>
+          {`To register for the course, you must request departmental approval after completing the course prerequisites. Submit your request below — we'll review your student record and follow up by email.`}</p>
       <form>
         <FormInputText 
-          name = 'studentId'
-          id = 'studentId'
-          label = 'Student ID'
+          name = 'courseName'
+          id = 'courseName'
+          label = 'Course Name'
+          placeholder= 'E.g., A01234567'
+          required = {false}
+          disabled = {true}
+          courseDetails = {courseDetails}
+        />
+        <FormInputText 
+          name = 'bcitId'
+          id = 'bcitId'
+          label = 'BCIT ID'
           placeholder= 'E.g., A01234567'
           required = {true}
         />

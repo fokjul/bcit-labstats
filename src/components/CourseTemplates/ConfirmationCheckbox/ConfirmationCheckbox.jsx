@@ -4,6 +4,7 @@ import { ButtonIcon } from '../../Atoms/Buttons/ButtonIcon/ButtonIcon';
 import { question } from '../../../assets/icons';
 import PopupTip from '../../GeneralTemplates/PopupTip/PopupTip';
 import PopupTipContent from '../../../prototypes/Content /PopupTipContent/PopupTipContent';
+import TextLink from '../../Navigation/TextLink/TextLink';
 
 const ConfirmationCheckbox = ({isCheckboxChecked, handleCheckboxCheck}) => {
   const [isConfirmationPopupOpen, setIsConfirmationPopupOpen] = useState(false);
@@ -27,6 +28,12 @@ const ConfirmationCheckbox = ({isCheckboxChecked, handleCheckboxCheck}) => {
                 onChange={handleCheckboxCheck}
                 />
             <label htmlFor="readConfirmation">I have received departmental approval.</label>
+            <p>No approval yet?</p>
+            <TextLink 
+              text="Submit request"
+              handleClick={() => setIsModalOpen(true)}
+            />
+              
             <ButtonIcon 
               icon={question}
               id="confirmation-approval-info-icon"

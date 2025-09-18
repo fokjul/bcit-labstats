@@ -60,6 +60,7 @@ const OfferingFooterCoursePage = ({offeringDetails, cartCounter, setCartCounter,
       state: {
         offeringsAddedToCart: offeringsAddedToCart,
         courseDetails: courseDetails, 
+        from: location.pathname,
       }
     })
   }

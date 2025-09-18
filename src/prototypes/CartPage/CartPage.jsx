@@ -1,7 +1,6 @@
 import "./CartPage.scss";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 //Components
@@ -25,12 +24,12 @@ const CartPage = () => {
   
   //Receives # of courses added to cart from the CoursePage
   const location = useLocation()
-  const {offeringsAddedToCart = [], courseDetails = {}} = location.state || {};
+  const {offeringsAddedToCart = [], courseDetails = {}, from } = location.state || {};
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [subtotal, setSubtotal] = useState(null)
   const [crnInCart, setCrnInCart ] = useState(offeringsAddedToCart)
-  const [isCheckboxChecked, setIsCheckboxChecked] = useState([false])
   const navigate = useNavigate()
+
  
   const openModal = () => {
     console.log('Continue to Registration TBD')
@@ -115,8 +114,8 @@ return (
                       <div className='cartPage__offerings__header'>
                         <h2>{`${courseDetails.crn} - ${courseDetails.title}`}</h2>
                         <TextLink 
-                          text="Back to Previous Page"
-                          handleClick={() => navigate(-1)}
+                          text="Back to course details"
+                          href={from}
                         />
                       </div>
                       <div className='cartPage__offerings-details'>
