@@ -114,7 +114,7 @@ return (
                       <div className='cartPage__offerings__header'>
                         <h2>{`${courseDetails.crn} - ${courseDetails.title}`}</h2>
                         <TextLink 
-                          text="Back to course details"
+                          text="Back to course page"
                           href={from}
                         />
                       </div>

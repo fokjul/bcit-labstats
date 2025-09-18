@@ -6,7 +6,7 @@ const SubmitApprovalForm = ({ courseDetails }) => {
   return (
     <div className='form__container'>
       <p className='form__description'>
-          {`To register for the course, you must request departmental approval after completing the course prerequisites. Submit your request below — we'll review your student record and follow up by email.`}</p>
+          {`You must request departmental approval after completing the course perquisites before you can register. Submit your request below. We’ll review your record and follow up by email.`}</p>
       <form>
         <FormInputText 
           name = 'courseName'

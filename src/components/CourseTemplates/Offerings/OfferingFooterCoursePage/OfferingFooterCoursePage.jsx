@@ -134,7 +134,7 @@ const OfferingFooterCoursePage = ({offeringDetails, cartCounter, setCartCounter,
         {isViewDetailsClicked.isClicked && isViewDetailsClicked.id === offeringDetails.crn && (
           <div className='offeringFooter__container'>
             <div className='offeringFooter__contact'>
-              <span className='offeringFooter__contact-description'>If you have any questions about this course section, please <TextLink text='contact us' /> </span>
+              <span className='offeringFooter__contact-description'>If you have any questions about this course, please <TextLink text='contact us' /> </span>
               
             </div>
             <div className='offeringFooter__hide-btn-container'>

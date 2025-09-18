@@ -56,19 +56,19 @@ const AccordionRowContent = ({title, courseDetails, isPopupTipOpen, setIsPopupTi
                                 <li className='descr__container--prereq-approval'>
                                     <div className='descr__container--prereq-approval-wrapper'>
                                         <div className='approval-copy'>
-                                            <p>Departmental approval is required to register after completing the prerequisite.</p>
+                                            <p>Departmental approval is required to register after completing the prerequisites.</p>
                                             <ButtonIcon 
                                                 icon={question}
                                                 handleBtnClick={handleOpenPopupTip}
                                                                     />
                                             {isPopupTipOpen && (
                                                 <PopupTip
-                                                    title='Why approval is needed?'
+                                                    title='Why you need approval?'
                                                     isPopupTipOpen={isPopupTipOpen}
                                                     setIsPopupTipOpen={setIsPopupTipOpen}
                                                     >
                                                         <PopupTipContent 
-                                                            content = 'Departmental approval is required to confirm you’ve completed all prerequisites. If you haven’t received approval yet, please submit a request below — you won’t be able to register without it.'
+                                                            content = 'Departmental approval is needed to confirm you’ve completed all prerequisites for this course. Please request approval below. You will not be able to register for this course without it.'
                                                         />
                                                 </PopupTip>
                                             )}
