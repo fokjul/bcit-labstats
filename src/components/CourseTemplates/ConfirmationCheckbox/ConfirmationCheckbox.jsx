@@ -13,9 +13,9 @@ const ConfirmationCheckbox = ({isCheckboxChecked, handleCheckboxCheck, setIsModa
         <div className='confirmationSection'>
             <div>
               <h5 className='offering-details__item-heading'>
-            Confirmation:
+            Confirmation
               </h5>
-              <p className='confirmationSection__description'>To proceed with registration and add this course to cart, please confirm:</p>
+              <p className='confirmationSection__description'>To proceed with registration and add this course to the cart, please confirm:</p>
             </div>
             
             <div className='confirmationSection__checkbox approval-copy'>
