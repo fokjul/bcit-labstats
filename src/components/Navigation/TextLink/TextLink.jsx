@@ -3,7 +3,7 @@ import './TextLink.scss'
 const TextLink = ({text, handleClick, href}) => {
 if (href) {
   return (
-    <a href={href}>{text}</a>
+    <a href={href} className='text-link text-link-copy'>{text}</a>
   )
 }
   return (

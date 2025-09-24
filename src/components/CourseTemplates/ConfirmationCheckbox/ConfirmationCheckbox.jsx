@@ -59,7 +59,7 @@ const ConfirmationCheckbox = ({isCheckboxChecked, handleCheckboxCheck, setIsModa
                 checked={isCheckboxChecked.confirmImportantInfo}
                 onChange={handleCheckboxCheck}
                 />
-            <label htmlFor="readConfirmation">I have read and understand the important information above.</label>
+            <label htmlFor="readConfirmation"> I have read and understand the important information above.</label>
             </div>
         </div>
     </div>
