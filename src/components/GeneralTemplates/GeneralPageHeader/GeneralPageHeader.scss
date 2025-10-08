@@ -1,0 +1,67 @@
+@use '../../../styles/partials/' as p;
+
+.pageHeader {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-l;
+        padding-inline: p.$size-s;
+        border-bottom: 1px solid p.$border-global-grey;
+        padding-top: p.px-to-rem(65);
+        padding-bottom: p.px-to-rem(50);
+
+        @include p.breakpoint(tablet) {
+            @include p.container-layout;
+            flex-direction: row;
+            padding-top: p.px-to-rem(105);
+            padding-bottom: p.px-to-rem(75);
+        }
+
+        &-btn {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-s;
+            @include p.breakpoint(tablet) {
+                width: p.px-to-rem(260);
+            }
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-m;
+        }
+    }
+
+    &__title {
+        max-width: p.px-to-rem(650);
+        font-weight: p.$font-demi
+    }
+
+    &__descr {
+        display: flex;
+        gap: p.$size-s;
+
+        &-element {
+            @extend .body-copy;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        gap: p.$size-s;
+    
+        &-element {
+            width: p.px-to-rem(22);
+            height: p.px-to-rem(22);
+        }
+    }
+
+    &__btn {
+
+        @include p.breakpoint(tablet) {
+            width: 100%;
+        }
+    }
+}

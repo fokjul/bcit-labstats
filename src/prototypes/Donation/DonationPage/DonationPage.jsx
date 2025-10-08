@@ -1,6 +1,6 @@
 import './DonationPage.scss';
 import PageLayout from '../../../components/Layout/PageLayout/PageLayout'
-import PageHeader from '../../../components/GeneralTemplates/PageHeader/PageHeader'
+import GeneralPageHeader from '../../../components/GeneralTemplates/GeneralPageHeader/GeneralPageHeader'
 import SidebarLayout from '../../../components/Navigation/Sidebar/SidebarLayout/SidebarLayout';
 import DonationForm from '../DonationForm/DonationForm';
 
@@ -8,7 +8,7 @@ import DonationForm from '../DonationForm/DonationForm';
 const DonationPage = () => {
   return (
     <PageLayout>
-      <PageHeader
+      <GeneralPageHeader
         title='Donate Now'
       />
       <div className='contentArea'>

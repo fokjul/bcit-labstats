@@ -1,6 +1,6 @@
-import './PageHeader.scss';
+import './GeneralPageHeader.scss';
 
-const PageHeader = ({title}) => {
+const GeneralPageHeader = ({title}) => {
   return (
     <div className='pageHeader'>
         <div className='pageHeader__container'>
@@ -13,4 +13,4 @@ const PageHeader = ({title}) => {
   )
 }
 
-export default PageHeader
+export default GeneralPageHeader

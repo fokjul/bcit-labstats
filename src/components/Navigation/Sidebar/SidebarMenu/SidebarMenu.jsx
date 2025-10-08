@@ -1,27 +1,38 @@
 import { useState } from 'react';
-import { arrowForwardBlue,  xmark, plus} from '../../../../assets/icons';
+import { arrowForwardBlue,  xmark, plus, arrowDownBlue} from '../../../../assets/icons';
 import './SidebarMenu.scss';
 
-const SidebarMenu = () => {
-  const [isPlusClicked, setIsPlusClicked] = useState(false)
+const SidebarMenu = ({content}) => {
+  const [openItems, setOpenItems] = useState({});
+
+  const toggleItem = (key) => {
+    setOpenItems(prev => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
   return (
     <ul className='sidemenu'>
         <li className='sidemenu__header'>
-            <a href='#'>admission</a>
-            <button className='sidemenu__header-btn' onClick={() => setIsPlusClicked(prev => !prev)}>
-              <img src={isPlusClicked ? xmark : plus}/>
+            <a href='#'>{content.sectionTitle}</a>
+            <button onClick={() => toggleItem('header')}>
+              <img src={openItems['header'] ? xmark : plus} />
             </button>
         </li>
-        <ul className={`sidemenu__list ${isPlusClicked ? "sidemenu__list--display" : ''}`}>
-          <li className='sidemenu__list-row'>
-          <a className='sidemenu__list-row-link' href='#'>about the Foundation</a>
-          <button className='sidemenu__list-row-btn'>
-            <img src={arrowForwardBlue}/>
-          </button>
-          </li>
-          <li className='sidemenu__list-row'>
-            <a href='#' className='sidemenu__list-row-link'>about the Foundation</a>
-          </li>
+        <ul className={`sidemenu__list ${openItems['header'] ? "sidemenu__list--display" : ''}`}>
+          {content.items.map((item, index) => {
+            return (
+              <li className="sidemenu__list-row" key={`item-${index}`}>
+                <a className='sidemenu__list-row-link' href={item.link}>{item.title}</a>
+                {item.children && item.children.length > 0 && (
+                  <button onClick={() => toggleItem(index)}>
+                  <img src={openItems[index] ? arrowDownBlue : arrowForwardBlue} />
+                </button>
+                )}
+          </li> )
+          })
+          }
+          
         </ul>
     </ul>
   )

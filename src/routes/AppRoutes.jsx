@@ -1,21 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 
 import Home from "../utilPages/Home";
-import CoursePage from "../prototypes/CoursePage/CoursePage";
-import CartPage from "../prototypes/CartPage/CartPage";
 import NotFound from "../utilPages/NotFound";
 import Prototypes from "../utilPages/Prototypes";
 import DonationPage from "../prototypes/Donation/DonationPage/DonationPage";
-import CoursePageCrnApproval from "../prototypes/CoursePageCrnApproval/CoursePageCrnApproval";
+import LabAvailabilityPage from "../prototypes/LabAvailabilityPage/LabAvailabilityPage";
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/prototypes" element={<Prototypes />} />
-      <Route exact path="/prototypes/course" element={<CoursePage />} />
-      <Route exact path="/prototypes/course-crn" element={<CoursePageCrnApproval />} />
-      <Route exact path="/prototypes/cart" element={<CartPage />} />
+      <Route exact path="/prototypes/lab-availability" element={<LabAvailabilityPage />} />
       <Route exact path="/prototypes/donation" element={<DonationPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
