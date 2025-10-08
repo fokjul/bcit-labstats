@@ -53,7 +53,7 @@ h5 {
   font-weight: 700;
 }
 
-.labels-buttons, .statusTag-text {
+.labels-buttons {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 500;
@@ -101,57 +101,39 @@ a, a:visited, a:active {
 }
 
 /* Margines & Paddings */
-.statusTag {
+.hidden {
+  display: none;
+}
+
+.sidemenu-item {
   display: flex;
-  flex-shrink: 0;
-  border-radius: 0.25rem;
-  height: fit-content;
-  width: fit-content;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
 }
-.statusTag img {
-  width: 1.375rem;
+.sidemenu-item a {
+  color: rgb(0, 60, 113);
+  cursor: pointer;
 }
-.statusTag--available {
-  display: inline-block;
-  vertical-align: bottom;
+.sidemenu-item a:hover {
+  color: rgb(41, 108, 246);
 }
-.statusTag--available div {
+.sidemenu-item__parent {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.25rem;
+  padding: 0.5rem;
 }
-.statusTag--unavailable {
-  display: inline-block;
-  vertical-align: bottom;
+.sidemenu-item__parent button {
+  height: 1rem;
+  width: 1rem;
 }
-.statusTag--unavailable div {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  color: rgb(210, 45, 45);
+.sidemenu-item__parent button img {
+  width: inherit;
+  height: inherit;
 }
-.statusTag--inUse {
-  display: inline-block;
-  vertical-align: bottom;
+.sidemenu-item__parent-icon--rotated {
+  transform: rotate(90deg);
 }
-.statusTag--inUse div {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-.statusTag-text {
-  text-transform: capitalize;
-}
-.statusTag-text p {
-  text-align: center;
-  line-height: 1.125rem;
-}
-.statusTag-text--available {
-  color: rgb(0, 159, 61);
-}
-.statusTag-text--full {
-  color: rgb(210, 45, 45);
-}
-.statusTag-text--inProgress {
-  color: rgb(255, 166, 10);
+.sidemenu-item__child-item {
+  padding: 0.5rem;
 }

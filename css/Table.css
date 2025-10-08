@@ -53,7 +53,7 @@ h5 {
   font-weight: 700;
 }
 
-.labels-buttons, .statusTag-text {
+.labels-buttons {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 500;
@@ -101,57 +101,3 @@ a, a:visited, a:active {
 }
 
 /* Margines & Paddings */
-.statusTag {
-  display: flex;
-  flex-shrink: 0;
-  border-radius: 0.25rem;
-  height: fit-content;
-  width: fit-content;
-}
-.statusTag img {
-  width: 1.375rem;
-}
-.statusTag--available {
-  display: inline-block;
-  vertical-align: bottom;
-}
-.statusTag--available div {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-.statusTag--unavailable {
-  display: inline-block;
-  vertical-align: bottom;
-}
-.statusTag--unavailable div {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  color: rgb(210, 45, 45);
-}
-.statusTag--inUse {
-  display: inline-block;
-  vertical-align: bottom;
-}
-.statusTag--inUse div {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-.statusTag-text {
-  text-transform: capitalize;
-}
-.statusTag-text p {
-  text-align: center;
-  line-height: 1.125rem;
-}
-.statusTag-text--available {
-  color: rgb(0, 159, 61);
-}
-.statusTag-text--full {
-  color: rgb(210, 45, 45);
-}
-.statusTag-text--inProgress {
-  color: rgb(255, 166, 10);
-}

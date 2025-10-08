@@ -7,22 +7,20 @@
 
 .contentArea {
     display: flex;
-    flex-direction: column-reverse;
-    padding-block: p.px-to-rem(38);
+    flex-direction: column;
+    padding-inline: p.$size-xl;
+    width: 100%;
     
     @include p.breakpoint(tablet) {
-        width: 100%;
-        align-items: flex-start;
         padding-top: 0;
-        padding-inline: p.$size-xl;
-        border-bottom: 1px solid p.$border-global-grey;
     }
 
     @include p.breakpoint(desktop) {
         @include p.container-layout;
         align-items: flex-start;
         flex-direction: row;
-        padding-inline: p.$size-xl;
+        padding: 0;
+        border-bottom: 1px solid p.$border-global-grey;
     }
     
     &__main {
@@ -39,7 +37,7 @@
         }
 
         @include p.breakpoint(desktop) {
-            padding-left: p.$size-xl;
+            padding-inline: p.$size-xl;
         }
     }
 

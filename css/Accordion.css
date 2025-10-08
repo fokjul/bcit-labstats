@@ -101,3 +101,8 @@ a, a:visited, a:active {
 }
 
 /* Margines & Paddings */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

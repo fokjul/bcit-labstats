@@ -4,8 +4,6 @@
     display: flex;
     flex-shrink: 0;
     border-radius: p.$size-xxs;
-    //padding: p.$size-xxs;
-    //padding-left: p.$size-s;
     height: fit-content;
     width: fit-content;
 
@@ -24,7 +22,7 @@
         }
     }
 
-    &--full {
+    &--unavailable {
         display: inline-block;
         vertical-align: bottom;
 
@@ -32,10 +30,11 @@
             display: flex;
             align-items: center;
             gap: p.$size-xxs;
+            color: p.$error-color
         }
     }
 
-    &--inProgress {
+    &--inUse {
         display: inline-block;
         vertical-align: bottom;
         div {
@@ -46,7 +45,7 @@
     }
 
     &-text {
-        @extend .body-copy;
+        @extend .labels-buttons;
         text-transform: capitalize;
 
         

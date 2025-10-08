@@ -3,9 +3,16 @@
 .sidemenu {
     list-style: none;
     padding-left: 0;
+    padding-top: p.$size-2xl;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
+    margin-block: 0;
+    
+
+    @include p.breakpoint(desktop) {
+        border-right: 1px solid p.$border-global-grey;
+    }
     
     ul {
         list-style: none;
@@ -23,6 +30,10 @@
         padding-block: p.$size-m;
         display: flex;
         justify-content: space-between;
+
+        img {
+            display: block;
+        }
 
         @include p.breakpoint(desktop) {
             border-block: 1px solid p.$border-global-grey;
@@ -53,6 +64,10 @@
         border-bottom: 1px solid p.$border-global-grey;
         display: none;
 
+        &-open {
+            display: block;
+        }
+
         @include p.breakpoint(desktop) {
             border-inline: 0;
             display: block;
@@ -67,10 +82,6 @@
             &-link {
                 color: p.$primaryColor--darkBlue; 
             }
-        }
-
-        &--display {
-            display: block;
         }
     }
 

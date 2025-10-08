@@ -104,9 +104,16 @@ a, a:visited, a:active {
 .sidemenu {
   list-style: none;
   padding-left: 0;
+  padding-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+  margin-block: 0;
+}
+@media (min-width: 80rem) {
+  .sidemenu {
+    border-right: 1px solid rgb(242, 242, 242);
+  }
 }
 .sidemenu ul {
   list-style: none;
@@ -122,6 +129,9 @@ a, a:visited, a:active {
   padding-block: 1.5rem;
   display: flex;
   justify-content: space-between;
+}
+.sidemenu__header img {
+  display: block;
 }
 @media (min-width: 80rem) {
   .sidemenu__header {
@@ -154,6 +164,9 @@ a, a:visited, a:active {
   border-bottom: 1px solid rgb(242, 242, 242);
   display: none;
 }
+.sidemenu__list-open {
+  display: block;
+}
 @media (min-width: 80rem) {
   .sidemenu__list {
     border-inline: 0;
@@ -168,7 +181,4 @@ a, a:visited, a:active {
 }
 .sidemenu__list-row-link {
   color: rgb(0, 60, 113);
-}
-.sidemenu__list--display {
-  display: block;
 }

@@ -2,6 +2,7 @@ import "./LabAvailabilityPage.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Accordion from "../../components/GeneralTemplates/AccordionPanel/Accordion/Accordion";
 
 //Components
 import Breadcrumbs from "../../components/CourseTemplates/Breadcrumbs/Breadcrumbs";
@@ -14,8 +15,6 @@ GeneralPageHeader
 
 const LabAvailabilityPage = () => {
   const [courseDetails, setCourseDetails] = useState({});
-  const [isPopupTipOpen, setIsPopupTipOpen] = useState(false)
-  const [isModalOpen, setIsModalOpen] = useState(false)
   const pageTitle = "Computer Lab Availability";
   
   const sidemenuContent = {
@@ -45,7 +44,7 @@ const LabAvailabilityPage = () => {
             link: "/students/labs-availability",
             children: [
               {
-                title: "Burnaby Campus",
+                title: "Burnaby Campus Labs",
                 link: "/students/labs-availability/lab-1"
               },
               {
@@ -113,6 +112,42 @@ const LabAvailabilityPage = () => {
     ]
   };
 
+  const labs = {
+    campuses: [
+      { 
+        title: "Burnaby Campus", 
+        link: "/students/labs-availability/lab-1", 
+        buildings: [
+          {
+            buildingName: "NE1",
+            labs: [
+              { labName: "201", availability: "Available", type: "General Access", computersTotal: 25, computersAvailable: 25 },
+              { labName: "245", availability: "Available", type: "Restricted", computersTotal: 25, computersAvailable: 20 },
+            ]
+          },
+          {
+            buildingName: "NE23",
+            labs: [
+              { labName: "201", availability: "Available", type: "General Access", computersTotal: 25, computersAvailable: 20 },
+            ]
+          }
+        ]
+      },
+      { 
+        title: "Downtown Campus",
+        link: "/students/labs-availability/lab-2",
+        buildings: [
+          {
+            buildingName: "DT1",
+            labs: [
+              { labName: "101", availability: "Available", type: "General Access", computersTotal: 20, computersAvailable: 15 },
+            ]
+          }
+        ]
+      }
+    ]
+  };
+
   const getCourseDetails = async () => {
     try {
       const response = await axios.get("https://bcit-flcc-ph2-server.vercel.app/courses");
@@ -145,7 +180,16 @@ const LabAvailabilityPage = () => {
           content={sidemenuContent}
         />
         <div className="contentArea__main">
-          
+          <div>
+          <p>Standard lab hours
+          Weekdays: 7.30 AM – 10.30 PM
+          Weekends & holidays: 7.30 AM – 5.30 PM</p>
+          <p>Late night lab hours
+          Open daily until 1:00 a.m.</p>
+          </div>
+          <Accordion 
+            content={labs}
+          />
         </div>
       </div>
     </div>

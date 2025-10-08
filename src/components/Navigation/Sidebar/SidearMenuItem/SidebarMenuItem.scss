@@ -1,0 +1,49 @@
+@use '../../../../styles/partials/' as p;
+
+.hidden {
+  display: none;
+}
+
+.sidemenu-item { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: p.$size-xs;
+
+    a {
+        color: p.$primaryColor--darkBlue;
+        cursor: pointer;
+
+        &:hover {
+            color: p.$primaryColor--blue;
+        }
+    }
+
+    &__parent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: p.$size-xs;
+        
+
+        button {
+            height: p.$size-s;
+            width: p.$size-s;
+
+            img {
+                width: inherit;
+                height: inherit;
+            }
+        }
+
+        &-icon--rotated {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__child {
+        &-item {
+            padding: p.$size-xs;
+        }
+    }
+}
+  
