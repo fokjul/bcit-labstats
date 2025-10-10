@@ -1,1 +1,39 @@
 @use '../../../../styles/partials/' as p;
+
+.table-row {
+    &-cell-simple {
+        border: 1px solid p.$border-grey;  
+        border-spacing: 0; 
+        padding: p.$size-s;
+    }
+
+    &-cell-complex {
+      border: 1px solid p.$border-grey;  
+      border-spacing: 0; 
+
+      button {
+        border: none;
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: p.$size-s;
+
+      }
+
+      &-expanded {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        td {
+          border-top: 1px solid p.$border-grey;  
+          padding: p.$size-s;
+          border-spacing: 0; 
+          width: 100%;
+        }
+      }
+    }
+
+
+}

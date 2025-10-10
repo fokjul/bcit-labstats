@@ -5,21 +5,33 @@ import StatusTag from '../../../Atoms/StatusTag/StatusTag';
 const TableRow = ({data, index}) => {
 console.log(data)
   return (
-    <tr>
-        <td>{data.labName}</td>
-        <td>
+    <tr className="table-row">
+        <td className="table-row-cell-simple">
+          {data.labName}</td>
+        <td className="table-row-cell-complex">
             <button>
               <StatusTag
                 status={{
                   name: data.computersAvailable < data.computersTotal ? "Available" : "Not Available",
                   value: data.computersAvailable < data.computersTotal ? "available" : "unavailable"
                 }}
+                label={true}
               />
                 <img src={arrowForwardBlue} alt="arrow icon" />
             </button>
-            <div>
-                more test
-            </div>
+            <tr className="table-row-cell-complex-expanded">
+                <td>station number</td>
+                <td>windows</td>
+                <td>
+                  <StatusTag 
+                    status={{
+                      name: data.computersAvailable < data.computersTotal ? "Available" : "Not Available",
+                      value: data.computersAvailable < data.computersTotal ? "available" : "unavailable"
+                    }}
+                    
+                  />
+                </td>
+            </tr>
 
         </td>
     </tr>

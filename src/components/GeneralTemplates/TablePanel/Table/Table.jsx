@@ -1,6 +1,7 @@
 import './Table.scss';
 import { useState } from "react";
 import TableRow from '../TableRow/TableRow';
+import TableHeader from '../TableHeader/TableHeader';
 
 const Table = ({ data }) => {
   const [openRow, setOpenRow] = useState(null);
@@ -11,19 +12,13 @@ const Table = ({ data }) => {
 
   return (
     <table className="lab-table">
-      <thead>
-        <tr>
-          <th>Lab</th>
-          <th>Computer Station Availability</th>
-        </tr>
-      </thead>
+      <TableHeader />
       <tbody>
         {data.map((lab, index) => (
           <TableRow 
             key={lab.labName}
             data={lab}
             />
-           
         ))}
       </tbody>
     </table>

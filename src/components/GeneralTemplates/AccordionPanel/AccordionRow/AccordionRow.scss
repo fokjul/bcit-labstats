@@ -52,11 +52,34 @@
 
     &__content {
         display: flex;
+        flex-direction: column;
         border: 1px solid p.$border-darkGrey; 
         padding: p.$size-s;
+        gap: p.$size-l;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-s;
+            width: fit-content
+        }
+
+        &__header {
+            display: flex;
+            align-items: center;
+            gap: p.$size-xs;
+            position: relative;
+        }
     }
 }
 
 .hidden {
     display: none;
+}
+
+/* Tooltip wrapper anchors the absolute popup to the icon */
+.tooltip {
+
+  display: inline-flex;
+  align-items: center;
 }

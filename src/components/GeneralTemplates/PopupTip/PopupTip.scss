@@ -6,16 +6,16 @@
         gap: p.$size-xxs;
         width: fit-content;
         min-height: fit-content;
-        max-width: p.px-to-rem(500);
+        width: p.px-to-rem(500);
         padding: p.$size-s;
         border: p.$size-xs solid p.$border-global-grey;
         background: p.$primaryColor--white;
         position: absolute;
-        z-index: 10;
-        bottom: 80%;
-        right: 0;
+        z-index: 1000; // ensure above nearby panels
+        bottom: 125%; // place directly below the icon
+        left: calc(50% + 20px); /* 20px gap to the right */                      
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.09);
-
+        overflow: visible; // allow inner content to extend if needed
 
     &__header {
         display: flex;
@@ -36,5 +36,9 @@
         width: 100%;
         font-size: p.px-to-rem(18);
         line-height: p.px-to-rem(32);
+        white-space: normal;       // allow multi-line wrapping
+        overflow-wrap: anywhere;   // break long words/URLs if needed
+        word-break: break-word;    // fallback for older browsers
+        overflow: visible;         // avoid clipping children
     }
 }

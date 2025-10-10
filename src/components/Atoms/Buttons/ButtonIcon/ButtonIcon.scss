@@ -6,8 +6,10 @@
     //width: 100%;
     //height: p.$size-2xl;
     cursor: pointer;
+    position: relative;
 
     &__img {
         width: p.px-to-rem(18);
     }
+
 }

@@ -1,0 +1,10 @@
+@use '../../../../styles/partials/' as p;
+
+.table-header {
+    background-color: p.$border-grey;
+
+    &-cell { 
+        padding: p.$size-xs;
+        text-align: left;
+    }
+}    
