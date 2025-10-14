@@ -36,13 +36,6 @@ const LabAvailabilityPage = () => {
     getLabData();
     console.log(labData)
   }, []);
-
-
-  const [isRowClicked, setIsRowClicked] = useState(false)
-
-  const handleExpandAll = () => {
-    setIsRowClicked(prev => !prev)
-  }
  
   return (
     <PageLayout>
@@ -96,9 +89,6 @@ const LabAvailabilityPage = () => {
           
           <Accordion 
             content={labsData.campuses}
-            isRowClicked={isRowClicked}
-            setIsRowClicked={setIsRowClicked}
-            handleExpandAll={handleExpandAll}
           />
         </div>
       </div>
