@@ -44,6 +44,9 @@ const AccordionRow = ({content, key, isExpandedAll, setIsExpandedAll}) => {
         </button>
         <div className={ isRowClicked || isExpandedAll ? 'accordionRow__content' : 'hidden'}>
             <div className='accordionRow__content__container'>
+                <div>
+                    <a href={content.googleMaps}>{`Find ${content.buildingName} on Google Maps`}</a>
+                </div>
                 <div className='accordionRow__content__header'>
                     <h4>General access labs</h4>
                     <ButtonIcon 
@@ -95,10 +98,6 @@ const AccordionRow = ({content, key, isExpandedAll, setIsExpandedAll}) => {
                 <Table 
                     data={content.labs}
                 />
-            </div>
-
-            <div>
-                <a href={content.googleMaps}>{`${content.buildingName} on Google Maps`}</a>
             </div>
             
         </div>
