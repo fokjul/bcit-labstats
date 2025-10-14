@@ -12,35 +12,53 @@
     }
 
     &--available {
-        display: inline-block;
+        display: flex;
         vertical-align: bottom;
         
         div {
             display: flex;
-            align-items: center;
+            flex-direction: row;
+            align-items: start;
             gap: p.$size-xxs;
+            color: p.$success-color;
+
+            @include p.breakpoint(tablet) {
+                align-items: center;
+            }
         }
     }
 
-    &--unavailable {
+    &--unAvailable {
         display: inline-block;
         vertical-align: bottom;
 
         div {
             display: flex;
-            align-items: center;
+            align-items: start;
+            flex-direction: row;
             gap: p.$size-xxs;
-            color: p.$error-color
+            color: p.$error-color;
+
+            @include p.breakpoint(tablet) {
+                align-items: center;
+            }
         }
     }
 
     &--inUse {
         display: inline-block;
         vertical-align: bottom;
+
         div {
             display: flex;
-            align-items: center;
+            align-items: start;
+            flex-direction: row;
             gap: p.$size-xxs;
+            color: p.$warning-color;
+
+            @include p.breakpoint(tablet) {
+                align-items: center;
+            }
         }
     }
 
@@ -54,17 +72,6 @@
             line-height: p.px-to-rem(18);
         }
 
-        &--available {
-            color: p.$success-color
-        }
-
-        &--full {
-            color: p.$error-color
-        }
-
-        &--inProgress {
-            color: p.$warning-color
-        }
     }
 }
 

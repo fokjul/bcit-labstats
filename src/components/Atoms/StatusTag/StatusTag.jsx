@@ -2,12 +2,12 @@ import React from 'react';
 import './StatusTag.scss';
 import { check, stop, clock} from '../../../assets/icons'
 
-const StatusTag = ({status, label = false}) => {
+const StatusTag = ({name, value, label = false}) => {
   return (
-    <div className={`statusTag statusTag--${status.value}`}>
+    <div className={`statusTag statusTag--${value}`}>
       <div>
-      <img src={status.value === 'available' ? check : stop} alt='icon'/>
-      <p className={label ? `statusTag-text statusTag-text--${status.value}` : 'hidden'}>{status.name}</p>
+      <img src={value === 'available' ? check : value === 'inUse' ? clock : stop} alt='icon'/>
+      <p className={label ? `statusTag-text statusTag-text--${value}` : 'hidden'}>{name}</p>
       </div>
     
   </div>

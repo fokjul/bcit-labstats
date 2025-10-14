@@ -28,8 +28,9 @@
 
         p {
             color: p.$primaryColor--darkBlue;
-            @extend .labels-buttons;
             line-height: normal;
+            font-family: p.$fontBody;
+            font-size: p.$font-s
         }
 
         &-icon {

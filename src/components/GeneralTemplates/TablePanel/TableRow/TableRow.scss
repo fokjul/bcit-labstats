@@ -5,11 +5,13 @@
         border: 1px solid p.$border-grey;  
         border-spacing: 0; 
         padding: p.$size-s;
+        vertical-align: top;
     }
 
     &-cell-complex {
       border: 1px solid p.$border-grey;  
       border-spacing: 0; 
+      min-width: p.px-to-rem(310);
 
       button {
         border: none;
@@ -20,11 +22,15 @@
         width: 100%;
         padding: p.$size-s;
 
+        .rotated {
+          transform: rotate(90deg);
+        }
+
       }
 
       &-expanded {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr auto;
 
         td {
           border-top: 1px solid p.$border-grey;  

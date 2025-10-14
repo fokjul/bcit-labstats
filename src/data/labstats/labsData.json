@@ -1,0 +1,162 @@
+{
+  "campuses": [
+    {
+      "title": "Burnaby Campus",
+      "link": "/students/labs-availability/lab-1",
+      "buildings": [
+        {
+          "buildingName": "NE1",
+          "labs": [
+            {
+              "labName": "201",
+              "availability": "Available",
+              "type": "General Access",
+              "computersTotal": 25,
+              "computersAvailable": 25,
+              "computers": [
+                { "id": "NE1-201-01", "os": "macOS", "status": "inUse" },
+                { "id": "NE1-201-02", "os": "Windows", "status": "inUse" },
+                { "id": "NE1-201-03", "os": "macOS", "status": "inUse" },
+                { "id": "NE1-201-04", "os": "Windows", "status": "inUse" },
+                { "id": "NE1-201-05", "os": "macOS", "status": "inUse" },
+                { "id": "NE1-201-06", "os": "Windows", "status": "inUse" },
+                { "id": "NE1-201-07", "os": "macOS", "status": "inUse" },
+                { "id": "NE1-201-08", "os": "Windows", "status": "inUse" },
+                { "id": "NE1-201-09", "os": "macOS", "status": "inUse" },
+                { "id": "NE1-201-10", "os": "Windows", "status": "inUse" },
+                { "id": "NE1-201-11", "os": "macOS", "status": "inUse" },
+                { "id": "NE1-201-12", "os": "Windows", "status": "inUse" },
+                { "id": "NE1-201-13", "os": "macOS", "status": "inUse" },
+                { "id": "NE1-201-14", "os": "Windows", "status": "inUse" },
+                { "id": "NE1-201-15", "os": "macOS", "status": "unavailable" },
+                { "id": "NE1-201-16", "os": "Windows", "status": "unavailable" },
+                { "id": "NE1-201-17", "os": "macOS", "status": "unavailable" },
+                { "id": "NE1-201-18", "os": "Windows", "status": "unavailable" },
+                { "id": "NE1-201-19", "os": "macOS", "status": "unavailable" },
+                { "id": "NE1-201-20", "os": "Windows", "status": "unavailable" },
+                { "id": "NE1-201-21", "os": "macOS", "status": "unavailable" },
+                { "id": "NE1-201-22", "os": "Windows", "status": "unavailable" },
+                { "id": "NE1-201-23", "os": "macOS", "status": "unavailable" },
+                { "id": "NE1-201-24", "os": "Windows", "status": "unavailable" },
+                { "id": "NE1-201-25", "os": "macOS", "status": "unavailable" }
+              ]
+            },
+            {
+              "labName": "245",
+              "availability": "Available",
+              "type": "Restricted",
+              "computersTotal": 25,
+              "computersAvailable": 20,
+              "computers": [
+                { "id": "NE1-245-01", "os": "Windows", "status": "available" },
+                { "id": "NE1-245-02", "os": "macOS", "status": "available" },
+                { "id": "NE1-245-03", "os": "Windows", "status": "available" },
+                { "id": "NE1-245-04", "os": "macOS", "status": "available" },
+                { "id": "NE1-245-05", "os": "Windows", "status": "available" },
+                { "id": "NE1-245-06", "os": "macOS", "status": "available" },
+                { "id": "NE1-245-07", "os": "Windows", "status": "available" },
+                { "id": "NE1-245-08", "os": "macOS", "status": "available" },
+                { "id": "NE1-245-09", "os": "Windows", "status": "available" },
+                { "id": "NE1-245-10", "os": "macOS", "status": "available" },
+                { "id": "NE1-245-11", "os": "Windows", "status": "available" },
+                { "id": "NE1-245-12", "os": "macOS", "status": "available" },
+                { "id": "NE1-245-13", "os": "Windows", "status": "available" },
+                { "id": "NE1-245-14", "os": "macOS", "status": "available" },
+                { "id": "NE1-245-15", "os": "Windows", "status": "available" },
+                { "id": "NE1-245-16", "os": "macOS", "status": "available" },
+                { "id": "NE1-245-17", "os": "Windows", "status": "available" },
+                { "id": "NE1-245-18", "os": "macOS", "status": "available" },
+                { "id": "NE1-245-19", "os": "Windows", "status": "available" },
+                { "id": "NE1-245-20", "os": "macOS", "status": "available" },
+                { "id": "NE1-245-21", "os": "Windows", "status": "inUse" },
+                { "id": "NE1-245-22", "os": "macOS", "status": "inUse" },
+                { "id": "NE1-245-23", "os": "Windows", "status": "inUse" },
+                { "id": "NE1-245-24", "os": "macOS", "status": "unavailable" },
+                { "id": "NE1-245-25", "os": "Windows", "status": "unavailable" }
+              ]
+            }
+          ]
+        },
+        {
+          "buildingName": "NE23",
+          "labs": [
+            {
+              "labName": "201",
+              "availability": "Available",
+              "type": "General Access",
+              "computersTotal": 25,
+              "computersAvailable": 20,
+              "computers": [
+                { "id": "NE23-201-01", "os": "macOS", "status": "available" },
+                { "id": "NE23-201-02", "os": "Windows", "status": "available" },
+                { "id": "NE23-201-03", "os": "macOS", "status": "available" },
+                { "id": "NE23-201-04", "os": "Windows", "status": "available" },
+                { "id": "NE23-201-05", "os": "macOS", "status": "available" },
+                { "id": "NE23-201-06", "os": "Windows", "status": "available" },
+                { "id": "NE23-201-07", "os": "macOS", "status": "available" },
+                { "id": "NE23-201-08", "os": "Windows", "status": "available" },
+                { "id": "NE23-201-09", "os": "macOS", "status": "available" },
+                { "id": "NE23-201-10", "os": "Windows", "status": "available" },
+                { "id": "NE23-201-11", "os": "macOS", "status": "available" },
+                { "id": "NE23-201-12", "os": "Windows", "status": "available" },
+                { "id": "NE23-201-13", "os": "macOS", "status": "available" },
+                { "id": "NE23-201-14", "os": "Windows", "status": "available" },
+                { "id": "NE23-201-15", "os": "macOS", "status": "available" },
+                { "id": "NE23-201-16", "os": "Windows", "status": "available" },
+                { "id": "NE23-201-17", "os": "macOS", "status": "available" },
+                { "id": "NE23-201-18", "os": "Windows", "status": "available" },
+                { "id": "NE23-201-19", "os": "macOS", "status": "available" },
+                { "id": "NE23-201-20", "os": "Windows", "status": "available" },
+                { "id": "NE23-201-21", "os": "macOS", "status": "inUse" },
+                { "id": "NE23-201-22", "os": "Windows", "status": "inUse" },
+                { "id": "NE23-201-23", "os": "macOS", "status": "unavailable" },
+                { "id": "NE23-201-24", "os": "Windows", "status": "unavailable" },
+                { "id": "NE23-201-25", "os": "macOS", "status": "unavailable" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Downtown Campus",
+      "link": "/students/labs-availability/lab-2",
+      "buildings": [
+        {
+          "buildingName": "DT1",
+          "labs": [
+            {
+              "labName": "101",
+              "availability": "Available",
+              "type": "General Access",
+              "computersTotal": 20,
+              "computersAvailable": 15,
+              "computers": [
+                { "id": "DT1-101-01", "os": "Windows", "status": "available" },
+                { "id": "DT1-101-02", "os": "macOS", "status": "available" },
+                { "id": "DT1-101-03", "os": "Windows", "status": "available" },
+                { "id": "DT1-101-04", "os": "macOS", "status": "available" },
+                { "id": "DT1-101-05", "os": "Windows", "status": "available" },
+                { "id": "DT1-101-06", "os": "macOS", "status": "available" },
+                { "id": "DT1-101-07", "os": "Windows", "status": "available" },
+                { "id": "DT1-101-08", "os": "macOS", "status": "available" },
+                { "id": "DT1-101-09", "os": "Windows", "status": "available" },
+                { "id": "DT1-101-10", "os": "macOS", "status": "available" },
+                { "id": "DT1-101-11", "os": "Windows", "status": "available" },
+                { "id": "DT1-101-12", "os": "macOS", "status": "available" },
+                { "id": "DT1-101-13", "os": "Windows", "status": "available" },
+                { "id": "DT1-101-14", "os": "macOS", "status": "available" },
+                { "id": "DT1-101-15", "os": "Windows", "status": "available" },
+                { "id": "DT1-101-16", "os": "macOS", "status": "inUse" },
+                { "id": "DT1-101-17", "os": "Windows", "status": "inUse" },
+                { "id": "DT1-101-18", "os": "macOS", "status": "unavailable" },
+                { "id": "DT1-101-19", "os": "Windows", "status": "unavailable" },
+                { "id": "DT1-101-20", "os": "macOS", "status": "unavailable" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

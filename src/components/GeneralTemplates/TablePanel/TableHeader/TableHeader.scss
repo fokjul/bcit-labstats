@@ -2,6 +2,7 @@
 
 .table-header {
     background-color: p.$border-grey;
+    border: 1px solid p.$border-grey;  
 
     &-cell { 
         padding: p.$size-xs;

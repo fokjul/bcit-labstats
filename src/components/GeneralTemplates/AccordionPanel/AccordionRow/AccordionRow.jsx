@@ -7,10 +7,15 @@ import ButtonIcon from  '../../../Atoms/Buttons/ButtonIcon/ButtonIcon';
 import PopupTip from '../../../GeneralTemplates/PopupTip/PopupTip';
 import PopupTipContent from '../../../../prototypes/Content/PopupTipContent/PopupTipContent';
 
-const AccordionRow = ({content}) => {
-    const [isRowClicked, setIsRowClicked] = useState(false)
+const AccordionRow = ({content, isRowClicked, setIsRowClicked}) => {
+
     const [isGeneralTipOpen, setIsGeneralTipOpen] = useState(false)
     const [isRestrictedTipOpen, setIsRestrictedTipOpen] = useState(false)
+
+    const totalAvailableStations = content.labs.reduce((total, lab) => {
+        const availableCount = lab.computers.filter(computer => computer.status === 'available').length;
+        return total + availableCount;
+    }, 0);
 
     useEffect (() => {
         content.buildingName === "Course Overview" && setIsRowClicked(true) 
@@ -33,7 +38,7 @@ const AccordionRow = ({content}) => {
         <button className={`accordionRow__button ${isRowClicked ? 'accordionRow__button--open' : ''}`} type='button' onClick={handleRowClick}>
             <div>
                 <h2>{content.buildingName}</h2>
-                <p>Stations available</p>
+                <p>{`${totalAvailableStations} computers available`}</p>
             </div>
             <img src={arrowDownBlue} alt='arrow icon' className={`accordionRow__button-icon ${isRowClicked ? 'accordionRow__button-icon--rotated' : ''}`}/>
         </button>

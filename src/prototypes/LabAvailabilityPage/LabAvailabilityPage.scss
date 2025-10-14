@@ -8,29 +8,31 @@
 .contentArea {
     display: flex;
     flex-direction: column;
-    padding-inline: p.$size-xl;
+    padding-inline: p.$size-s;
     width: 100%;
     
     @include p.breakpoint(tablet) {
-        padding-top: 0;
+        padding-inline: p.$size-xl;
     }
 
     @include p.breakpoint(desktop) {
         @include p.container-layout;
         align-items: flex-start;
         flex-direction: row;
-        padding: 0;
         border-bottom: 1px solid p.$border-global-grey;
+        padding-inline: 0;
     }
     
     &__main {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-l;
         padding-bottom: p.px-to-rem(38);
         border-bottom: 1px solid p.$border-global-grey;
-        padding-inline: p.$size-s;
         width: 100%;
+        padding-top: p.$size-m;
 
         @include p.breakpoint(tablet) {
-            padding-top: p.$size-xl;
             padding-bottom: p.$size-3xl;
             padding-inline: 0;
             border-bottom: none;
@@ -38,6 +40,58 @@
 
         @include p.breakpoint(desktop) {
             padding-inline: p.$size-xl;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            gap: p.$size-m;
+
+            @include p.breakpoint(tablet) {
+                flex-direction: row;
+                align-items: start;
+                justify-content: space-between;
+            }
+        }
+
+        &__hours {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-m;
+
+            &__standard {
+                display: flex;
+                flex-direction: column;
+                gap: p.$size-xs;
+            }
+            &__late-night {
+                display: flex;
+                flex-direction: column;
+                gap: p.$size-xs;
+            }
+
+            
+        }
+
+        &__legend {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-xs;
+            align-items: start;
+
+            div {
+                display: flex;
+                flex-direction: row;
+                gap: p.$size-s;
+                
+                @include p.breakpoint(tablet) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    gap: p.$size-s;
+                }
+            }
         }
     }
 
@@ -48,5 +102,16 @@
         color: p.$secondaryColor--fontGrey;
         margin-top: p.$size-xl;
     }
+}
+
+.accordion__toggle {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: p.$primaryColor--blue;
+    font-weight: p.$font-demi;
+    width: fit-content;
+    height: fit-content;
+    font-size: p.$font-xs;
 }
 
