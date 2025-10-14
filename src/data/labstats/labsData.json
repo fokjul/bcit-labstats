@@ -123,7 +123,7 @@
       "link": "/students/labs-availability/lab-2",
       "buildings": [
         {
-          "buildingName": "DT1",
+          "buildingName": "SE12",
           "labs": [
             {
               "labName": "101",
@@ -132,26 +132,26 @@
               "computersTotal": 20,
               "computersAvailable": 15,
               "computers": [
-                { "id": "DT1-101-01", "os": "Windows", "status": "available" },
-                { "id": "DT1-101-02", "os": "macOS", "status": "available" },
-                { "id": "DT1-101-03", "os": "Windows", "status": "available" },
-                { "id": "DT1-101-04", "os": "macOS", "status": "available" },
-                { "id": "DT1-101-05", "os": "Windows", "status": "available" },
-                { "id": "DT1-101-06", "os": "macOS", "status": "available" },
-                { "id": "DT1-101-07", "os": "Windows", "status": "available" },
-                { "id": "DT1-101-08", "os": "macOS", "status": "available" },
-                { "id": "DT1-101-09", "os": "Windows", "status": "available" },
-                { "id": "DT1-101-10", "os": "macOS", "status": "available" },
-                { "id": "DT1-101-11", "os": "Windows", "status": "available" },
-                { "id": "DT1-101-12", "os": "macOS", "status": "available" },
-                { "id": "DT1-101-13", "os": "Windows", "status": "available" },
-                { "id": "DT1-101-14", "os": "macOS", "status": "available" },
-                { "id": "DT1-101-15", "os": "Windows", "status": "available" },
-                { "id": "DT1-101-16", "os": "macOS", "status": "inUse" },
-                { "id": "DT1-101-17", "os": "Windows", "status": "inUse" },
-                { "id": "DT1-101-18", "os": "macOS", "status": "unavailable" },
-                { "id": "DT1-101-19", "os": "Windows", "status": "unavailable" },
-                { "id": "DT1-101-20", "os": "macOS", "status": "unavailable" }
+                { "id": "SE12-101-01", "os": "Windows", "status": "available" },
+                { "id": "SE12-101-02", "os": "macOS", "status": "available" },
+                { "id": "SE12-101-03", "os": "Windows", "status": "available" },
+                { "id": "SE12-101-04", "os": "macOS", "status": "available" },
+                { "id": "SE12-101-05", "os": "Windows", "status": "available" },
+                { "id": "SE12-101-06", "os": "macOS", "status": "available" },
+                { "id": "SE12-101-07", "os": "Windows", "status": "available" },
+                { "id": "SE12-101-08", "os": "macOS", "status": "available" },
+                { "id": "SE12-101-09", "os": "Windows", "status": "available" },
+                { "id": "SE12-101-10", "os": "macOS", "status": "available" },
+                { "id": "SE12-101-11", "os": "Windows", "status": "available" },
+                { "id": "SE12-101-12", "os": "macOS", "status": "available" },
+                { "id": "SE12-101-13", "os": "Windows", "status": "available" },
+                { "id": "SE12-101-14", "os": "macOS", "status": "available" },
+                { "id": "SE12-101-15", "os": "Windows", "status": "available" },
+                { "id": "SE12-101-16", "os": "macOS", "status": "inUse" },
+                { "id": "SE12-101-17", "os": "Windows", "status": "inUse" },
+                { "id": "SE12-101-18", "os": "macOS", "status": "unavailable" },
+                { "id": "SE12-101-19", "os": "Windows", "status": "unavailable" },
+                { "id": "SE12-101-20", "os": "macOS", "status": "unavailable" }
               ]
             }
           ]

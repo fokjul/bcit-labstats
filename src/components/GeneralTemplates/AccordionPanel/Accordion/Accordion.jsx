@@ -9,7 +9,7 @@ const Accordion = ({content, setIsRowClicked, isRowClicked, handleExpandAll}) =>
     <div className='accordion'>
       <div className='accordion__header'>
         <h5>Buildings</h5>
-        <button type='button' onClick={handleExpandAll} className='accordion__toggle'>{isRowClicked ? 'Collapse all rows' : 'Expand all rows'} </button>
+        <button type='button' onClick={handleExpandAll} className='accordion__toggle'>{isRowClicked ? 'Collapse all' : 'Expand all'} </button>
       </div>
       
 
