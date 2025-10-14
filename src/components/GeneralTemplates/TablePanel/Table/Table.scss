@@ -5,3 +5,10 @@ table {
     border-spacing: 0; 
 }
     
+ .lab-table {
+      width: 100%;
+
+      @include p.breakpoint(tablet) {
+        width: p.px-to-rem(500);
+      }
+    }

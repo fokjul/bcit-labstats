@@ -34,7 +34,6 @@ const LabAvailabilityPage = () => {
 
   useEffect(() => {
     getLabData();
-    console.log(labData)
   }, []);
  
   return (

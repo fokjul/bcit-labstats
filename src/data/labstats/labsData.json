@@ -5,7 +5,8 @@
       "link": "/students/labs-availability/lab-1",
       "buildings": [
         {
-          "buildingName": "NE1",
+          "buildingName": "NE2",
+          "googleMaps": "https://maps.app.goo.gl/q8dbD1ZhMZYsHacE6",
           "labs": [
             {
               "labName": "201",
@@ -79,11 +80,12 @@
         },
         {
           "buildingName": "NE23",
+          "googleMaps": "https://maps.app.goo.gl/Q1GaXAE55LdG89iF6",
           "labs": [
             {
               "labName": "201",
               "availability": "Available",
-              "type": "General Access",
+              "type": "General Access", 
               "computersTotal": 25,
               "computersAvailable": 20,
               "computers": [
@@ -124,6 +126,7 @@
       "buildings": [
         {
           "buildingName": "SE12",
+          "googleMaps": "https://maps.app.goo.gl/Dy7KQt8y7gBkzpzc8",
           "labs": [
             {
               "labName": "101",

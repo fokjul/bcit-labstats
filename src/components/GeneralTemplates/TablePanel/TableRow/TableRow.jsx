@@ -1,10 +1,9 @@
 import './TableRow.scss'
-import { check, stop, clock, arrowForwardBlue } from '../../../../assets/icons';
+import { arrowForwardBlue } from '../../../../assets/icons';
 import StatusTag from '../../../Atoms/StatusTag/StatusTag';
 import { useState } from 'react';
 
 const TableRow = ({data, index}) => {
-console.log(data)
   
   // Calculate number of available computers based on status
   const availableCount = data.computers.filter(computer => computer.status === 'available').length;
@@ -27,7 +26,7 @@ console.log(data)
                 value={isLabAvailable ? "available" : "unAvailable"}
                 label={true}
               />
-                <img src={arrowForwardBlue} alt="arrow icon" className={openRow ? 'rotated' : ''}/>
+                <img src={arrowForwardBlue} alt="arrow icon" className={openRow ? 'rotatedUp' : 'rotatedDown'}/>
             </button>
             {openRow && data.computers.map((computer, idx) => (
               <tr key={idx} className="table-row-cell-complex-expanded">

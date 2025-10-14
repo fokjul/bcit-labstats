@@ -1,6 +1,7 @@
 @use '../../../../styles/partials/' as p;
 
 .table-row {
+
     &-cell-simple {
         border: 1px solid p.$border-grey;  
         border-spacing: 0; 
@@ -11,7 +12,6 @@
     &-cell-complex {
       border: 1px solid p.$border-grey;  
       border-spacing: 0; 
-      min-width: p.px-to-rem(310);
 
       button {
         border: none;
@@ -19,10 +19,19 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
         padding: p.$size-s;
+        width: 100%;
+        //min-width: p.px-to-rem(300);
 
-        .rotated {
+        @include p.breakpoint(tablet) {
+          min-width: p.px-to-rem(310);
+        }
+
+        .rotatedUp {
+          transform: rotate(270deg);
+        }
+
+        .rotatedDown {
           transform: rotate(90deg);
         }
 
@@ -31,12 +40,19 @@
       &-expanded {
         display: grid;
         grid-template-columns: 1fr 1fr auto;
+        text-align: left;
 
         td {
           border-top: 1px solid p.$border-grey;  
-          padding: p.$size-s;
+          padding-left: p.$size-s;
+          padding-right: p.$size-s;
+          padding-block: p.$size-s;
           border-spacing: 0; 
           width: 100%;
+          
+          @include p.breakpoint(tablet) {
+            padding: p.$size-s;
+          }
         }
       }
     }
