@@ -7,14 +7,14 @@ const Breadcrumbs = ({crn, subject}) => {
     <div className='breadcrumbBar'>
         <div className='breadcrumbBar__container'>
             <ul className='breadcrumbs'>
-                <li className='breadcrumbs-item'>study</li>
-                <li className='breadcrumbs-item'>flexible learning</li>
+                <li className='breadcrumbs-item'>test</li>
+                <li className='breadcrumbs-item'>test</li>
                 { crn && subject 
                   ? <>
                     <li className='breadcrumbs-item'>{subject}</li>
                     <li className='breadcrumbs-item'>{crn}</li>
                     </>
-                  : <li className='breadcrumbs-item'>Cart</li> 
+                  : <li className='breadcrumbs-item'>test</li> 
                 }
                 
             </ul>

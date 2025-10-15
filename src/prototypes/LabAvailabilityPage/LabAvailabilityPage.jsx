@@ -40,7 +40,7 @@ const LabAvailabilityPage = () => {
     <PageLayout>
       <div className="app">
       <Breadcrumbs 
-        crn = 'test'
+        crn = ''
         subject = 'test'
       />
       <GeneralPageHeader
