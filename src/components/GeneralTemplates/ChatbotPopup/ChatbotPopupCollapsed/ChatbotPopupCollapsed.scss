@@ -1,0 +1,68 @@
+@use '../../../../styles/partials/' as p;
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-15px); // Higher first bounce
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-8px); // Lower second bounce
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.chatbotPopupCollapsed {
+    min-width: p.px-to-rem(320); 
+    animation: float 1.2s cubic-bezier(0.5, 0, 0.5, 1) 1;
+    animation-fill-mode: forwards;
+
+    &__header {
+        border: 1px solid p.$primaryColor--darkBlue;
+        background-color: p.$primaryColor--darkBlue;
+        color: p.$primaryColor--white;
+        padding: p.$size-xs p.$size-s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-title {
+            font-size: p.$size-s;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-button {
+            display: flex;          // Make it a flex container
+            align-items: center;    // Center vertically
+            justify-content: end; // Center horizontally
+            width: p.$size-l;       // Explicit width
+            height: p.$size-l;      // Explicit height
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+
+            &::after {
+                font-family: 'Font Awesome 5 Free'; 
+                font-weight: 600;
+                content: '\f00d';
+                display: block;
+                color: p.$primaryColor--white;
+            }
+        }
+    }
+    
+    &__body {
+        gap: p.$size-s;
+        background-color: p.$background-blue-veryLight;
+        padding: p.$size-s;
+        border-inline: 1px solid p.$secondaryColor--fontGrey;
+        border-bottom: 1px solid p.$secondaryColor--fontGrey; 
+    }
+}

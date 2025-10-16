@@ -1,0 +1,113 @@
+@use '../../../../styles/partials/' as p;
+
+.chatbotPopup {
+
+
+    &__header {
+        border: 1px solid p.$primaryColor--darkBlue;
+        background-color: p.$primaryColor--darkBlue;
+        color: p.$primaryColor--white;
+        padding: p.$size-s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-title {
+            font-size: p.$size-m;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        &-button {
+            display: flex;          // Make it a flex container
+            align-items: center;    // Center vertically
+            justify-content: center; // Center horizontally
+            width: p.$size-l;       // Explicit width
+            height: p.$size-l; 
+            cursor: pointer; 
+            background-color: transparent;
+            border: none;
+          // Explicit height
+
+            &--expanded::after {
+                font-family: 'Font Awesome 5 Free'; 
+                font-weight: 600;
+                content: '\f061';
+                transform: rotate(45deg);
+                display: block;
+                cursor: pointer; 
+                color: p.$primaryColor--white;
+            }
+        }
+    }
+    
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-s;
+        background-color: p.$background-blue-veryLight;
+        padding: p.$size-s;
+        border-inline: 1px solid p.$secondaryColor--fontGrey;
+        border-bottom: 1px solid p.$secondaryColor--fontGrey;
+        min-width: p.px-to-rem(375);
+
+        &-content {
+            background-color: p.$primaryColor--white;
+            padding: p.$size-s;
+            border-radius: p.$size-xxs;
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-xs;
+
+            &-hidden {
+                display: none;
+            }
+
+            &-suggestions {
+                display: flex;
+                flex-direction: column;
+                gap: p.$size-xs;
+
+                button {
+                    text-align: start;
+                    width: fit-content;
+                    border: 1px solid p.$primaryColor--blue;
+                    color: p.$primaryColor--blue;
+                    padding: p.$size-xxs;
+                    border-radius: p.$size-xxs;
+                    cursor: pointer;
+                    background-color: transparent;
+                }
+            }
+                
+        }
+
+        &-input {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: p.$size-xs;
+
+            input {
+                border: 1px solid p.$border-darkGrey;
+                padding: p.$size-s;
+                border-radius: p.$size-xxs;
+                width: 100%;
+                gap: p.$size-xs;
+            }
+            &::after {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Font Awesome 5 Free'; 
+                font-weight: 600;
+                content: '\f1d8';
+                transform: rotate(45deg);
+                width: p.$size-l;
+                height: p.$size-l;
+                cursor: pointer;
+            }
+        }   
+    }
+}

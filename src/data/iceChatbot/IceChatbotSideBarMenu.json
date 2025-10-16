@@ -1,0 +1,77 @@
+{
+    "sectionTitle": "International Credential Evaluation Service (ICES)",
+    "items": [
+      {
+        "title": "About ICES",
+        "link": "/#",
+        "children": []
+      },
+      {
+        "title": "General Application",
+        "link": "/#",
+        "children": [
+          {
+            "title": "Step 1: Select Evaluation Type",
+            "link": "/#"
+          },
+          {
+            "title": "Step 2: Requirements",
+            "link": "/#"
+          },
+          {
+            "title": "Step 3: Service Fees",
+            "link": "/#"
+          },
+          {
+            "title": "Step 4: Apply Online",
+            "link": "/#"
+          }
+        ]
+      },
+      {
+        "title": "For Immigration (ECA)",
+        "link": "/#",
+        "children": []
+      },
+      {
+        "title": "Country Specific Information",
+        "link": "/#",
+        "children": []
+      },
+      {
+        "title": "Document Translations",
+        "link": "/#",
+        "children": []
+      },
+      {
+        "title": "Processing Times",
+        "link": "/#",
+        "children": []
+      },
+      {
+        "title": "Application Status",
+        "link": "/#",
+        "children": []
+      },
+      {
+        "title": "Frequently Asked Questions",
+        "link": "/#",
+        "children": []
+      },
+      {
+        "title": "News & Updates",
+        "link": "/#",
+        "children": []
+      },
+      {
+        "title": "Forms & Resources",
+        "link": "/#",
+        "children": []
+      },
+      {
+        "title": "Contact ICES",
+        "link": "/#",
+        "children": []
+      }
+    ]
+  }

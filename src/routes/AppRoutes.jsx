@@ -5,6 +5,7 @@ import NotFound from "../utilPages/NotFound";
 import Prototypes from "../utilPages/Prototypes";
 import DonationPage from "../prototypes/Donation/DonationPage/DonationPage";
 import LabAvailabilityPage from "../prototypes/LabAvailabilityPage/LabAvailabilityPage";
+import IceChatbot from "../prototypes/iceChatbot/iceChatbot";
 
 const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const AppRoutes = () => {
       <Route exact path="/prototypes" element={<Prototypes />} />
       <Route exact path="/prototypes/lab-availability" element={<LabAvailabilityPage />} />
       <Route exact path="/prototypes/donation" element={<DonationPage />} />
+      <Route exact path="/prototypes/ice-chatbot" element={<IceChatbot />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

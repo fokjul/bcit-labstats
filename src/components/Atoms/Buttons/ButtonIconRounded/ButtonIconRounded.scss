@@ -1,0 +1,66 @@
+@use '../../../../styles/partials/' as p;
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-15px); // Higher first bounce
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-8px); // Lower second bounce
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.buttonIconRounded {
+    display: flex;
+    border: none;
+    align-items: center;
+    padding: p.$size-xs + p.$size-xxs;
+    gap: p.$size-xs;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: p.$size-xs;
+    animation: float 1.2s cubic-bezier(0.5, 0, 0.5, 1) 1;
+    animation-fill-mode: forwards;
+
+    @extend .labels-buttons;
+
+    &--toOpen {
+        background-color: p.$primaryColor--blue;
+        color: p.$primaryColor--white;
+        text-transform: uppercase;
+        font-weight: p.$font-demi;
+        width: fit-content;
+
+        &::before {
+            font-family: 'Font Awesome 5 Free'; 
+            font-weight: 600;
+            content: '\f059';
+            font-size: p.$size-s;
+        }
+    }
+
+    &--toClose {
+        background-color: p.$primaryColor--blue;
+        color: p.$primaryColor--white;
+        width: fit-content;
+        gap: 0;
+        padding-inline: p.$size-m;
+
+
+        &::before {
+            font-family: 'Font Awesome 5 Free'; 
+            font-weight: 600;
+            content: '\f00d';
+            font-size: p.$size-s;
+        }
+    }
+}

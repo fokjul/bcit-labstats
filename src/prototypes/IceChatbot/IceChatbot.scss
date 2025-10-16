@@ -1,0 +1,18 @@
+@use '../../styles/partials/' as p;
+
+body {
+    position: relative;
+}
+
+
+
+.chatbotPopupContainer {
+    position: fixed;
+    z-index: 1000;
+    bottom: p.$size-m;
+    right: p.$size-m;
+    display: flex;
+    flex-direction: column;
+    gap: p.$size-xs;
+    align-items: end;
+}
