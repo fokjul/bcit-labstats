@@ -5,7 +5,7 @@ import NotFound from "../utilPages/NotFound";
 import Prototypes from "../utilPages/Prototypes";
 import DonationPage from "../prototypes/Donation/DonationPage/DonationPage";
 import LabAvailabilityPage from "../prototypes/LabAvailabilityPage/LabAvailabilityPage";
-import IceChatbot from "../prototypes/iceChatbot/iceChatbot";
+import IceChatbot from "../prototypes/IceChatbot/IceChatbot";
 
 const AppRoutes = () => {
   return (
