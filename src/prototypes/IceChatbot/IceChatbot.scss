@@ -4,7 +4,27 @@ body {
     position: relative;
 }
 
+.contentArea__main { 
+    &__text {
+        @extend .body-copy; 
 
+        p {
+            margin-bottom: p.$size-s;
+        }
+
+        ul {
+            line-height: p.$size-xl;
+        }
+
+        &-block {
+            display: flex;
+            flex-direction: column;
+            gap: p.$size-s;
+            margin-bottom: p.$size-l;
+        }
+    }
+}
+    
 
 .chatbotPopupContainer {
     position: fixed;

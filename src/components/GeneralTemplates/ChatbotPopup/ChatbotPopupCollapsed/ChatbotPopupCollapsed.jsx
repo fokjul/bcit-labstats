@@ -4,7 +4,7 @@ const ChatbotPopupCollapsed = ({handleCloseChatbotPopup}) => {
   return (
     <div className='chatbotPopupCollapsed'>
         <div className='chatbotPopupCollapsed__header'>
-            <p className='chatbotPopupCollapsed__header-title'>Hi, I am ICES Virtual Assistant</p>
+            <p className='chatbotPopupCollapsed__header-title'>ICES Virtual Assistant</p>
             <button 
                 type='button'
                 className='chatbotPopupCollapsed__header-button' 
@@ -12,7 +12,7 @@ const ChatbotPopupCollapsed = ({handleCloseChatbotPopup}) => {
             </button>
         </div>
         <div className='chatbotPopupCollapsed__body'>
-            <p>Let me help you find answers faster!</p>
+            <p>Save your time — ask ICES now.</p>
             <p></p>
         </div>
         

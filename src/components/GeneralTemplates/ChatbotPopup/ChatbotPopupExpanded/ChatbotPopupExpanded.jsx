@@ -13,15 +13,17 @@ const ChatbotPopupExpanded = ({handleBtnClick}) => {
         <div className='chatbotPopup__body'>
             <div className='chatbotPopup__body-content'>
                 <div>
-                    <p>Hi, I'm ICES Chatbot</p>
-                    <p>How can I help you today?</p>
+                    <p>What do you want to know?</p>
                 </div>
                 <div className='chatbotPopup__body-content-suggestions'>
                     <ChatbotAnswerButtons
-                        label='Basic Evaluation'
+                        label='What is the service fee for general application?'
                     />
                     <ChatbotAnswerButtons
-                        label='Comprehensive Evaluation'
+                        label='What are the requirements for general application?'
+                    />
+                    <ChatbotAnswerButtons
+                        label='How can I apply for general application?'
                     />
                 </div>
             </div>

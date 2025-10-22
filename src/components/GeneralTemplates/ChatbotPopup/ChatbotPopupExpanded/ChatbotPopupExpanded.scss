@@ -50,7 +50,11 @@
         padding: p.$size-s;
         border-inline: 1px solid p.$secondaryColor--fontGrey;
         border-bottom: 1px solid p.$secondaryColor--fontGrey;
+        max-width: p.px-to-rem(325);
+
+        @include p.breakpoint(tablet) {
         min-width: p.px-to-rem(375);
+        }
 
         &-content {
             background-color: p.$primaryColor--white;

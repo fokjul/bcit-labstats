@@ -36,6 +36,9 @@
     &--toOpen {
         background-color: p.$primaryColor--blue;
         color: p.$primaryColor--white;
+        //background-color: p.$secondaryColor--yellow;
+        //color: p.$primaryColor--darkBlue;
+        //border: 1px solid p.$primaryColor--darkBlue;
         text-transform: uppercase;
         font-weight: p.$font-demi;
         width: fit-content;
