@@ -39,21 +39,55 @@
 
       &-expanded {
         display: grid;
-        grid-template-columns: 1fr 1fr auto;
+        grid-template-columns: 1fr auto;
         text-align: left;
+        grid-template-areas:
+          "building status"
+          "platform status";
+        padding-block: p.$size-s;
+        border-top: 1px solid p.$border-grey; 
 
-        td {
-          border-top: 1px solid p.$border-grey;  
+        td { 
           padding-left: p.$size-s;
           padding-right: p.$size-s;
-          padding-block: p.$size-s;
+          //padding-block: p.$size-s;
           border-spacing: 0; 
           width: 100%;
+
+          &:nth-child(1) {
+            // Hide their original borders to make them look merged
+            grid-area: building;
+            border-right: none;
+            border-bottom: none;
+            padding-top: xxs;
+          }
+          
+          &:nth-child(2) {
+            // Hide their original borders to make them look merged
+            border-right: none;
+            border-bottom: none;
+            border-top: 0; 
+            padding-bottom: xxs;
+            grid-area: platform;
+          }
+
+          &:nth-child(3) { // Status
+            grid-area: status;
+            align-self: center;
+            grid-area: status;
+          }
           
           @include p.breakpoint(tablet) {
-            padding: p.$size-s;
+            grid-template-columns: 1fr 1fr auto;
           }
         }
+
+        @include p.breakpoint(tablet) {
+            grid-template-columns: 1fr 1fr auto;
+            grid-template-areas: "building platform status";
+          }
+
+        
       }
     }
 
