@@ -1,8 +1,8 @@
 import './ChatbotAnswerButtons.scss'
 
-const ChatbotAnswerButtons = ({label}) => {
+const ChatbotAnswerButtons = ({label, handleBtnClick}) => {
   return (
-    <button>{label}</button>
+    <button onClick={() => handleBtnClick(label)}>{label}</button>
   )
 }
 

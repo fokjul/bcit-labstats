@@ -108,8 +108,10 @@ const IceChatbot = () => {
             </div>
             
           <div className='chatbotPopupContainer'>
-          {isSmallPopupOpen && <ChatbotPopupCollapsed 
+          {isSmallPopupOpen && 
+          <ChatbotPopupCollapsed 
             handleCloseChatbotPopup={closeSmallPopup}
+            handleOpenChatbotPopup={handleOpenChatbot}
           />}
           
           {isExpanded && <ChatbotPopupExpanded 
