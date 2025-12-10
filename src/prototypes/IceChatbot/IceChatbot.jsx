@@ -120,7 +120,7 @@ const IceChatbot = () => {
             
             <div className='chatbotPopupContainer__button'>
                 <ButtonIconRounded 
-                  label={isExpanded ? '' : 'Ask Us'}
+                  label={isExpanded ? '' : 'Ask BCIT AI'}
                   type={isExpanded ? 'toClose' : 'toOpen'}
                   isButtonDisabled={false}
                   handleBtnClick={isExpanded ? handleCloseChatbot : handleOpenChatbot}

@@ -15,13 +15,13 @@ const handleSuggestionBtnClick = (value) => {
   return (
     <div className='chatbotPopup'>
         <div className='chatbotPopup__header'>
-            <p className='chatbotPopup__header-title'>ICES Virtual Assistant</p>
+            <p className='chatbotPopup__header-title'>BCIT AI Assistant</p>
             <button type='button' className='chatbotPopup__header-button chatbotPopup__header-button--expanded' onClick={handleBtnClick}></button>
         </div>
         <div className='chatbotPopup__body'>
             <div className='chatbotPopup__body-content'>
                 <div>
-                    <p>What do you want to know?</p>
+                    <p>I can help with program info, admissions steps, deadlines, services etc. I can't access personal records or make decisions.</p>
                 </div>
                 <div className='chatbotPopup__body-content-suggestions'>
                     <ChatbotAnswerButtons
@@ -40,12 +40,16 @@ const handleSuggestionBtnClick = (value) => {
                 </div>
             </div>
             <div className='chatbotPopup__body-input'>
-                <input type="text" placeholder='Ask ICES...' id='chatbotIinput' name='chatbotIinput' value={selectedSuggestion} onChange={(e) => setSelectedSuggestion(e.target.value)}/>
-                <ButtonIcon 
-                    handleBtnClick={()=> {}}
-                    id='chatbotPopup__body-input-btn'
-                />
+                <div className='chatbotPopup__body-input-container'>
+                    <input type="text" placeholder='Get instant answer...' id='chatbotIinput' name='chatbotIinput' value={selectedSuggestion} onChange={(e) => setSelectedSuggestion(e.target.value)}/>
+                    <ButtonIcon 
+                        handleBtnClick={()=> {}}
+                        id='chatbotPopup__body-input-btn'
+                    />
+                </div>
+                <p>AI responses may contain errors. See <a href='#'> BCIT chatbot</a> for details.</p>
             </div>
+            
         </div>
         
     </div>

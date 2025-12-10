@@ -1,5 +1,6 @@
 @use '../../../../styles/partials/' as p;
 
+
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -36,18 +37,21 @@
     &--toOpen {
         background-color: p.$primaryColor--blue;
         color: p.$primaryColor--white;
-        //background-color: p.$secondaryColor--yellow;
-        //color: p.$primaryColor--darkBlue;
-        //border: 1px solid p.$primaryColor--darkBlue;
         text-transform: uppercase;
         font-weight: p.$font-demi;
         width: fit-content;
 
         &::before {
-            font-family: 'Font Awesome 5 Free'; 
-            font-weight: 600;
-            content: '\f059';
-            font-size: p.$size-s;
+          content: "";
+          display: inline-block;
+          width: p.$size-m;   // adjust as needed
+          height: p.$size-m;
+          margin-right: p.$size-xxs;
+          background-image: url("/sparkles.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          filter: brightness(0) invert(1);
         }
     }
 
@@ -60,7 +64,7 @@
 
 
         &::before {
-            font-family: 'Font Awesome 5 Free'; 
+            font-family: 'Font Awesome 5 Free';
             font-weight: 600;
             content: '\f00d';
             font-size: p.$size-s;

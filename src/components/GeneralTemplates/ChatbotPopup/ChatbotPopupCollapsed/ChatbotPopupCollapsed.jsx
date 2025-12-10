@@ -1,11 +1,10 @@
 import './ChatbotPopupCollapsed.scss';
-import ButtonIcon from '../../../Atoms/Buttons/ButtonIcon/ButtonIcon';
 
 const ChatbotPopupCollapsed = ({handleCloseChatbotPopup, handleOpenChatbotPopup}) => {
   return (
     <div className='chatbotPopupCollapsed'>
         <div className='chatbotPopupCollapsed__header'>
-            <p className='chatbotPopupCollapsed__header-title'>ICES Virtual Assistant</p>
+            <p className='chatbotPopupCollapsed__header-title'>BCIT AI Assistant</p>
             <button 
                 type='button'
                 className='chatbotPopupCollapsed__header-button' 
@@ -13,14 +12,9 @@ const ChatbotPopupCollapsed = ({handleCloseChatbotPopup, handleOpenChatbotPopup}
             </button>
         </div>
         <div className='chatbotPopupCollapsed__body'>
-            <p>Have a question about applications?</p>
-            {/* <p>Save time — ask ICES now.</p> */}
+            <p>Have a question? Let our AI help</p>
              <div className='chatbotPopupCollapsed__body-input'>
-                <input type="text" placeholder='Save your time— ask ICES now!' id='chatbotIinput' name='chatbotIinput' onFocus={handleOpenChatbotPopup}/>
-                {/* <ButtonIcon 
-                    handleBtnClick={()=> {}}
-                    id='chatbotPopup__body-input-btn'
-                /> */}
+                <input type="text" placeholder='Save your time — ask AI now!' id='chatbotIinput' name='chatbotIinput' onFocus={handleOpenChatbotPopup}/>
             </div>
         </div>
         

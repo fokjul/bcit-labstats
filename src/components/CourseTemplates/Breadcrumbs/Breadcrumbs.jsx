@@ -1,6 +1,5 @@
 import './Breadcrumbs.scss';
 import CartIcon from '../../Atoms/CartIcon/CartIcon';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Breadcrumbs = ({crn, subject}) => {
   return (
