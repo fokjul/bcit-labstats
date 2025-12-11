@@ -15,13 +15,13 @@ const handleSuggestionBtnClick = (value) => {
   return (
     <div className='chatbotPopup'>
         <div className='chatbotPopup__header'>
-            <p className='chatbotPopup__header-title'>BCIT AI Assistant</p>
+            <p className='chatbotPopup__header-title'>BCIT AI Assist</p>
             <button type='button' className='chatbotPopup__header-button chatbotPopup__header-button--expanded' onClick={handleBtnClick}></button>
         </div>
         <div className='chatbotPopup__body'>
             <div className='chatbotPopup__body-content'>
                 <div>
-                    <p>I can help with program info, admissions steps, deadlines, services etc. I can't access personal records or make decisions.</p>
+                    <p>I can answer questions about programs, courses, admission steps, deadlines, services, etc. I can't access personal records or make decisions.</p>
                 </div>
                 <div className='chatbotPopup__body-content-suggestions'>
                     <ChatbotAnswerButtons
@@ -47,7 +47,7 @@ const handleSuggestionBtnClick = (value) => {
                         id='chatbotPopup__body-input-btn'
                     />
                 </div>
-                <p>AI responses may contain errors. See <a href='#'> BCIT chatbot</a> for details.</p>
+                <p>AI responses may contain errors. See <a href='#'> BCIT AI Assist</a> for details.</p>
             </div>
             
         </div>

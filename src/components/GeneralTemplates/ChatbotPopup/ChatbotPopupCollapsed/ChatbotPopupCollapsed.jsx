@@ -4,7 +4,7 @@ const ChatbotPopupCollapsed = ({handleCloseChatbotPopup, handleOpenChatbotPopup}
   return (
     <div className='chatbotPopupCollapsed'>
         <div className='chatbotPopupCollapsed__header'>
-            <p className='chatbotPopupCollapsed__header-title'>BCIT AI Assistant</p>
+            <p className='chatbotPopupCollapsed__header-title'>BCIT AI Assist</p>
             <button 
                 type='button'
                 className='chatbotPopupCollapsed__header-button' 
