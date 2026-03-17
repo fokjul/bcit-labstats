@@ -1,0 +1,113 @@
+{
+  "loanEligibility": {
+    "legend": "Student loan eligibility",
+    "options": [
+      {
+        "type": "radio",
+        "id": "eligible",
+        "name": "loanEligibility",
+        "value": "eligible",
+        "label": "Eligible"
+      },
+      {
+        "type": "radio",
+        "id": "notEligible",
+        "name": "loanEligibility",
+        "value": "notEligible",
+        "label": "Not eligible"
+      }
+    ]
+  },
+  "studyFormat": {
+    "legend": "Study format",
+    "options": [
+      {
+        "type": "checkbox",
+        "id": "partTime",
+        "name": "partTime",
+        "value": "partTime",
+        "label": "Part-time"
+      },
+      {
+        "type": "checkbox",
+        "id": "fullTime",
+        "name": "fullTime",
+        "value": "fullTime",
+        "label": "Full-time"
+      }
+    ]
+  },
+  "studyAreas": {
+    "legend": "Study areas",
+    "options": [
+      {
+        "type": "checkbox",
+        "id": "appliedScience",
+        "name": "appliedScience",
+        "value": "appliedScience",
+        "label": "Applied & Natural Sciences"
+      },
+      {
+        "type": "checkbox",
+        "id": "business",
+        "name": "business",
+        "value": "business",
+        "label": "Business & Media"
+      },
+      {
+        "type": "checkbox",
+        "id": "technology",
+        "name": "technology",
+        "value": "technology",
+        "label": "Computing & IT"
+      },
+      {
+        "type": "checkbox",
+        "id": "engineering",
+        "name": "engineering",
+        "value": "engineering",
+        "label": "Engineering"
+      },
+      {
+        "type": "checkbox",
+        "id": "healthScience",
+        "name": "healthScience",
+        "value": "healthScience",
+        "label": "Health Sciences"
+      },
+      {
+        "type": "checkbox",
+        "id": "studyAreaTrades",
+        "name": "trades",
+        "value": "trades",
+        "label": "Trades & Apprenticeships"
+      }
+    ]
+  },
+  "educationLevel": {
+    "legend": "Education level",
+    "options": [
+      {
+        "type": "checkbox",
+        "id": "graduate",
+        "name": "graduate",
+        "value": "graduate",
+        "label": "Graduate"
+      },
+      {
+        "type": "checkbox",
+        "id": "undergraduate",
+        "name": "undergraduate",
+        "value": "undergraduate",
+        "label": "Undergraduate"
+      },
+      {
+        "type": "checkbox",
+        "id": "educationLevelTrades",
+        "name": "trades",
+        "value": "trades",
+        "label": "Skilled Trades"
+      }
+    ]
+  }
+}

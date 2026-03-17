@@ -42,6 +42,7 @@ h1, h2, h3, h4, h5 {
       font-size: $font-3xl;
       line-height: $lineH-2xl;
       font-weight: $font-demi;
+      letter-spacing: 2.5px;
   }
 
   h2 {
@@ -54,12 +55,14 @@ h1, h2, h3, h4, h5 {
     font-size: $font-xl;
     line-height: $lineH-l;
     font-weight: $font-demi;
+    color: c.$secondaryColor--fontGrey;
   }
 
   h4 {
     font-size: $font-l;
     line-height: $lineH-m;
     font-weight: $font-demi;
+    color: c.$secondaryColor--fontGrey;
   }
 
 

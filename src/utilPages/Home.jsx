@@ -7,6 +7,7 @@ const Home = () => {
         <li><Link to='/prototypes/lab-availability'>Lab Availability Page Prototype</Link></li>
         <li><Link to='/prototypes/ice-chatbot'>ICE Chatbot Prototype</Link></li>
         <li><Link to='/prototypes/donation'>Donation Page Prototype</Link></li>
+        <li><Link to='/prototypes/student-loans'>Student Loans Prototype</Link></li>
       </ul>
     </div>
   )

@@ -59,3 +59,5 @@ coverage/          # Test coverage reports
 # For example, if you have a separate backend folder:
 # /backend/node_modules/
 # /backend/dist/
+*storybook.log
+storybook-static

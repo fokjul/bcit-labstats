@@ -1,0 +1,28 @@
+@use '../../../styles/partials/' as p;
+
+.filterSet {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: p.$size-xs;
+  
+  &__legend {
+    @extend .body-copy;
+    font-weight: p.$font-bold;
+  }
+  
+  &__inputSet {
+    display: flex;
+    align-items: center;
+    gap: p.$size-xs;
+  }
+  
+  &__input {
+    display: flex;
+    gap: p.$size-xs;
+  }
+  
+  &__label {
+    @extend .body-copy;
+  }
+}

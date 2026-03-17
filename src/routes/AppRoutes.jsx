@@ -6,6 +6,7 @@ import Prototypes from "../utilPages/Prototypes";
 import DonationPage from "../prototypes/Donation/DonationPage/DonationPage";
 import LabAvailabilityPage from "../prototypes/LabAvailabilityPage/LabAvailabilityPage";
 import IceChatbot from "../prototypes/IceChatbot/IceChatbot";
+import StudentLoans from "../prototypes/StudentLoans/StudentLoans";
 
 const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const AppRoutes = () => {
       <Route exact path="/prototypes/lab-availability" element={<LabAvailabilityPage />} />
       <Route exact path="/prototypes/donation" element={<DonationPage />} />
       <Route exact path="/prototypes/ice-chatbot" element={<IceChatbot />} />
+      <Route exact path="/prototypes/student-loans" element={<StudentLoans />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

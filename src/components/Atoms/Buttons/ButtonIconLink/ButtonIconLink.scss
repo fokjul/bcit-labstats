@@ -3,11 +3,13 @@
 .btn-iconLink {
     display: flex;
     align-items: center;
+    border: none;
     background-color: p.$background-grey;
     border-radius: p.$size-xxs;
     padding-inline: p.$size-xxs;
     height: p.$size-m;
     cursor: pointer;
+
 
     &__img {
         width: p.$size-s;

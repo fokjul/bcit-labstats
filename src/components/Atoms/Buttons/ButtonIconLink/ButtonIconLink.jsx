@@ -1,11 +1,11 @@
 import './ButtonIconLink.scss'
 
-const ButtonIconLink = ({handleClick, label, icon}) => {
+const ButtonIconLink = ({handleClick, label, icon, type}) => {
   return (
-    <div className='btn-iconLink' onClick={handleClick}>
-        <img src={icon} alt={label} className='btn-iconLink__img'/>
+    <button className='btn-iconLink' onClick={handleClick} type={type}>
+        {icon ? <img src={icon} alt={label} className='btn-iconLink__img'/> : ''}
         <span className='btn-iconLink__text'>{label}</span>
-    </div>
+    </button>
   )
 }
 

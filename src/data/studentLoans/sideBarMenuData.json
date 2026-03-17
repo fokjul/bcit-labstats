@@ -1,0 +1,20 @@
+{
+    "sectionTitle": "Student Financial Aid & Awards",
+    "items": [
+      {
+        "title": "StudentAid BC Loans & Grants",
+        "link": "/#",
+        "children": [
+          {
+            "title": "Eligibility & Key Information",
+            "link": "/#"
+          }
+        ]
+      },
+      {
+        "title": "Tuition Fee Deferrals",
+        "link": "/#",
+        "children": []
+      }
+    ]
+  }
