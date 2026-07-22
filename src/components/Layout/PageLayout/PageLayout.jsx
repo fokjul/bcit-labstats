@@ -2,7 +2,7 @@ import UtilityMenu from "../../Navigation/UtilityMenuGroup/UtilityMenu/UtilityMe
 import WebsiteHeader from "../WebsiteHeader/WebsiteHeader";
 import Footer from "../Footer/Footer";
 
-const PageLayout = ({children}) => {
+const PageLayout = ({children, footerChildren=''}) => {
   return (
     <div>
         <UtilityMenu />

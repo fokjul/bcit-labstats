@@ -1,12 +1,12 @@
 import './Modal.scss';
-import { ButtonIcon } from '../../Atoms/Buttons/ButtonIcon/ButtonIcon';
+import ButtonIcon from '../../Atoms/Buttons/ButtonIcon/ButtonIcon';
 
 import { xmark } from '../../../assets/icons';
 import { useEffect, useState } from 'react';
-import FormButton from '../../Atoms/Buttons/FormButtonPrimary/FormButton';
+import FormButton from '../../Atoms/Buttons/FormButton/FormButton';
 import Notice from '../../Panels/Notice/Notice';
 
-const Modal = ({title, children, setIsModalOpen, isModalOpen, btnLabel = 'submit'}) => {
+const Modal = ({title, children, setIsModalOpen, isModalOpen, btnLabel = 'submit', handlePrimaryBtnClick, secondaryBtn = false, secondaryBtnLabel, handleSecondaryBtnClick, tetriaryBtn = true, handleTetriaryBtnClick}) => {
 
 const [isFormSubmitted, setIsFormSubmitted] = useState(false)
 
@@ -37,12 +37,13 @@ const handleFormSubmission = () => {
                 <div className='modal__title'>
                     <h2>{title}</h2>
                     <div className='modal__btnIcon'>
-                        <ButtonIcon 
-                        icon={xmark}
-                        handleBtnClick={handleCloseModal}
-                        />
+                         {tetriaryBtn && (
+                            <ButtonIcon 
+                            icon={xmark}
+                            handleBtnClick={handleCloseModal}
+                            />
+                        )}
                     </div>
-                    
                 </div>
                 {isFormSubmitted 
                     ? <>
@@ -51,12 +52,12 @@ const handleFormSubmission = () => {
                             descr='Thank you for submitting your request. We will be in touch with you within 2 business days.'
                         />
                         <div className='modal__btn'>
-                            <FormButton 
-                                value = 'close'
-                                type = 'button'
-                                handleBtnClick={handleCloseModal}
-                                isButtonDisabled = {false}
-                            /> 
+                                <FormButton 
+                                    value = 'close'
+                                    type = 'button'
+                                    handleBtnClick={handleCloseModal}
+                                    isButtonDisabled = {false}
+                                /> 
                         </div>
                         
                         </>
@@ -65,17 +66,23 @@ const handleFormSubmission = () => {
                             {children}
                         </div>
                         <div className='modal__btn'>
-                    <FormButton 
-                        value = {btnLabel}
-                        type = 'submit'
-                        handleBtnClick={handleFormSubmission}
-                        isButtonDisabled = {false}
-                    />
-                </div>
+                            <FormButton 
+                                value = {btnLabel}
+                                type = 'submit'
+                                handleBtnClick={handlePrimaryBtnClick}
+                                isButtonDisabled = {false}
+                            />
+                            {secondaryBtn && (
+                                <FormButton 
+                                    value = {secondaryBtnLabel}
+                                    type = 'button'
+                                    handleBtnClick={handleSecondaryBtnClick}
+                                    isButtonDisabled = {false}
+                                    className='formBtnSecondary'
+                                />
+                            )}
+                    </div>
                     </>}
-                
-                
-                
             </div>
         
 

@@ -1,8 +1,39 @@
-import React from 'react'
 import './Footer.scss'
 import { facebook, linkedin, twitter} from '../../../assets/icons';
+import ButtonLink from '../../../components/Atoms/Buttons/ButtonLink/ButtonLink'
+import Modal from '../../GeneralTemplates/Modal/Modal'
+import { useCookieModal } from '../../../contexts/CookieModalContext';
+import RadioCheckboxFieldset from '../../Atoms/RadioCheckboxFieldset/RadioCheckboxFieldset';
+import { useState } from 'react';
 
 const Footer = () => {
+  const { isCookieSettingsOpen, setIsCookieSettingsOpen } = useCookieModal();
+  const [cookieFilters, setCookieFilters] = useState({
+    cookieConsent: {
+      necessary: true,
+      analytics: true,
+      marketing: true
+    }
+  });
+
+  const handleCookieSettings = () => {
+    setIsCookieSettingsOpen(true);
+  }
+
+  const handleCheckboxChange = (groupKey, value) => {
+    setCookieFilters(prev => ({
+      ...prev,
+      [groupKey]: {
+        ...prev[groupKey],
+        [value]: !prev[groupKey][value]
+      }
+    }));
+  }
+
+  const handlePrimaryBtnClick = () => {
+    setIsCookieSettingsOpen(false);
+  }
+
   return (
     <div className='footer'>
         <div className='footer__container'>
@@ -47,12 +78,40 @@ const Footer = () => {
                 </div>
                 
                 <div className='footer__info-container-links'>
-                    <span>Feedback</span>
+                    <ButtonLink
+                        label = "Cookie Settings"
+                        className="button-link"
+                        handleClick={handleCookieSettings}
+                    />
                     <span>Copyright</span>
                     <span>Privacy</span>
                 </div>
             </div>
         </div>
+        <Modal 
+            title='Cookie Settings'
+            setIsModalOpen={setIsCookieSettingsOpen}
+            isModalOpen={isCookieSettingsOpen}
+            btnLabel='Save Preferences'
+            handlePrimaryBtnClick={handlePrimaryBtnClick}
+        >
+            <div className='cookie-settings'>
+            <p>This website stores cookies on your computer. These cookies are used to collect information about how you interact with our website and allow us to remember your browser. We use this information to improve and customize your browsing experience, for analytics and metrics about our visitors both on this website and other media, and for marketing purposes.</p>
+            <RadioCheckboxFieldset
+                groupKey="cookieConsent"
+                legend="Manage cookies"
+                options={[
+                    { id: "cookie-consent-1", name: "cookieConsent", value: "necessary", label: "Necessary", type: "checkbox", disabled: true },
+                    { id: "cookie-consent-2", name: "cookieConsent", value: "analytics", label: "Analytics", type: "checkbox" },
+                    { id: "cookie-consent-3", name: "cookieConsent", value: "marketing", label: "Marketing", type: "checkbox" }
+                ]}
+                filters={cookieFilters}
+                onRadioChange={() => {}}
+                onCheckboxChange={handleCheckboxChange}
+            />
+               
+            </div>
+        </Modal>
     </div>
   )
 }

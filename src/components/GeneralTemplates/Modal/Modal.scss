@@ -20,7 +20,7 @@
         flex-direction: column;
         gap: p.$size-m;
         width: fit-content;
-        max-width: p.px-to-rem(900);
+        max-width: p.px-to-rem(700);
         padding: p.$size-m;
         border: p.$size-m solid p.$border-global-grey;
         background: p.$primaryColor--white;
@@ -40,7 +40,14 @@
     }
 
     &__btn {
-        max-width: p.px-to-rem(290);
+        flex-direction: column;
+        display: flex;
+        gap: p.$size-s;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: row;
+            gap: p.$size-m;
+      }
     }
 
 }

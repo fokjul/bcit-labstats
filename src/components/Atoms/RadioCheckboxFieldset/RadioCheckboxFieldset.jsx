@@ -26,8 +26,9 @@ const RadioCheckboxFieldset = ({
             onChange={
               item.type === "radio"
                 ? onRadioChange
-                : onCheckboxChange(groupKey, item.value)
+                : () => onCheckboxChange(groupKey, item.value)
             }
+            disabled={item.disabled}
           />
           <label htmlFor={item.id} className='filterSet__label'>{item.label}</label>
         </div>

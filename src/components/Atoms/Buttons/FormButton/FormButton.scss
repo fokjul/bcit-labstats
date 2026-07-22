@@ -1,0 +1,29 @@
+@use '../../../../styles/partials/' as p;
+
+.formBtnPrimary {
+    background-color: p.$primaryColor--blue;  
+    border: none;
+    border-radius: p.$size-xxs;
+    @include p.label;
+    color: p.$primaryColor--white;
+    padding: p.$size-s;
+    cursor: pointer;
+    &:hover {
+        background-color: p.$primaryColor--darkBlue;
+    }
+}
+
+.formBtnSecondary {
+    background-color: p.$primaryColor--white;  
+    border: 1px, solid, p.$primaryColor--blue; 
+    border-radius: p.$size-xxs;
+    @include p.label;
+    color: p.$primaryColor--blue; 
+    padding: p.$size-s;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px, solid, p.$primaryColor--darkBlue; 
+        color: p.$primaryColor--darkBlue; 
+    }
+}

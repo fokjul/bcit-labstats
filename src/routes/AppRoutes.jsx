@@ -7,6 +7,7 @@ import DonationPage from "../prototypes/Donation/DonationPage/DonationPage";
 import LabAvailabilityPage from "../prototypes/LabAvailabilityPage/LabAvailabilityPage";
 import IceChatbot from "../prototypes/IceChatbot/IceChatbot";
 import StudentLoans from "../prototypes/StudentLoans/StudentLoans";
+import ConsentMode from "../prototypes/ConsentMode/ConsentMode";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route exact path="/prototypes/donation" element={<DonationPage />} />
       <Route exact path="/prototypes/ice-chatbot" element={<IceChatbot />} />
       <Route exact path="/prototypes/student-loans" element={<StudentLoans />} />
+      <Route exact path="/prototypes/consent-mode" element={<ConsentMode />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

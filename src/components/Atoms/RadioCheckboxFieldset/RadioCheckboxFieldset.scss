@@ -5,6 +5,9 @@
   display: flex;
   flex-direction: column;
   gap: p.$size-xs;
+  margin-inline: 0;
+  margin-block: p.$size-s;
+  padding: 0;
   
   &__legend {
     @extend .body-copy;

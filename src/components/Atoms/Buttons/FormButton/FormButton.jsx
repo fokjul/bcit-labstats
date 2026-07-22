@@ -1,9 +1,9 @@
 import './FormButton.scss'
 
-const FormButton = ({value, type, isButtonDisabled = false, handleBtnClick = ''}) => {
+const FormButton = ({value, type, isButtonDisabled = false, handleBtnClick = '', className='formBtnPrimary'}) => {
   return (
     <input 
-      className = 'submitFormButton' 
+      className = {className}
       disabled = {isButtonDisabled}
       onClick = {() => handleBtnClick()}
       type = {type}
