@@ -4,14 +4,15 @@
   border: none;
   display: flex;
   flex-direction: column;
-  gap: p.$size-xs;
+  gap: p.$size-m;
   margin-inline: 0;
   margin-block: p.$size-s;
   padding: 0;
   
   &__legend {
-    @extend .body-copy;
+    @extend .heading5;
     font-weight: p.$font-bold;
+    margin-bottom: p.$size-xs;
   }
   
   &__inputSet {
@@ -27,5 +28,11 @@
   
   &__label {
     @extend .body-copy;
+    font-weight: p.$font-bold;
+  }
+  
+  &__description {
+    @extend .body-copy;
+    margin-left: p.$size-m;
   }
 }

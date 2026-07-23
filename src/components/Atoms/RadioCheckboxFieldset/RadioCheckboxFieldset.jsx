@@ -12,26 +12,30 @@ const RadioCheckboxFieldset = ({
     <fieldset className='filterSet'>
       <legend className='filterSet__legend'>{legend}</legend>
       {options.map((item) => (
-        <div key={item.id} className='filterSet__input'>
-          <input
-            type={item.type}
-            id={item.id}
-            name={item.name}
-            value={item.value}
-            checked={
-              item.type === "radio"
-                ? filters[groupKey] === item.value
-                : filters[groupKey][item.value]
-            }
-            onChange={
-              item.type === "radio"
-                ? onRadioChange
-                : () => onCheckboxChange(groupKey, item.value)
-            }
-            disabled={item.disabled}
-          />
-          <label htmlFor={item.id} className='filterSet__label'>{item.label}</label>
+        <div>
+          <div key={item.id} className='filterSet__input'>
+            <input
+              type={item.type}
+              id={item.id}
+              name={item.name}
+              value={item.value}
+              checked={
+                item.type === "radio"
+                  ? filters[groupKey] === item.value
+                  : filters[groupKey][item.value]
+              }
+              onChange={
+                item.type === "radio"
+                  ? onRadioChange
+                  : () => onCheckboxChange(groupKey, item.value)
+              }
+              disabled={item.disabled}
+            />
+            <label htmlFor={item.id} className='filterSet__label'>{item.label}</label>
+          </div>
+           <div className='filterSet__description'>{item.description}</div>
         </div>
+       
       ))}
     </fieldset>
   );

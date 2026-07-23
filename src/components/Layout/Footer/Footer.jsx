@@ -101,9 +101,9 @@ const Footer = () => {
                 groupKey="cookieConsent"
                 legend="Manage cookies"
                 options={[
-                    { id: "cookie-consent-1", name: "cookieConsent", value: "necessary", label: "Necessary", type: "checkbox", disabled: true },
-                    { id: "cookie-consent-2", name: "cookieConsent", value: "analytics", label: "Analytics", type: "checkbox" },
-                    { id: "cookie-consent-3", name: "cookieConsent", value: "marketing", label: "Marketing", type: "checkbox" }
+                    { id: "cookie-consent-1", name: "cookieConsent", value: "necessary", label: "Strictly necessary", type: "checkbox", disabled: true, description: "Keeps the site secure and working — page navigation, forms, and saving these very choices. Cannot be switched off." },
+                    { id: "cookie-consent-2", name: "cookieConsent", value: "analytics", label: "Analytics & performance", type: "checkbox", description: "Helps us see which pages are useful and where students get stuck, so we can fix and improve them." },
+                    { id: "cookie-consent-3", name: "cookieConsent", value: "marketing", label: "Advertising & marketing", type: "checkbox", description: "Lets us show and measure BCIT program ads that are relevant to you on other sites." }
                 ]}
                 filters={cookieFilters}
                 onRadioChange={() => {}}

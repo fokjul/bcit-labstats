@@ -110,7 +110,10 @@
             gap: p.$size-s;
         }
     }
+}
 
-
-    
+.cookie-settings {
+    p {
+        @extend .body-copy;
+    }
 }
