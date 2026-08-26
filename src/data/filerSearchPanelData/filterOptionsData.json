@@ -1,0 +1,96 @@
+{
+  "category": {
+    "legend": "Category",
+    "options": [
+      {
+        "type": "radio",
+        "id": "administration",
+        "name": "administration",
+        "value": "administration",
+        "label": "Administration"
+      },
+      {
+        "type": "radio",
+        "id": "education",
+        "name": "education",
+        "value": "education",
+        "label": "Education"
+      },
+      {
+        "type": "radio",
+        "id": "foundationLiaison",
+        "name": "foundationLiaison",
+        "value": "foundationLiaison",
+        "label": "Foundation and Industry Liaison"
+      },
+      {
+        "type": "radio",
+        "id": "financeServices",
+        "name": "financeServices",
+        "value": "financeServices",
+        "label": "Finance and Corporate Services"
+      },
+      {
+        "type": "radio",
+        "id": "governance",
+        "name": "governance",
+        "value": "governance",
+        "label": "Governance"
+      },
+      {
+        "type": "radio",
+        "id": "humanResources",
+        "name": "humanResources",
+        "value": "humanResources",
+        "label": "Human Resources"
+      },
+      {
+        "type": "radio",
+        "id": "informationManagement",
+        "name": "informationManagement",
+        "value": "informationManagement",
+        "label": "Information Management"
+      },
+      {
+        "type": "radio",
+        "id": "researchInternational",
+        "name": "researchInternational",
+        "value": "researchInternational",
+        "label": "Research and International"
+      },
+      {
+        "type": "radio",
+        "id": "ssem",
+        "name": "ssem",
+        "value": "ssem",
+        "label": "Safety, Security and Emergency Management"
+      },
+      {
+        "type": "radio",
+        "id": "studentServices",
+        "name": "studentServices",
+        "value": "studentServices",
+        "label": "Student Services"
+      }
+    ]
+  },
+  "status": {
+    "legend": "Status",
+    "options": [
+      {
+        "type": "radio",
+        "id": "underReview",
+        "name": "underReview",
+        "value": "underReview",
+        "label": "Under Review"
+      },
+      {
+        "type": "radio",
+        "id": "Revised",
+        "name": "revised",
+        "value": "revised",
+        "label": "Revised"
+      }
+    ]
+  }
+}

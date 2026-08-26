@@ -1,0 +1,15 @@
+{
+    "sectionTitle": "About BCIT",
+    "items": [
+      {
+        "title": "Leadership & Vision",
+        "link": "/#",
+        "children": [
+          {
+            "title": "Policies",
+            "link": "/#"
+          }
+        ]
+      }
+    ]
+  }

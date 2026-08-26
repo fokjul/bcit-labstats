@@ -9,6 +9,7 @@ const Home = () => {
         <li><Link to='/prototypes/donation'>Donation Page Prototype</Link></li>
         <li><Link to='/prototypes/student-loans'>Student Loans Prototype</Link></li>
         <li><Link to='/prototypes/consent-mode'>Consent Mode Prototype</Link></li>
+        <li><Link to='/prototypes/filter-search-panel'>Filter Search Panel Prototype</Link></li>
       </ul>
     </div>
   )

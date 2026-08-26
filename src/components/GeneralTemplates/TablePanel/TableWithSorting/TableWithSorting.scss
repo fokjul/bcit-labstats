@@ -1,0 +1,125 @@
+@use '../../../../styles/partials/' as p;
+
+.lab-table {
+  width: 100%;
+}
+
+.table-row-simple {
+  border-bottom: 1px solid p.$border-grey;
+  
+  &:hover {
+    background-color: p.$background-grey;
+  }
+}
+
+.table-row {
+    &-cell-simple {
+        border: 1px solid p.$border-grey;  
+        border-spacing: 0; 
+        padding: p.$size-s;
+        vertical-align: top;
+    }
+
+    &-link {
+      color: p.$primaryColor--blue;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-cell-complex {
+      border: 1px solid p.$border-grey;  
+      border-spacing: 0; 
+
+      button {
+        border: none;
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: p.$size-s;
+        width: 100%;
+        //min-width: p.px-to-rem(300);
+
+        @include p.breakpoint(tablet) {
+          min-width: p.px-to-rem(310);
+        }
+
+        .rotatedUp {
+          transform: rotate(270deg);
+        }
+
+        .rotatedDown {
+          transform: rotate(90deg);
+        }
+
+      }
+
+      &-expanded {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        text-align: left;
+        grid-template-areas:
+          "building status"
+          "platform status";
+        padding-block: p.$size-s;
+        border-top: 1px solid p.$border-grey; 
+
+        td { 
+          padding-left: p.$size-s;
+          padding-right: p.$size-s;
+          //padding-block: p.$size-s;
+          border-spacing: 0; 
+          width: 100%;
+
+          &:nth-child(1) {
+            // Hide their original borders to make them look merged
+            grid-area: building;
+            border-right: none;
+            border-bottom: none;
+            padding-top: xxs;
+          }
+          
+          &:nth-child(2) {
+            // Hide their original borders to make them look merged
+            border-right: none;
+            border-bottom: none;
+            border-top: 0; 
+            padding-bottom: xxs;
+            grid-area: platform;
+          }
+
+          &:nth-child(3) { // Status
+            grid-area: status;
+            align-self: center;
+            grid-area: status;
+          }
+          
+          @include p.breakpoint(tablet) {
+            grid-template-columns: 1fr 1fr auto;
+          }
+        }
+
+        @include p.breakpoint(tablet) {
+            grid-template-columns: 1fr 1fr auto;
+            grid-template-areas: "building platform status";
+          }
+
+        
+      }
+    }
+}
+
+.table-header {
+    background-color: p.$background-grey;
+    border: 1px solid p.$border-grey;  
+
+    &-cell { 
+        padding: p.$size-xs;
+        text-align: left;
+        border: 1px solid p.$border-grey;
+        border-spacing: 0;
+    }
+} 

@@ -14,10 +14,10 @@ const Table = ({ data }) => {
     <table className="lab-table">
       <TableHeader />
       <tbody>
-        {data.map((lab, index) => (
+        {data.map((item, index) => (
           <TableRow 
-            key={lab.labName}
-            data={lab}
+            key={item.labName}
+            data={item}
             />
         ))}
       </tbody>

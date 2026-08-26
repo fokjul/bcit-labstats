@@ -8,6 +8,7 @@ import LabAvailabilityPage from "../prototypes/LabAvailabilityPage/LabAvailabili
 import IceChatbot from "../prototypes/IceChatbot/IceChatbot";
 import StudentLoans from "../prototypes/StudentLoans/StudentLoans";
 import ConsentMode from "../prototypes/ConsentMode/ConsentMode";
+import FilterSearchPanel from "../prototypes/FilterSearchPanel/FilterSearchPanel";
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const AppRoutes = () => {
       <Route exact path="/prototypes/ice-chatbot" element={<IceChatbot />} />
       <Route exact path="/prototypes/student-loans" element={<StudentLoans />} />
       <Route exact path="/prototypes/consent-mode" element={<ConsentMode />} />
+      <Route exact path="/prototypes/filter-search-panel" element={<FilterSearchPanel />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
