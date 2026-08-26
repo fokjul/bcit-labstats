@@ -1,0 +1,108 @@
+{
+  "filters": {
+    "category": {
+      "legend": "Category",
+      "options": [
+        { "id": "administration", "value": "administration", "label": "Administration" },
+        { "id": "education", "value": "education", "label": "Education" },
+        { "id": "foundation_liaison", "value": "foundation_liaison", "label": "Foundation and Industry Liaison" },
+        { "id": "finance_services", "value": "finance_services", "label": "Finance and Corporate Services" },
+        { "id": "governance", "value": "governance", "label": "Governance" },
+        { "id": "human_resources", "value": "human_resources", "label": "Human Resources" },
+        { "id": "information_management", "value": "information_management", "label": "Information Management" },
+        { "id": "research_international", "value": "research_international", "label": "Research and International" },
+        { "id": "ssem", "value": "ssem", "label": "Safety, Security and Emergency Management" },
+        { "id": "student_services", "value": "student_services", "label": "Student Services" }
+      ]
+    },
+    "status": {
+      "legend": "Status",
+      "options": [
+        { "id": "under_review", "value": "under_review", "label": "Under Review" },
+        { "id": "revised", "value": "revised", "label": "Revised" }
+      ]
+    }
+  },
+  "items": [
+    {
+      "id": "1000",
+      "title": "1000 – Policy Development and Maintenance",
+      "fileType": "PDF",
+      "link": "https://www.bcit.ca/files/pdf/policies/2004.pdf",
+      "category": "administration",
+      "status": "under_review"
+    },
+    {
+      "id": "1010",
+      "title": "1010 – Economic, Social, and Environmental Sustainability",
+      "fileType": "PDF",
+      "link": "https://www.bcit.ca/files/pdf/policies/1010.pdf",
+      "category": "administration",
+      "status": "under_review"
+    },
+    {
+      "id": "5601",
+      "title": "5601 – Faculty Qualifications",
+      "fileType": "PDF",
+      "link": "https://www.bcit.ca/files/pdf/policies/5601.pdf",
+      "category": "education",
+      "status": "under_review"
+    },
+    {
+      "id": "5701",
+      "title": "5701 – Academic Freedom",
+      "fileType": "PDF",
+      "link": "https://www.bcit.ca/files/pdf/policies/5701.pdf",
+      "category": "education",
+      "status": "under_review"
+    },
+    {
+      "id": "5801",
+      "title": "5801 – Educational Affiliations",
+      "fileType": "PDF",
+      "link": "https://www.bcit.ca/files/pdf/policies/5801.pdf",
+      "category": "education",
+      "status": "under_review"
+    },
+    {
+      "id": "5801-PR1",
+      "title": "5801-PR1 – Education Affiliation Development Process",
+      "fileType": "PDF",
+      "link": "https://www.bcit.ca/files/pdf/policies/5801-pr1.pdf",
+      "category": "education",
+      "status": "under_review"
+    },
+    {
+      "id": "5900",
+      "title": "5900 – Educational Technology Policy",
+      "fileType": "PDF",
+      "link": "https://www.bcit.ca/files/pdf/policies/5900.pdf",
+      "category": "education",
+      "status": "under_review"
+    },
+    {
+      "id": "5900-PR1",
+      "title": "5900-PR1 – Educational Technology Selection and Implementation Procedures",
+      "fileType": "PDF",
+      "link": "https://www.bcit.ca/files/pdf/policies/5900-pr1.pdf",
+      "category": "education",
+      "status": "under_review"
+    },
+    {
+      "id": "5900-PR2",
+      "title": "5900-PR2 – Educational Technology Selection Criteria",
+      "fileType": "PDF",
+      "link": "https://www.bcit.ca/files/pdf/policies/5900-pr2.pdf",
+      "category": "education",
+      "status": "under_review"
+    },
+    {
+      "id": "5900-PR3",
+      "title": "5900-PR3 – Educational Technology Privacy Compliance",
+      "fileType": "PDF",
+      "link": "https://www.bcit.ca/files/pdf/policies/5900-pr3.pdf",
+      "category": "education",
+      "status": "under_review"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import './FilterSearchPanel.scss'
+import './Policies.scss'
 import { useMemo, useState } from "react";
 
 // Components
@@ -11,13 +11,14 @@ import ButtonIconLarge from '../../components/Atoms/Buttons/ButtonIconLarge/Butt
 import ButtonIconLink from '../../components/Atoms/Buttons/ButtonIconLink/ButtonIconLink';
 import RadioCheckboxFieldset from '../../components/Atoms/RadioCheckboxFieldset/RadioCheckboxFieldset';
 import TableWithSorting from '../../components/GeneralTemplates/TablePanel/TableWithSorting/TableWithSorting';
+import FilterSearchPanel from '../../components/Panels/FilterSearchPanel/FilterSearchPanel';
 
 // Data
-import filerSearchData from '../../data/filerSearchPanelData/filterSearchData.json';
-import sideBarMenuData from '../../data/filerSearchPanelData/sideBarMenuData.json';
-import filterOptionsData from '../../data/filerSearchPanelData/filterOptionsData.json';
+import policyTableData from '../../data/PolicyData/policyTableData.json';
+import policySideBarMenuData from '../../data/PolicyData/policySideBarMenuData.json';
+import policyFilterData from '../../data/PolicyData/policyFilterData.json';
 
-const FilterSearchPanel = () => {
+const Policies = () => {
   const initialFilters = {
     loanEligibility: "eligible",
     studyFormat: {
@@ -148,83 +149,7 @@ const FilterSearchPanel = () => {
         <div className="contentArea">
           <SidebarMenu content={sideBarMenuData} />
           <div className="contentArea__main">
-            <div className="contentArea__main__container">
-              <div className='contentArea__main__search'>
-                {/* <h3>Search by program name</h3> */}
-
-                <div className="student-loans__search-wrap">
-                  <SearchBarLarge
-                    placeholder="Search by policy name, number or keyword"
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                  />
-
-                  {searchResults.length > 0 && (
-                    <ul className="student-loans__autocomplete">
-                      {searchResults.map((program) => (
-                        <li
-                          key={program}
-                          className="student-loans__autocomplete-item"
-                          onClick={() => handleSelectProgram(program)}
-                        >
-                          {program}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-
-              <div className='contentArea__main__filter'>
-                <h3>or Explore programs</h3>
-                <form onSubmit={handleSubmit} className='contentArea__main__filter-form'>
-                <div className='contentArea__main__filter-form__group'>
-                  {Object.entries(filterOptionsData).map(([groupKey, group]) => (
-                    <RadioCheckboxFieldset
-                        key={groupKey}
-                        groupKey={groupKey}
-                        legend={group.legend}
-                        options={group.options}
-                        filters={filters}
-                        onRadioChange={handleRadioChange}
-                        onCheckboxChange={handleCheckboxChange}
-                    />
-                ))}
-                </div>
-                <div className='contentArea__main__filter-form__actions'>
-                    <ButtonIconLarge
-                    icon="filter"
-                    label="Filter programs"
-                    designType="primary"
-                    type="submit"
-                  />
-
-                  <ButtonIconLink
-                    icon=""
-                    label="Reset Filter"
-                    type="reset"
-                    handleClick={handleReset}
-                  />
-                </div>
-                </form>
-              </div>
-              <div className='contentArea__main__result'>
-                 {selectedProgram && (
-                  <div className="student-loans__result">
-                    <h3>{selectedProgramName}</h3>
-                    {selectedProgram.map((item) => (
-                      <>
-                        <p>{item.status}</p>
-                        <p>{item.start_date}</p>
-                      </>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <TableWithSorting 
-                data={filerSearchData}
-              />
-            </div>
+            <FilterSearchPanel />
           </div>
         </div>
       </div>
@@ -232,4 +157,4 @@ const FilterSearchPanel = () => {
   );
 };
 
-export default FilterSearchPanel
+export default Policies
