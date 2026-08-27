@@ -14,9 +14,8 @@ import TableWithSorting from '../../components/GeneralTemplates/TablePanel/Table
 import FilterSearchPanel from '../../components/Panels/FilterSearchPanel/FilterSearchPanel';
 
 // Data
-import policyTableData from '../../data/PolicyData/policyTableData.json';
+import policyData from '../../data/PolicyData/policyData.json';
 import policySideBarMenuData from '../../data/PolicyData/policySideBarMenuData.json';
-import policyFilterData from '../../data/PolicyData/policyFilterData.json';
 
 const Policies = () => {
   const initialFilters = {
