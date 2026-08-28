@@ -2,17 +2,17 @@ import React from 'react';
 import './SearchBarLarge.scss';
 import { search } from '../../../assets/icons'
 
-const SearchBarLarge = ({placeholder = 'Search', value, onChange}) => {
+const SearchBarLarge = ({placeholder = 'Search', value, onChange, showFullSearch, hideSmallSearch, hideSearchIcon = false}) => {
   return (
     <>
-       <div className='searchBar'>
+       <div className={`searchBar ${showFullSearch ? 'showFullSearch' : ''}`}>
         <input className='searchBar__input' placeholder={placeholder} value={value} onChange={onChange}/>
-        <button className='searchBar__button' type='submit'>
+        <button className={`searchBar__button ${hideSearchIcon ? 'hideSearchIcon' : ''}`} type='submit'>
             <img src={search} alt='search icon' className='searchBar__button-icon'/>
         </button>
       </div>
       <div className='searchBar--mobile'>
-          <button className='searchBar--mobile__button' type='submit'>
+          <button className={`searchBar--mobile__button ${hideSearchIcon ? 'hideSearchIcon' : ''}`} type='submit'>
               <img src={search} alt='search icon' className='searchBar--mobile__button-icon'/>
           </button>
       </div>

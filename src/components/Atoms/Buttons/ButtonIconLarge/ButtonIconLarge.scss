@@ -30,6 +30,24 @@
         }
     }
 
+        &--accordion {
+        background-color: p.$primaryColor--white;
+        border: 1px solid p.$border-dark-grey;
+        color: p.$primaryColor--darkBlue;
+        font-weight: p.$font-bold;
+        text-transform: uppercase;
+        &::after {
+            font-family: 'Font Awesome 5 Free'; 
+            font-weight: 600;
+            content: '\f054'
+        }
+
+                @include p.breakpoint(tablet) {
+            width: fit-content;
+            //width: 100%;
+        }
+    }
+
     &--primary {
         background-color: p.$primaryColor--blue;
         color: p.$primaryColor--white;
@@ -78,6 +96,19 @@
 
         @include p.breakpoint(tablet) {
             width: fit-content;
+        }
+    }
+
+    &.arrow-right {
+        &::after {
+            transform: rotate(90deg);
+        }
+    }
+
+    &.arrow-down {
+        //background-color: p.$primaryColor--darkBlue;
+        &::after {
+            transform: rotate(90deg);
         }
     }
 }

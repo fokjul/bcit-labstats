@@ -4,13 +4,33 @@
   border: none;
   display: flex;
   flex-direction: column;
-  gap: p.$size-m;
+  gap: p.$size-xs;
   margin-inline: 0;
   margin-block: p.$size-s;
   padding: 0;
   
+  &--dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: p.$size-xs;
+  }
+
+  &__dropdown {
+    padding: p.$size-s;
+    border: 1px solid p.$border-dark-grey;
+    border-radius: p.$size-xxs;
+    background-color: p.$primaryColor--white;
+    font-size: p.$size-s;
+    color: p.$secondaryColor--fontGrey;
+    
+    &:focus {
+      outline: 2px solid p.$primaryColor--blue;
+      outline-offset: 2px;
+    }
+  }
+
   &__legend {
-    @extend .heading5;
+    @extend .body-copy;
     font-weight: p.$font-bold;
     margin-bottom: p.$size-xs;
   }
@@ -28,7 +48,7 @@
   
   &__label {
     @extend .body-copy;
-    font-weight: p.$font-bold;
+    font-weight: p.$font-reg;
   }
   
   &__description {

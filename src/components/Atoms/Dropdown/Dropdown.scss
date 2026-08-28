@@ -1,0 +1,49 @@
+@use '../../../styles/partials/' as p;
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: p.$size-xs;
+    width: 100%;
+    
+
+    @include p.breakpoint(tablet) {
+            max-width: 250px;
+        }
+
+    &__label {
+        @extend .body-copy;
+        font-weight: p.$font-bold;
+        color: p.$primaryColor--darkBlue;
+    }
+
+    &__select {
+        transition: all .15s ease-in-out;
+        padding: 0 16px;
+        border: 1px solid #bababa;
+        border-radius: 3px;
+        background-color: #fff;
+        display: block;
+        width: 100%;
+        height: 45px;
+        letter-spacing: normal;
+        text-transform: none;
+        font: normal 400 16px/1.78 Nunito Sans,Arial,sans-serif;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        
+        &:focus {
+            outline: 2px solid p.$primaryColor--blue;
+            outline-offset: 2px;
+        }
+
+        &::placeholder {
+            color: p.$secondaryColor--fontGrey;
+        }
+    }
+}

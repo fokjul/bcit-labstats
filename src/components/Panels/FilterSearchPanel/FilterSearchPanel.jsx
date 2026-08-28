@@ -2,85 +2,68 @@ import './FilterSearchPanel.scss'
 import { useMemo, useState } from "react";
 
 // Components
-import Breadcrumbs from "../../CourseTemplates/Breadcrumbs/Breadcrumbs";
-import PageLayout from "../../Layout/PageLayout/PageLayout";
-import GeneralPageHeader from "../../GeneralTemplates/GeneralPageHeader/GeneralPageHeader";
-import SidebarMenu from "../../Navigation/Sidebar/SidebarMenu/SidebarMenu";
 import SearchBarLarge from '../../Atoms/SearchBarLarge/SearchBarLarge';
 import ButtonIconLarge from '../../Atoms/Buttons/ButtonIconLarge/ButtonIconLarge';
 import ButtonIconLink from '../../Atoms/Buttons/ButtonIconLink/ButtonIconLink';
 import RadioCheckboxFieldset from '../../Atoms/RadioCheckboxFieldset/RadioCheckboxFieldset';
+import Dropdown from '../../Atoms/Dropdown/Dropdown';
 import TableWithSorting from '../../GeneralTemplates/TablePanel/TableWithSorting/TableWithSorting';
 
-// Data
-
-
-const FilterSearchPanel = ({filterData, tableData}) => {
-  const initialFilters = {
-    loanEligibility: "eligible",
-    studyFormat: {
-      partTime: false,
-      fullTime: false
-    },
-    studyAreas: {
-      business: false,
-      healthScience: false,
-      appliedScience: false,
-      engineering: false,
-      technology: false,
-      trades: false
-    },
-    educationLevel: {
-      graduate: false,
-      undergraduate: false,
-      trades: false
-    }
+const FilterSearchPanel = ({ filterData, tableData, searchPlaceholder = "Search...", searchTitle = "Search", buttonLabel = "Filter" }) => {
+  // Dynamically build initial filters from filterData
+  const buildInitialFilters = () => {
+    if (!filterData) return {};
+    
+    const initialFilters = {};
+    Object.entries(filterData).forEach(([groupKey, group]) => {
+      // If there are more than 3 options, treat as dropdown (single selection)
+      // If 3 or fewer options, treat as radio buttons (single selection)
+      // Both start with null to show all items initially
+      initialFilters[groupKey] = null;
+    });
+    return initialFilters;
   };
 
-  const [filters, setFilters] = useState(initialFilters);
+  const [filters, setFilters] = useState(buildInitialFilters);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [selectedProgramName, setSelectedProgramName] = useState("");
-  const [selectedProgram, setSelectedProgram] = useState(null);
+  const [showFilters, setShowFilters] = useState(false);
 
-  const programNames = useMemo(
-    () => Object.keys(filerSearchData.data || {}),
-    []
+  const itemNames = useMemo(
+    () => tableData ? tableData.map(item => item.title || item.name || item.id) : [],
+    [tableData]
   );
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchQuery(value);
-    setSelectedProgramName("");
-    setSelectedProgram(null);
 
     if (!value.trim()) {
       setSearchResults([]);
       return;
     }
 
-    const filtered = programNames
-      .filter((program) =>
-        program.toLowerCase().includes(value.toLowerCase())
+    const filtered = itemNames
+      .filter((name) =>
+        name.toLowerCase().includes(value.toLowerCase())
       )
       .slice(0, 8);
 
     setSearchResults(filtered);
   };
 
-  const handleSelectProgram = (program) => {
-    setSearchQuery(program);
-    setSelectedProgramName(program);
-    setSelectedProgram(filerSearchData.data[program]);
-    setSearchResults([]);
-  };
-
   const handleRadioChange = (e) => {
     const { name, value } = e.target;
-
     setFilters((prev) => ({
       ...prev,
       [name]: value
+    }));
+  };
+
+  const handleDropdownChange = (groupKey, value) => {
+    setFilters((prev) => ({
+      ...prev,
+      [groupKey]: value
     }));
   };
 
@@ -100,122 +83,149 @@ const FilterSearchPanel = ({filterData, tableData}) => {
   };
 
   const handleReset = () => {
-    setFilters(initialFilters);
-    //setSearchQuery("");
-    //setSearchResults([]);
-    //setSelectedProgramName("");
-    //setSelectedProgram(null);
+    setFilters(buildInitialFilters);
+    setSearchQuery("");
+    setSearchResults([]);
   };
 
-  {Object.entries(filterOptionsData).map(([groupKey, group]) => (
-  <fieldset key={groupKey}>
-    <legend>{group.legend}</legend>
+  // Filter table data based on search and filters
+  const filteredTableData = useMemo(() => {
+    if (!tableData) return [];
+    
+    return tableData.filter(item => {
+      // Search filter
+      if (searchQuery) {
+        const searchLower = searchQuery.toLowerCase();
+        const titleMatch = (item.title || '').toLowerCase().includes(searchLower);
+        if (!titleMatch) return false;
+      }
 
-    {group.options.map((option) => (
-      <label key={option.id}>
-        <input
-          type={option.type}
-          id={option.id}
-          name={option.name}
-          value={option.value}
-
-          checked={
-            option.type === "radio"
-              ? filters.loanEligibility === option.value
-              : filters[groupKey][option.value]
+      // Apply other filters
+      for (const [groupKey, filterValue] of Object.entries(filters)) {
+        if (filterValue && typeof filterValue === 'object') {
+          // Checkbox filters - at least one must be checked
+          const checkedValues = Object.entries(filterValue)
+            .filter(([_, checked]) => checked)
+            .map(([value]) => value);
+          
+          if (checkedValues.length > 0) {
+            const itemValue = item[groupKey];
+            if (!checkedValues.includes(itemValue)) return false;
           }
+        } else if (filterValue !== null && filterValue !== undefined && filterValue !== '') {
+          // Radio filters - exact match (only if a value is selected)
+          const itemValue = item[groupKey];
+          if (itemValue !== filterValue) return false;
+        }
+      }
 
-          onChange={
-            option.type === "radio"
-              ? handleRadioChange
-              : handleCheckboxChange(groupKey, option.value)
-          }
-        />
-
-        {option.label}
-      </label>
-    ))}
-  </fieldset>
-))}
+      return true;
+    });
+  }, [tableData, searchQuery, filters]);
 
   return (
-     <div className="contentArea__main__container">
-              <div className='contentArea__main__search'>
-                {/* <h3>Search by program name</h3> */}
+    <div className="contentArea__main__container">
+      <div className='contentArea__main__filter-bar'>
+        <div className="contentArea__main__search-container">
+          <h3>{searchTitle}</h3>
+          <div className="student-loans__search-wrap">
+            <SearchBarLarge
+              placeholder={searchPlaceholder}
+              value={searchQuery}
+              onChange={handleSearchChange}
+              hideSmallSearch={true}
+              showFullSearch={true}
+              hideSearchIcon={true}
+            />
 
-                <div className="student-loans__search-wrap">
-                  <SearchBarLarge
-                    placeholder="Search by policy name, number or keyword"
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                  />
-
-                  {searchResults.length > 0 && (
-                    <ul className="student-loans__autocomplete">
-                      {searchResults.map((program) => (
-                        <li
-                          key={program}
-                          className="student-loans__autocomplete-item"
-                          onClick={() => handleSelectProgram(program)}
-                        >
-                          {program}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-
-              <div className='contentArea__main__filter'>
-                <h3>or Explore programs</h3>
-                <form onSubmit={handleSubmit} className='contentArea__main__filter-form'>
-                <div className='contentArea__main__filter-form__group'>
-                  {Object.entries(filterOptionsData).map(([groupKey, group]) => (
-                    <RadioCheckboxFieldset
-                        key={groupKey}
-                        groupKey={groupKey}
-                        legend={group.legend}
-                        options={group.options}
-                        filters={filters}
-                        onRadioChange={handleRadioChange}
-                        onCheckboxChange={handleCheckboxChange}
-                    />
+            {searchResults.length > 0 && (
+              <ul className="student-loans__autocomplete">
+                {searchResults.map((name, index) => (
+                  <li
+                    key={index}
+                    className="student-loans__autocomplete-item"
+                    onClick={() => {
+                      setSearchQuery(name);
+                      setSearchResults([]);
+                    }}
+                  >
+                    {name}
+                  </li>
                 ))}
-                </div>
-                <div className='contentArea__main__filter-form__actions'>
-                    <ButtonIconLarge
-                    icon="filter"
-                    label="Filter programs"
-                    designType="primary"
-                    type="submit"
-                  />
+              </ul>
+            )}
+          </div>
+        </div>
+        {filterData && (
+          <div className="contentArea__main__filter-btn-container">
+            <ButtonIconLarge
+              label={buttonLabel}
+              designType="accordion"
+              arrowType="down"
+              handleBtnClick={() => setShowFilters(!showFilters)}
+              className={showFilters ? 'open' : ''}
+            />
+          </div>
+        )}
+      </div>
 
-                  <ButtonIconLink
-                    icon=""
-                    label="Reset Filter"
-                    type="reset"
-                    handleClick={handleReset}
+      {filterData && showFilters && (
+        <div className='contentArea__main__filter'>
+          <form onSubmit={handleSubmit} className='contentArea__main__filter-form'>
+            <div className='contentArea__main__filter-form__group'>
+              {Object.entries(filterData).map(([groupKey, group]) => {
+                // If there are more than 3 options, use Dropdown
+                if (group.options.length > 3) {
+                  return (
+                    <Dropdown
+                      key={groupKey}
+                      id={group.options[0].id}
+                      name={group.options[0].name}
+                      label={group.legend}
+                      value={filters[groupKey]}
+                      options={group.options}
+                      onChange={(e) => handleDropdownChange(groupKey, e.target.value)}
+                      placeholder="All"
+                    />
+                  );
+                }
+                // Otherwise use RadioCheckboxFieldset
+                return (
+                  <RadioCheckboxFieldset
+                    key={groupKey}
+                    groupKey={groupKey}
+                    legend={group.legend}
+                    options={group.options}
+                    filters={filters}
+                    onRadioChange={handleRadioChange}
+                    onCheckboxChange={handleCheckboxChange}
                   />
-                </div>
-                </form>
-              </div>
-              <div className='contentArea__main__result'>
-                 {selectedProgram && (
-                  <div className="student-loans__result">
-                    <h3>{selectedProgramName}</h3>
-                    {selectedProgram.map((item) => (
-                      <>
-                        <p>{item.status}</p>
-                        <p>{item.start_date}</p>
-                      </>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <TableWithSorting 
-                data={filerSearchData}
+                );
+              })}
+            </div>
+            <div className='contentArea__main__filter-form__actions'>
+              {/* <ButtonIconLarge
+                icon="filter"
+                label="Apply Filter"
+                designType="primary"
+                type="submit"
+              /> */}
+
+              <ButtonIconLink
+                icon=""
+                label="Reset Filter"
+                type="reset"
+                handleClick={handleReset}
               />
             </div>
+          </form>
+        </div>
+      )}
+
+      <TableWithSorting 
+        data={filteredTableData}
+      />
+    </div>
   );
 };
 

@@ -11,7 +11,10 @@ const WebsiteHeader = () => {
           <Logo />
           <div className='navMenuBar__menu-container'>
             <TopMenu />
-            <SearchBarLarge />
+            <SearchBarLarge 
+              showFullSearch={false}
+              hideSmallSearch={false}
+            />
           </div>
           
         </div>

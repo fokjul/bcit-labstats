@@ -5,7 +5,7 @@ const TableWithSorting = ({ data, columns }) => {
   // Handle undefined or null data
   const tableData = data || [];
   
-  // If columns not provided, infer from first data item's keys
+  // If columns not provided, infer from first data item's keys (excluding 'link')
   const tableColumns = columns || (tableData.length > 0 ? Object.keys(tableData[0]).filter(key => key !== 'link') : []);
   
   // Function to render cell content based on field type
@@ -26,7 +26,7 @@ const TableWithSorting = ({ data, columns }) => {
         <tr className='table-header-row'>
           {tableColumns.map((column, index) => (
             <th key={index} className='table-header-cell'>
-              {typeof column === 'string' ? column : column.header}
+              {typeof column === 'string' ? column.charAt(0).toUpperCase() + column.slice(1) : column.header}
             </th>
           ))}
         </tr>
