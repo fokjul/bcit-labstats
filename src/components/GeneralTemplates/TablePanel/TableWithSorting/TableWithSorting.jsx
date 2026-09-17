@@ -16,7 +16,12 @@ const TableWithSorting = ({ data, columns }) => {
     if (field === 'title' && item.link) {
       return <a href={item.link} className="table-row-link">{value}</a>;
     }
-    
+
+    // Capitalize the first letter for display without changing the underlying data
+    if (typeof value === 'string') {
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    }
+
     return value;
   };
 
@@ -34,11 +39,21 @@ const TableWithSorting = ({ data, columns }) => {
       <tbody>
         {tableData.map((item, index) => (
           <tr key={index} className="table-row-simple">
-            {tableColumns.map((column, colIndex) => (
-              <td key={colIndex} className="table-row-cell-simple">
-                {renderCellContent(item, typeof column === 'string' ? column : column.field)}
-              </td>
-            ))}
+            {tableColumns.map((column, colIndex) => {
+              const field = typeof column === 'string' ? column : column.field;
+              const label = typeof column === 'string' ? column.charAt(0).toUpperCase() + column.slice(1) : column.header;
+              const isTitle = field === 'title';
+
+              return (
+                <td
+                  key={colIndex}
+                  className={isTitle ? 'table-row-cell-simple table-row-cell-title' : 'table-row-cell-simple'}
+                  data-label={isTitle ? undefined : label}
+                >
+                  {renderCellContent(item, field)}
+                </td>
+              );
+            })}
          </tr>
         ))}
       </tbody>

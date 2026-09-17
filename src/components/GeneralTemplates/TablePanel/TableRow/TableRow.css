@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+/* Primary Colors */
+/* Secondary Colors */
+/* Utility Colors */
+/* Font Family */
+/* Font weight */
+/* Font Size */
+/* Line Height  */
+h1, h2, h3, h4, h5 {
+  font-family: "DM Sans", "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 3.375rem;
+  line-height: 3.375rem;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+  color: rgb(90, 90, 90);
+}
+
+h4 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 500;
+  color: rgb(90, 90, 90);
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.body-copy {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.menu-item {
+  font-size: 0.875rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.labels-buttons {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+
+.heading2 {
+  font-size: 2.625rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+.heading5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+html {
+  width: 100vw;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 60, 113);
+  font-family: "Nunito Sans", "Arial", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+/* Margines & Paddings */
+.table-row-cell-simple {
+  border: 1px solid rgb(233, 233, 233);
+  border-spacing: 0;
+  padding: 1rem;
+  vertical-align: top;
+}
+.table-row-cell-complex {
+  border: 1px solid rgb(233, 233, 233);
+  border-spacing: 0;
+}
+.table-row-cell-complex button {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+@media (min-width: 59.9375rem) {
+  .table-row-cell-complex button {
+    min-width: 19.375rem;
+  }
+}
+.table-row-cell-complex button .rotatedUp {
+  transform: rotate(270deg);
+}
+.table-row-cell-complex button .rotatedDown {
+  transform: rotate(90deg);
+}
+.table-row-cell-complex-expanded {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  text-align: left;
+  grid-template-areas: "building status" "platform status";
+  padding-block: 1rem;
+  border-top: 1px solid rgb(233, 233, 233);
+}
+.table-row-cell-complex-expanded td {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-spacing: 0;
+  width: 100%;
+}
+.table-row-cell-complex-expanded td:nth-child(1) {
+  grid-area: building;
+  border-right: none;
+  border-bottom: none;
+  padding-top: xxs;
+}
+.table-row-cell-complex-expanded td:nth-child(2) {
+  border-right: none;
+  border-bottom: none;
+  border-top: 0;
+  padding-bottom: xxs;
+  grid-area: platform;
+}
+.table-row-cell-complex-expanded td:nth-child(3) {
+  grid-area: status;
+  align-self: center;
+  grid-area: status;
+}
+@media (min-width: 59.9375rem) {
+  .table-row-cell-complex-expanded td {
+    grid-template-columns: 1fr 1fr auto;
+  }
+}
+@media (min-width: 59.9375rem) {
+  .table-row-cell-complex-expanded {
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-areas: "building platform status";
+  }
+}/*# sourceMappingURL=TableRow.css.map */

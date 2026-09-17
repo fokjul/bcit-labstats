@@ -125,102 +125,104 @@ const FilterSearchPanel = ({ filterData, tableData, searchPlaceholder = "Search.
 
   return (
     <div className="contentArea__main__container">
-      <div className='contentArea__main__filter-bar'>
-        <div className="contentArea__main__search-container">
-          <h3>{searchTitle}</h3>
-          <div className="student-loans__search-wrap">
-            <SearchBarLarge
-              placeholder={searchPlaceholder}
-              value={searchQuery}
-              onChange={handleSearchChange}
-              hideSmallSearch={true}
-              showFullSearch={true}
-              hideSearchIcon={true}
-            />
+      <div className={`contentArea__main__filter-group ${filterData && showFilters ? 'open' : ''}`.trim()}>
+        <div className='contentArea__main__filter-bar'>
+          <div className="contentArea__main__search-container">
+            <h3>{searchTitle}</h3>
+            <div className="student-loans__search-wrap">
+              <SearchBarLarge
+                placeholder={searchPlaceholder}
+                value={searchQuery}
+                onChange={handleSearchChange}
+                hideSmallSearch={true}
+                showFullSearch={true}
+                hideSearchIcon={true}
+              />
 
-            {searchResults.length > 0 && (
-              <ul className="student-loans__autocomplete">
-                {searchResults.map((name, index) => (
-                  <li
-                    key={index}
-                    className="student-loans__autocomplete-item"
-                    onClick={() => {
-                      setSearchQuery(name);
-                      setSearchResults([]);
-                    }}
-                  >
-                    {name}
-                  </li>
-                ))}
-              </ul>
-            )}
+              {searchResults.length > 0 && (
+                <ul className="student-loans__autocomplete">
+                  {searchResults.map((name, index) => (
+                    <li
+                      key={index}
+                      className="student-loans__autocomplete-item"
+                      onClick={() => {
+                        setSearchQuery(name);
+                        setSearchResults([]);
+                      }}
+                    >
+                      {name}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
+          {filterData && (
+            <div className="contentArea__main__filter-btn-container">
+              <ButtonIconLarge
+                label={buttonLabel}
+                designType="accordion"
+                arrowType="down"
+                handleBtnClick={() => setShowFilters(!showFilters)}
+                className={showFilters ? 'open' : ''}
+              />
+            </div>
+          )}
         </div>
-        {filterData && (
-          <div className="contentArea__main__filter-btn-container">
-            <ButtonIconLarge
-              label={buttonLabel}
-              designType="accordion"
-              arrowType="down"
-              handleBtnClick={() => setShowFilters(!showFilters)}
-              className={showFilters ? 'open' : ''}
-            />
+
+        {filterData && showFilters && (
+          <div className='contentArea__main__filter'>
+            <form onSubmit={handleSubmit} className='contentArea__main__filter-form'>
+              <div className='contentArea__main__filter-form__group'>
+                {Object.entries(filterData).map(([groupKey, group]) => {
+                  // If there are more than 3 options, use Dropdown
+                  if (group.options.length > 3) {
+                    return (
+                      <Dropdown
+                        key={groupKey}
+                        id={group.options[0].id}
+                        name={group.options[0].name}
+                        label={group.legend}
+                        value={filters[groupKey]}
+                        options={group.options}
+                        onChange={(e) => handleDropdownChange(groupKey, e.target.value)}
+                        placeholder="All"
+                      />
+                    );
+                  }
+                  // Otherwise use RadioCheckboxFieldset
+                  return (
+                    <RadioCheckboxFieldset
+                      key={groupKey}
+                      groupKey={groupKey}
+                      legend={group.legend}
+                      options={group.options}
+                      filters={filters}
+                      onRadioChange={handleRadioChange}
+                      onCheckboxChange={handleCheckboxChange}
+                    />
+                  );
+                })}
+              </div>
+              <div className='contentArea__main__filter-form__actions'>
+                {/* <ButtonIconLarge
+                  icon="filter"
+                  label="Apply Filter"
+                  designType="primary"
+                  type="submit"
+                /> */}
+
+                <ButtonIconLink
+                  icon=""
+                  label="Reset Filter"
+                  type="reset"
+                  handleClick={handleReset}
+                />
+              </div>
+            </form>
           </div>
         )}
       </div>
-
-      {filterData && showFilters && (
-        <div className='contentArea__main__filter'>
-          <form onSubmit={handleSubmit} className='contentArea__main__filter-form'>
-            <div className='contentArea__main__filter-form__group'>
-              {Object.entries(filterData).map(([groupKey, group]) => {
-                // If there are more than 3 options, use Dropdown
-                if (group.options.length > 3) {
-                  return (
-                    <Dropdown
-                      key={groupKey}
-                      id={group.options[0].id}
-                      name={group.options[0].name}
-                      label={group.legend}
-                      value={filters[groupKey]}
-                      options={group.options}
-                      onChange={(e) => handleDropdownChange(groupKey, e.target.value)}
-                      placeholder="All"
-                    />
-                  );
-                }
-                // Otherwise use RadioCheckboxFieldset
-                return (
-                  <RadioCheckboxFieldset
-                    key={groupKey}
-                    groupKey={groupKey}
-                    legend={group.legend}
-                    options={group.options}
-                    filters={filters}
-                    onRadioChange={handleRadioChange}
-                    onCheckboxChange={handleCheckboxChange}
-                  />
-                );
-              })}
-            </div>
-            <div className='contentArea__main__filter-form__actions'>
-              {/* <ButtonIconLarge
-                icon="filter"
-                label="Apply Filter"
-                designType="primary"
-                type="submit"
-              /> */}
-
-              <ButtonIconLink
-                icon=""
-                label="Reset Filter"
-                type="reset"
-                handleClick={handleReset}
-              />
-            </div>
-          </form>
-        </div>
-      )}
 
       <TableWithSorting 
         data={filteredTableData}

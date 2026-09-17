@@ -2,11 +2,28 @@
 
 .lab-table {
   width: 100%;
+
+  @include p.breakpoint(tablet) {
+    display: table;
+  }
 }
 
 .table-row-simple {
-  border-bottom: 1px solid p.$border-grey;
-  
+  display: block;
+  border: 1px solid p.$border-grey;
+  border-radius: p.$size-xxs;
+  padding: p.$size-s;
+  margin-bottom: p.$size-s;
+
+  @include p.breakpoint(tablet) {
+    display: table-row;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid p.$border-grey;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
   &:hover {
     background-color: p.$background-grey;
   }
@@ -14,10 +31,50 @@
 
 .table-row {
     &-cell-simple {
-        border: 1px solid p.$border-grey;  
-        border-spacing: 0; 
-        padding: p.$size-s;
-        vertical-align: top;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: p.$size-s;
+        border: none;
+        padding-block: p.$size-xs;
+
+        &::before {
+          content: attr(data-label);
+          font-weight: bold;
+        }
+
+        @include p.breakpoint(tablet) {
+          display: table-cell;
+          border: 1px solid p.$border-grey;
+          border-spacing: 0;
+          padding: p.$size-s;
+          vertical-align: top;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid p.$border-grey;
+          }
+
+          &::before {
+            content: none;
+          }
+        }
+    }
+
+    &-cell-title {
+        display: block;
+        padding-block: 0 p.$size-s;
+        margin-bottom: p.$size-xs;
+
+        &::before {
+          content: none;
+        }
+
+        @include p.breakpoint(tablet) {
+          display: table-cell;
+          border-bottom: 1px solid p.$border-grey;
+          padding-block: p.$size-s;
+          margin-bottom: 0;
+        }
     }
 
     &-link {
@@ -113,13 +170,18 @@
 }
 
 .table-header {
-    background-color: p.$background-grey;
-    border: 1px solid p.$border-grey;  
+    display: none;
 
-    &-cell { 
+    @include p.breakpoint(tablet) {
+        display: table-header-group;
+        background-color: p.$background-grey;
+        border: 1px solid p.$border-grey;
+    }
+
+    &-cell {
         padding: p.$size-xs;
         text-align: left;
         border: 1px solid p.$border-grey;
         border-spacing: 0;
     }
-} 
+}

@@ -64,6 +64,16 @@
             gap: p.$size-l;
         }
 
+        &__filter-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            &.open {
+                gap: p.$size-s;
+            }
+        }
+
         &__filter-bar {
             display: flex;
             flex-direction: column;

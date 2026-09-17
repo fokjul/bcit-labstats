@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+/* Primary Colors */
+/* Secondary Colors */
+/* Utility Colors */
+/* Font Family */
+/* Font weight */
+/* Font Size */
+/* Line Height  */
+h1, h2, h3, h4, h5 {
+  font-family: "DM Sans", "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 3.375rem;
+  line-height: 3.375rem;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+  color: rgb(90, 90, 90);
+}
+
+h4 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 500;
+  color: rgb(90, 90, 90);
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.body-copy, .filterSet__legend, .filterSet__label, .filterSet__description {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.menu-item {
+  font-size: 0.875rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.labels-buttons {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+
+.heading2 {
+  font-size: 2.625rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+.heading5 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+html {
+  width: 100vw;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 60, 113);
+  font-family: "Nunito Sans", "Arial", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+/* Margines & Paddings */
+.filterSet {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-inline: 0;
+  margin-block: 1rem;
+  padding: 0;
+}
+.filterSet--dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.filterSet__dropdown {
+  padding: 1rem;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 0.25rem;
+  background-color: rgb(255, 255, 255);
+  font-size: 1rem;
+  color: rgb(90, 90, 90);
+}
+.filterSet__dropdown:focus {
+  outline: 2px solid rgb(41, 108, 246);
+  outline-offset: 2px;
+}
+.filterSet__legend {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.filterSet__inputSet {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.filterSet__input {
+  display: flex;
+  gap: 0.5rem;
+}
+.filterSet__label {
+  font-weight: 400;
+}
+.filterSet__description {
+  margin-left: 1.5rem;
+}/*# sourceMappingURL=RadioCheckboxFieldset.css.map */
