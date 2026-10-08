@@ -1,0 +1,45 @@
+@use '../../../styles/partials/' as p;
+
+.cookieOverlay {
+    display: flex;
+    flex-direction: column;
+    gap: p.$size-xs;
+    position: fixed;
+    left: p.$size-s;
+    right: p.$size-s;
+    bottom: calc(var(--notification-bar-height, 0px) + #{p.$size-s});
+    z-index: 20;
+    width: auto;
+    padding: p.$size-m;
+    border: 1px solid p.$border-grey;
+    border-radius: p.$size-xxs;
+    background: p.$primaryColor--white;
+    box-shadow: 0 p.px-to-rem(4) p.px-to-rem(16) rgba(0, 0, 0, 0.15);
+
+    @include p.breakpoint(tablet) {
+        left: 50%;
+        right: auto;
+        bottom: p.$size-m;
+        transform: translateX(-50%);
+        width: fit-content;
+        max-width: p.px-to-rem(600);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: p.$size-m;
+        width: 100%;
+    }
+
+    &__btn {
+        flex-direction: column;
+        display: flex;
+        gap: p.$size-s;
+
+        @include p.breakpoint(tablet) {
+            flex-direction: row;
+            gap: p.$size-m;
+        }
+    }
+}

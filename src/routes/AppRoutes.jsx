@@ -8,6 +8,7 @@ import LabAvailabilityPage from "../prototypes/LabAvailabilityPage/LabAvailabili
 import IceChatbot from "../prototypes/IceChatbot/IceChatbot";
 import StudentLoans from "../prototypes/StudentLoans/StudentLoans";
 import ConsentMode from "../prototypes/ConsentMode/ConsentMode";
+import ConsentModeOverlay from "../prototypes/ConsentModeOverlay/ConsentModeOverlay";
 import Policies from "../prototypes/Policies/Policies";
 
 const AppRoutes = () => {
@@ -20,6 +21,7 @@ const AppRoutes = () => {
       <Route exact path="/prototypes/ice-chatbot" element={<IceChatbot />} />
       <Route exact path="/prototypes/student-loans" element={<StudentLoans />} />
       <Route exact path="/prototypes/consent-mode" element={<ConsentMode />} />
+      <Route exact path="/prototypes/consent-mode-overlay" element={<ConsentModeOverlay />} />
       <Route exact path="/prototypes/policies" element={<Policies/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>

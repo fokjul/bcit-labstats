@@ -9,7 +9,9 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 20;
+        // Above NotificationBar (30) so the modal covers everything, including
+        // the sticky/fixed notification bar, while it's open.
+        z-index: 40;
         width: 100vw;
         height: 100vh;
         background: rgba(0, 0, 0, 0.7);

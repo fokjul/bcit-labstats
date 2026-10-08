@@ -1,0 +1,42 @@
+@use '../../../styles/partials/' as p;
+
+.chatLauncher {
+    position: fixed;
+    right: p.$size-s;
+    // Stacks 16px above LeaveFeedbackButton's resting spot (bottom:16px,
+    // height:48px), but never lower than clearing the notification bar.
+    bottom: max(
+        calc(#{p.$size-s} + #{p.px-to-rem(48)} + #{p.$size-s}),
+        calc(var(--notification-bar-height, 0px) + #{p.$size-s})
+    );
+    width: p.px-to-rem(64);
+    height: p.px-to-rem(64);
+    border: none;
+    border-radius: p.px-to-rem(4);
+    background-color: p.$primaryColor--blue;
+    color: p.$primaryColor--white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 p.px-to-rem(4) p.px-to-rem(12) rgba(0, 0, 0, 0.25);
+    // Below CookieOverlay's z-index (20) so the policy overlay covers it
+    // on mobile, where both are fixed near the same corner.
+    z-index: 10;
+
+    &::after {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 600;
+        content: '\f086';
+        font-size: p.px-to-rem(22);
+    }
+
+    @include p.breakpoint(tablet) {
+        right: p.$size-m;
+        // 16px above LeaveFeedbackButton's desktop spot (bottom:24px, height:48px)
+        bottom: calc(#{p.$size-m} + #{p.px-to-rem(48)} + #{p.$size-s});
+        // Still below the shared Modal's backdrop (z-index:20) so it sits
+        // underneath whenever a Modal is open.
+        z-index: 15;
+    }
+}

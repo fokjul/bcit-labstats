@@ -1,0 +1,78 @@
+@use '../../../styles/partials/' as p;
+
+.notificationBar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: p.$size-s;
+    width: 100%;
+    padding: p.$size-s;
+    background-color: p.$border-dark-grey;
+    color: p.$primaryColor--darkBlue;
+    z-index: 30;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    @include p.breakpoint(tablet) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: p.$size-m;
+        position: sticky;
+        top: 0;
+        bottom: auto;
+        padding-inline: p.$size-xl;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: p.$size-xs;
+    }
+
+    &__icon {
+        display: none;
+        width: p.px-to-rem(20);
+        height: p.px-to-rem(20);
+        flex-shrink: 0;
+
+        @include p.breakpoint(tablet) {
+            display: block;
+        }
+    }
+
+    &__text {
+        @extend .body-copy;
+        margin: 0;
+    }
+
+    &__chevron {
+        width: p.px-to-rem(8);
+        margin-left: p.$size-xxs;
+        vertical-align: middle;
+    }
+
+    &__close {
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: p.$size-xxs;
+        flex-shrink: 0;
+        align-self: center;
+
+        @include p.breakpoint(tablet) {
+            align-self: auto;
+        }
+
+        img {
+            width: p.px-to-rem(14);
+            height: p.px-to-rem(14);
+        }
+    }
+}
